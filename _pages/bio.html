@@ -1,0 +1,92 @@
+---
+layout: page
+title: Biography
+kicker: Academic Profile
+permalink: /bio/
+---
+{% assign cv = site.data.cv %}
+
+<div class="two-col">
+  <div class="bio-left">
+    <!-- SUMMARY -->
+    <div class="section-label">Summary</div>
+    <p style="color:var(--slate);line-height:1.85;margin-bottom:1rem;font-size:0.97rem">{{ cv.summary }}</p>
+    <p style="color:var(--slate);line-height:1.85;margin-bottom:1rem;font-size:0.97rem">
+      I am a co-founder of the <a href="https://cisd.di.univr.it/area/7/" target="_blank">IoT for Care (IoT4Care)</a> research group at the University of Verona, and a member of the <strong>Biomedical Data Analysis Lab (BMDLab)</strong> and the <strong>Stavanger AI Lab (SAIL)</strong> at UiS.
+    </p>
+    <p style="color:var(--slate);line-height:1.85;margin-bottom:1rem;font-size:0.97rem">
+      I serve as Associate Editor of the <strong>IEEE Sensors Journal</strong> and am part of the organizing and review committee for various international journals and conferences.
+    </p>
+
+    <!-- VISITING -->
+    <div class="section-label mt-5">International Visiting Experiences</div>
+    {% for v in cv.visiting %}
+    <div class="pos-item">
+      <div class="pos-year">{{ v.period | split: " – " | first }}</div>
+      <div>
+        <div class="pos-role">{{ v.role }}</div>
+        <div class="pos-inst">{{ v.department }}<br>{{ v.institution }}, {{ v.location }}<br><em>{{ v.note }}</em></div>
+      </div>
+    </div>
+    {% endfor %}
+
+    <!-- AWARDS -->
+    <div class="section-label mt-5">Awards &amp; Competitions</div>
+    {% for award in cv.awards %}
+    <div class="award-item">
+      <div class="award-year">{{ award.year }}</div>
+      <div class="award-text">
+        <h4>{{ award.title }} <span class="award-badge {% if award.type == 'International' %}badge-intl{% else %}badge-natl{% endif %}">{{ award.type }}</span></h4>
+        <p>{{ award.location }}</p>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="btn-gap mt-4">
+      <a href="{{ site.baseurl }}/assets/files/CV_Demrozi.pdf" class="btn btn-primary" target="_blank">Download CV (PDF)</a>
+      <a href="https://www.uis.no/nb/profile/florenc-demrozi" class="btn btn-outline" target="_blank">UiS Official Profile</a>
+    </div>
+  </div>
+
+  <div class="bio-right">
+    <!-- EMPLOYMENT -->
+    <div class="section-label">Employment</div>
+    {% for job in cv.employment %}
+    <div class="pos-item">
+      <div class="pos-year">{{ job.period | split: " – " | first }}</div>
+      <div>
+        <div class="pos-role">{{ job.role }}</div>
+        <div class="pos-inst">
+          {{ job.department }}<br>
+          {{ job.institution }}, {{ job.location }}<br>
+          <em>{{ job.areas }}</em>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+    <!-- EDUCATION -->
+    <div class="section-label mt-5">Education</div>
+    {% for edu in cv.education %}
+    <div class="edu-item">
+      <div class="edu-year">{{ edu.period | split: " – " | first }}</div>
+      <div>
+        <div class="edu-degree">{{ edu.degree }}</div>
+        {% if edu.thesis %}<div class="edu-thesis">"{{ edu.thesis }}"{% if edu.supervisor %} · Supervisor: {{ edu.supervisor }}{% endif %}</div>{% endif %}
+        {% if edu.grade %}<div class="edu-grade">Grade: {{ edu.grade }}</div>{% endif %}
+        {% if edu.note %}<div class="edu-where">{{ edu.note }}</div>{% endif %}
+        <div class="edu-where">{{ edu.institution }}, {{ edu.location }}</div>
+      </div>
+    </div>
+    {% endfor %}
+
+    <!-- LANGUAGES -->
+    <div class="section-label mt-5">Languages</div>
+    {% for lang in cv.languages %}
+    <div class="pos-item" style="padding:0.75rem 0">
+      <div class="pos-year" style="min-width:90px">{{ lang.language }}</div>
+      <div class="pos-inst" style="font-size:0.88rem">{{ lang.level }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

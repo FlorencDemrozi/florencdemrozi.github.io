@@ -1,0 +1,141 @@
+---
+layout: page
+title: Activities
+kicker: Academic Service
+permalink: /activities/
+---
+{% assign cv = site.data.cv %}
+
+<!-- SUPERVISED STUDENTS -->
+<div class="section-label">Supervision</div>
+<h2 class="section-title">Supervised Students</h2>
+
+<h3 class="teach-year">University of Stavanger — 2022–present</h3>
+<table class="students-table" style="margin-bottom:2.5rem">
+  <thead><tr><th>Student</th><th>Programme</th><th>Level</th></tr></thead>
+  <tbody>
+    <tr><td>Rakul Ponnuthurai Inthrakumar</td><td>Computer Science</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Markus Korneliussen Klungtveit</td><td>Computer Science</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Jan Markus Høie</td><td>Computer Science</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Tawite Noe Marthe</td><td>Computer Science</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Mascuud Mohamed Ali</td><td>Computer Science</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Abdulaziz Abdulkadir Hassan</td><td>Computer Science</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Mikhaela Barba</td><td>Medical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Sarah Jasmin Hussain</td><td>Medical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Kjetil Andreas Wangberg</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Tina Ravndal Askø</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Rolf Svanheim</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Svein-Thore Hammerseth Wighus</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Aditya Borah</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Tom Mantel</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Joakim Tønnessen</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Knut Edland Gjerdsbakk</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Norunn Hjartåker</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
+    <tr><td>Lars-Erik Nes Panengstuen</td><td>Robotics</td><td><span class="badge badge-msc">M.Sc.</span></td></tr>
+    <tr><td>Aleksander Odland Fattnes</td><td>Computer Science</td><td><span class="badge badge-msc">M.Sc.</span></td></tr>
+    <tr><td>Morten Ekse</td><td>Electrical Technology</td><td><span class="badge badge-msc">M.Sc.</span></td></tr>
+    <tr><td>Aleksander Møllerud</td><td>Electrical Technology</td><td><span class="badge badge-msc">M.Sc.</span></td></tr>
+  </tbody>
+</table>
+
+<h3 class="teach-year">University of Verona — 2016–2022 (selected)</h3>
+<table class="students-table" style="margin-bottom:3rem">
+  <thead><tr><th>Student</th><th>Programme</th><th>Level</th></tr></thead>
+  <tbody>
+    <tr><td>Cristian Turetta</td><td>Computer Science</td><td><span class="badge badge-phd">Ph.D.</span></td></tr>
+    <tr><td>Toqueer Malik</td><td>Computer Science</td><td><span class="badge badge-phd">Ph.D.</span></td></tr>
+    <tr><td>Riccardo Zucchelli</td><td>CS &amp; Engineering</td><td><span class="badge badge-msc">M.Sc.</span></td></tr>
+    <tr><td>Carlo Tachella</td><td>CS &amp; Engineering</td><td><span class="badge badge-msc">M.Sc.</span></td></tr>
+    <tr><td>Alessandro Fuser</td><td>CS &amp; Engineering</td><td><span class="badge badge-msc">M.Sc.</span></td></tr>
+    <tr><td>Stefano Brunone</td><td>CS &amp; Engineering</td><td><span class="badge badge-msc">M.Sc.</span></td></tr>
+    <tr><td>Vladislav Bragoi</td><td>CS &amp; Engineering</td><td><span class="badge badge-msc">M.Sc.</span></td></tr>
+    <tr><td>Nicola Serlonghi</td><td>CS &amp; Engineering</td><td><span class="badge badge-msc">M.Sc.</span></td></tr>
+    <tr><td>Marin Jereghi</td><td>CS &amp; Engineering</td><td><span class="badge badge-msc">M.Sc.</span></td></tr>
+    <tr><td>Fabio Chiarani</td><td>CS &amp; Engineering</td><td><span class="badge badge-msc">M.Sc.</span></td></tr>
+  </tbody>
+</table>
+
+<!-- TEACHING -->
+<div class="section-label">Teaching</div>
+<h2 class="section-title">Teaching Activities</h2>
+
+<div class="two-col">
+  <div>
+    <div class="teach-year">Current (2025–2026)</div>
+    {% for t in cv.teaching_current %}
+    <div class="teach-item"><em>{{ t.course }}</em> — {{ t.institution }}, {{ t.level }}. {{ t.credits }}. {{ t.students }} students. Language: {{ t.language }}.</div>
+    {% endfor %}
+
+    <div class="teach-year">2022–2023</div>
+    {% for t in cv.teaching_past limit:4 %}
+    <div class="teach-item"><em>{{ t.course }}</em> — {{ t.institution }}, {{ t.level }}{% if t.hours %}. {{ t.hours }}{% endif %}{% if t.students %}. {{ t.students }} students{% endif %}. Language: {{ t.language }}.</div>
+    {% endfor %}
+  </div>
+  <div>
+    <div class="teach-year">2020–2022</div>
+    {% for t in cv.teaching_past offset:4 %}
+    <div class="teach-item"><em>{{ t.course }}</em> — {{ t.institution }}, {{ t.level }}{% if t.hours %}. {{ t.hours }}{% endif %}{% if t.students %}. {{ t.students }} students{% endif %}. Language: {{ t.language }}.</div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- REVIEWING & SERVICE -->
+<div class="section-label mt-5">Editorial Service</div>
+<h2 class="section-title">Editorial &amp; Reviewing</h2>
+
+<div class="two-col">
+  <div>
+    <div class="ri-title">Journal Editor</div>
+    {% for ed in cv.service.journal_editor %}
+    <div class="review-list"><li><strong>{{ ed.role }}</strong> — {{ ed.journal }} ({{ ed.period }})</li></div>
+    {% endfor %}
+
+    <div class="ri-title mt-4">Journal Reviewer</div>
+    <ul class="review-list">
+      {% for j in cv.service.journal_reviewer %}
+      <li>{{ j }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <div class="ri-title">Conference Chair Roles</div>
+    <ul class="committee-list">
+      {% for r in cv.service.conference_chair %}
+      <li><strong>{{ r.role }}</strong> — {{ r.event }}, {{ r.location }}, {{ r.year }}</li>
+      {% endfor %}
+    </ul>
+
+    <div class="ri-title mt-4">Ph.D. Thesis Committee Member</div>
+    <ul class="committee-list">
+      {% for c in cv.service.phd_committees %}
+      <li><strong>{{ c.candidate }}</strong> ({{ c.year }}) — "{{ c.thesis }}" · {{ c.institution }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section-label mt-5">Research Projects</div>
+<h2 class="section-title">Funded Projects</h2>
+<div class="two-col">
+  <div>
+    {% for proj in cv.projects limit:5 %}
+    <div class="project-card">
+      <div class="project-meta">{{ proj.period }} · {{ proj.role }}</div>
+      <h4>{{ proj.title }}</h4>
+      <p>{{ proj.funder }}</p>
+      <div class="project-funding">{{ proj.funding }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  <div>
+    {% for proj in cv.projects offset:5 %}
+    <div class="project-card">
+      <div class="project-meta">{{ proj.period }} · {{ proj.role }}</div>
+      <h4>{{ proj.title }}</h4>
+      <p>{{ proj.funder }}</p>
+      <div class="project-funding">{{ proj.funding }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

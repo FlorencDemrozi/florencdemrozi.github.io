@@ -1,0 +1,11 @@
+{% assign cv = site.data.cv %}
+<footer>
+  <div class="footer-inner">
+    <span>© {{ site.time | date: "%Y" }} {{ cv.personal.name }} · University of Stavanger, Norway</span>
+    <span>
+      <a href="https://www.uis.no" target="_blank" rel="noopener">uis.no</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:{{ cv.personal.email }}">{{ cv.personal.email }}</a>
+    </span>
+  </div>
+</footer>

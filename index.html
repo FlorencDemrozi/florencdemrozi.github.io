@@ -1,0 +1,135 @@
+---
+layout: default
+title: Home
+---
+{% assign cv = site.data.cv %}
+{% assign pubs = site.data.publications %}
+
+<!-- HERO -->
+<section class="home-hero">
+  <div class="home-hero-inner">
+    <div class="hero-text fade-in">
+      <div class="hero-eyebrow">{{ cv.personal.address | split: "," | last | strip }}</div>
+      <h1 class="hero-name">
+        {{ cv.personal.name | split: " " | first }}<br>
+        {{ cv.personal.name | split: " " | last }}
+        <em>{{ cv.personal.title }}</em>
+      </h1>
+      <p class="hero-position">
+        {% assign current = cv.employment | first %}
+        <strong>{{ current.role }}</strong><br>
+        {{ current.department }}<br>
+        {{ current.institution }}, {{ current.location }}
+      </p>
+      <blockquote class="hero-quote">
+        "{{ cv.personal.tagline_en }}"
+      </blockquote>
+      <div class="hero-tags">
+        {% for interest in cv.research_interests %}
+        <span class="hero-tag">{{ interest }}</span>
+        {% endfor %}
+      </div>
+      <div class="hero-socials">
+        {% for profile in cv.personal.profiles %}
+        <a class="hero-social" href="{{ profile.url }}" target="_blank" rel="noopener">
+          {% include icon.html icon=profile.icon %}
+          {{ profile.label }}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="hero-card fade-in fade-in-3">
+      {% if cv.personal.photo %}
+      <img class="hero-card-photo" src="{{ site.baseurl }}/{{ cv.personal.photo }}" alt="{{ cv.personal.name }}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="hero-card-photo-placeholder" style="display:none">FD</div>
+      {% else %}
+      <div class="hero-card-photo-placeholder">FD</div>
+      {% endif %}
+      <div class="hero-card-info">
+        <div class="card-label">Current Position</div>
+        <div class="card-role">{{ current.role }}</div>
+        <div class="card-dept">{{ current.department }}<br>{{ current.institution }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SNAPSHOT -->
+<div class="home-section home-section-alt">
+  <div class="home-section-inner">
+    <div class="section-label">About</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>{{ cv.summary }}</p>
+        <p>I am a co-founder of the <a href="https://cisd.di.univr.it/area/7/" target="_blank">IoT for Care (IoT4Care)</a> research group at the University of Verona, and a member of the <strong>Biomedical Data Analysis Lab (BMDLab)</strong> and the <strong>Stavanger AI Lab (SAIL)</strong> at UiS. I also serve as <strong>Associate Editor</strong> of the <em>IEEE Sensors Journal</em>.</p>
+        <p>I currently serve as <strong>Program Chair</strong> of <a href="https://coinsconf.com">IEEE COINS 2026</a> — the IEEE International Conference on Omni-Layer Intelligent Systems, University of Bologna, September 7–9, 2026.</p>
+        <div class="btn-gap">
+          <a href="{{ site.baseurl }}/bio/" class="btn btn-primary">Full Biography →</a>
+          <a href="{{ site.baseurl }}/publications/" class="btn btn-outline">Publications</a>
+        </div>
+      </div>
+      <div>
+        <div class="ri-title">Research Interests</div>
+        <ul class="ri-list">
+          {% for interest in cv.research_interests %}
+          <li>{{ interest }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS -->
+<div class="home-section">
+  <div class="home-section-inner">
+    <div class="section-label">Recent Highlights</div>
+    <h2 class="section-title">News &amp; Updates</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">2026</div>
+        <h4>Program Chair — IEEE COINS 2026</h4>
+        <p>Serving as Program Chair for IEEE COINS 2026, University of Bologna, Italy, September 7–9.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2025</div>
+        <h4>Promoted to Full Professor in Biomedical/Medical Engineering/Technology</h4>
+        <p>Department of Electrical Engineering and Computer Science, University of Stavanger, Norway. June 2025.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2025</div>
+        <h4>SpareBank 1 Sør-Norge Innovation Award</h4>
+        <p>Recipient of the 2025 Innovation Award, Stavanger, Norway.</p>
+      </div>
+      {% assign recent = site.data.publications.items | where_exp: "p", "p.year >= 2024" | sort: "year" | reverse %}
+      {% for pub in recent limit:3 %}
+      <div class="tl-item">
+        <div class="tl-date">{{ pub.year }}</div>
+        <h4>{{ pub.title }}</h4>
+        <p>{{ pub.venue }}{% if pub.doi %} · DOI: {{ pub.doi }}{% endif %}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- PUBLICATION STATS -->
+<div class="home-section home-section-alt">
+  <div class="home-section-inner">
+    <div class="section-label">Research Output</div>
+    {% assign journals = site.data.publications.items | where: "type", "journal" %}
+    {% assign conferences = site.data.publications.items | where: "type", "conference" %}
+    {% assign books = site.data.publications.items | where: "type", "book" %}
+    <div class="pub-stats">
+      <div class="pub-stat"><span class="num">{{ site.data.publications.items | size }}</span><span class="lbl">Total Publications</span></div>
+      <div class="pub-stat"><span class="num">{{ journals | size }}</span><span class="lbl">Journal Articles</span></div>
+      <div class="pub-stat"><span class="num">{{ conferences | size }}</span><span class="lbl">Conference Papers</span></div>
+      <div class="pub-stat"><span class="num">{{ books | size }}</span><span class="lbl">Books / Editorials</span></div>
+    </div>
+    <div class="btn-gap">
+      <a href="{{ site.baseurl }}/publications/" class="btn btn-primary">View All Publications →</a>
+      <a href="{{ site.data.cv.personal.profiles | where: 'label', 'Google Scholar' | map: 'url' | first }}" target="_blank" class="btn btn-outline">Google Scholar</a>
+    </div>
+  </div>
+</div>

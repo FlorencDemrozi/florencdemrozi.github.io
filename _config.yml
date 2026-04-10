@@ -1,0 +1,39 @@
+title: "Florenc Demrozi"
+description: "Full Professor in Biomedical/Medical Engineering/Technology — University of Stavanger, Norway"
+baseurl: ""
+url: ""  # set to your GitHub Pages URL, e.g. "https://florencdemrozi.github.io"
+
+author:
+  name: "Florenc Demrozi"
+  email: "florenc.demrozi@uis.no"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - scripts/
+  - "*.py"
+  - vendor/
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+defaults:
+  - scope:
+      path: "_pages"
+    values:
+      layout: "page"

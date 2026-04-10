@@ -1,0 +1,27 @@
+{% assign cv = site.data.cv %}
+<nav id="top-nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="{{ site.baseurl }}/">
+      <span class="nav-dot"></span>{{ cv.personal.name | split: " " | first }} {{ cv.personal.name | split: " " | last }}
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="{{ site.baseurl }}/" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
+      <li><a href="{{ site.baseurl }}/bio/" {% if page.url contains "/bio" %}class="active"{% endif %}>Bio</a></li>
+      <li><a href="{{ site.baseurl }}/publications/" {% if page.url contains "/publications" %}class="active"{% endif %}>Publications</a></li>
+      <li><a href="{{ site.baseurl }}/thesis/" {% if page.url contains "/thesis" %}class="active"{% endif %}>Thesis Proposals</a></li>
+      <li><a href="{{ site.baseurl }}/activities/" {% if page.url contains "/activities" %}class="active"{% endif %}>Activities</a></li>
+      <li><a href="{{ site.baseurl }}/contact/" {% if page.url contains "/contact" %}class="active"{% endif %}>Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="{{ site.baseurl }}/">Home</a>
+    <a href="{{ site.baseurl }}/bio/">Bio</a>
+    <a href="{{ site.baseurl }}/publications/">Publications</a>
+    <a href="{{ site.baseurl }}/thesis/">Thesis Proposals</a>
+    <a href="{{ site.baseurl }}/activities/">Activities</a>
+    <a href="{{ site.baseurl }}/contact/">Contact</a>
+  </div>
+</nav>

@@ -1,0 +1,73 @@
+---
+layout: page
+title: Contact
+kicker: Get in Touch
+permalink: /contact/
+---
+{% assign cv = site.data.cv %}
+
+<div class="contact-grid">
+  <div>
+    <div class="section-label">Direct Contact</div>
+
+    <div class="contact-item">
+      <div class="contact-icon">📧</div>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a href="mailto:{{ cv.personal.email }}">{{ cv.personal.email }}</a></div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📞</div>
+      <div>
+        <div class="contact-label">Phone</div>
+        <div class="contact-value">{{ cv.personal.phone }}</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🏛</div>
+      <div>
+        <div class="contact-label">Institution</div>
+        <div class="contact-value">{{ cv.personal.address }}</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🔬</div>
+      <div>
+        <div class="contact-label">ORCID</div>
+        <div class="contact-value"><a href="https://orcid.org/{{ cv.personal.orcid }}" target="_blank">{{ cv.personal.orcid }}</a></div>
+      </div>
+    </div>
+
+    <div class="info-box mt-4">
+      <strong>Thesis &amp; Internship Enquiries</strong>
+      Please include your CV, transcript, and a brief description of your research interests when writing. See <a href="{{ site.baseurl }}/thesis/">Thesis Proposals</a> for open positions.
+    </div>
+
+    <!-- REFEREES -->
+    <div class="section-label mt-5">Referees</div>
+    {% for ref in cv.referees %}
+    <div class="pos-item" style="padding:0.9rem 0">
+      <div class="pos-year" style="min-width:100px;font-size:0.62rem">{{ ref.title | split: " " | first }}</div>
+      <div>
+        <div class="pos-role" style="font-size:0.92rem">{{ ref.name }}</div>
+        <div class="pos-inst">{{ ref.title }}<br>{{ ref.institution }}<br><a href="mailto:{{ ref.email }}">{{ ref.email }}</a></div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div>
+    <div class="section-label">Online Profiles</div>
+    <div class="social-grid">
+      {% for profile in cv.personal.profiles %}
+      <a class="social-card" href="{{ profile.url }}" target="_blank" rel="noopener">
+        {% include icon.html icon=profile.icon %}
+        <div>
+          <div class="sname">{{ profile.label }}</div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
