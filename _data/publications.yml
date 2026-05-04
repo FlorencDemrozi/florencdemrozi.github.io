@@ -1,13 +1,6 @@
-last_updated: '2026-04-20'
+last_updated: '2026-05-04'
 scholar_url: https://scholar.google.it/citations?user=gF5XNDIAAAAJ&hl=en
 items:
-- id: C1
-  type: conference
-  year: 2026
-  title: A Multi-Sensor Approach for Soft Labeling in Human Activity Recognition Domain
-  authors: Iervasi M., Turetta C., Pravadelli G., Demrozi F.
-  venue: Design, Automation & Test in Europe (DATE 2026)
-  year_str: '2026'
 - id: J1
   type: journal
   year: 2026
@@ -25,6 +18,14 @@ items:
     and Samaneh Zolfaghari and Domiziana Rinaldi and Giuliana Fazzina and Giulio Balestro and Alessandro Picelli and Graziano
     Pravadelli and Gabriella Olmo and Stefano Tamburin and Leonardo Lopiano and Carlo Alberto Artusi
   venue: Scientific Data
+- id: S043
+  type: conference
+  year: 2026
+  year_str: '2026'
+  title: 'Towards Robust Neuromorphic/Event Vision-Based Fall Detection: Cross-Dataset Generalisation Benchmarking'
+  authors: Muhammad Zeeshan Masood and Muhammad Hamza Zafar and Syed Kumayl Raza Moosavi and Demrozi F. and Furqan Shaukat
+    and Filippo Sanfilippo
+  venue: Expert Systems with Applications
 - id: C2
   type: conference
   year: 2025
@@ -475,3 +476,10 @@ items:
   authors: Demrozi F., Pravadelli G., Stefanni F.
   venue: Forum on Specification and Design Languages (FDL 2016)
   year_str: '2016'
+- id: C1
+  type: conference
+  year: 2000
+  title: A Multi-Sensor Approach for Soft Labeling in Human Activity Recognition Domain
+  authors: Iervasi M., Turetta C., Pravadelli G., Demrozi F.
+  venue: Design, Automation & Test in Europe (DATE 2026)
+  year_str: '2000'
