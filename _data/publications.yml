@@ -1,6 +1,13 @@
-last_updated: '2026-05-18'
+last_updated: '2026-07-13'
 scholar_url: https://scholar.google.it/citations?user=gF5XNDIAAAAJ&hl=en
 items:
+- id: C1
+  type: conference
+  year: 2026
+  title: A Multi-Sensor Approach for Soft Labeling in Human Activity Recognition Domain
+  authors: Iervasi M., Turetta C., Pravadelli G., Demrozi F.
+  venue: Design, Automation & Test in Europe (DATE 2026)
+  year_str: '2026'
 - id: J1
   type: journal
   year: 2026
@@ -26,6 +33,28 @@ items:
   authors: Muhammad Zeeshan Masood and Muhammad Hamza Zafar and Syed Kumayl Raza Moosavi and Demrozi F. and Furqan Shaukat
     and Filippo Sanfilippo
   venue: Expert Systems with Applications
+- id: S045
+  type: conference
+  year: 2026
+  year_str: '2026'
+  title: 'Distributed and Adaptive Machine Learning for Wearable Sensor Time-Series Data in Healthcare Monitoring and Human
+    Activity Recognition: A Review'
+  authors: Demrozi F.
+  venue: ''
+- id: S046
+  type: conference
+  year: 2026
+  year_str: '2026'
+  title: Technological Advances for Gait and Balance Assessment
+  authors: Alessandro Zampogna and Demrozi F. and Silvia Del Din
+  venue: ''
+- id: S049
+  type: conference
+  year: 2026
+  year_str: '2026'
+  title: IMU-based pre-impact, impact, and post-impact fall detection dataset
+  authors: Muhammad Toqeer Ali and Cristian Turetta and Demrozi F. and Graziano Pravadelli
+  venue: ''
 - id: C2
   type: conference
   year: 2025
@@ -476,10 +505,11 @@ items:
   authors: Demrozi F., Pravadelli G., Stefanni F.
   venue: Forum on Specification and Design Languages (FDL 2016)
   year_str: '2016'
-- id: C1
+- id: S058
   type: conference
   year: 2000
-  title: A Multi-Sensor Approach for Soft Labeling in Human Activity Recognition Domain
-  authors: Iervasi M., Turetta C., Pravadelli G., Demrozi F.
-  venue: Design, Automation & Test in Europe (DATE 2026)
-  year_str: '2000'
+  year_str: Unknown
+  title: This article is protected by copyright. All rights reserved.
+  authors: Tamburin Stefano and Elisa Mantovani and Demrozi F. and Daniel L Hertz and Cristian Turetta and Omar Ferro and
+    Andreas A Argyriou and Graziano Pravadelli and Stefano Tamburina
+  venue: ''
