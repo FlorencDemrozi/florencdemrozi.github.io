@@ -1,428 +1,515 @@
-# ─────────────────────────────────────────────────────────────
-# Publications — auto-updated by GitHub Actions (scripts/fetch_publications.py)
-# You can also edit manually. Keys: id, type, year, title, authors, venue, doi, url, award
-# type: journal | conference | preprint | book | editorial | thesis
-# ─────────────────────────────────────────────────────────────
-
-last_updated: "2026-04-10"
-scholar_url: "https://scholar.google.it/citations?user=gF5XNDIAAAAJ&hl=en"
-
+last_updated: '2026-07-13'
+scholar_url: https://scholar.google.it/citations?user=gF5XNDIAAAAJ&hl=en
 items:
-
-  # ── JOURNAL ARTICLES ──────────────────────────────────────
-
-  - id: J1
-    type: journal
-    year: 2026
-    title: "A multi-level annotated sensor dataset of gait freezing manifestations and severity in Parkinson's disease"
-    authors: "Borzì L., Demrozi F., Bacchin R.A., Turetta C., Tebaldi M., Sigcha L., Zolfaghari S., Rinaldi D., Fazzina G., Balestro G., et al."
-    venue: "Scientific Data"
-    year_str: "2026"
-
-  - id: J2
-    type: journal
-    year: 2025
-    title: "Freezing of gait detection: the effect of sensor type, position, activities, datasets, and machine learning model"
-    authors: "Borzi L., Demrozi F., Bacchin R.A., Turetta C., Sigcha L., Rinaldi D., Fazzina G., Balestro G., Picelli A., Pravadelli G., Olmo G., Tamburin S., Lopiano L., Artusi C.A."
-    venue: "Journal of Parkinson's Disease"
-    url: "https://www.journalofparkinsonsdisease.com/"
-    year_str: "2025"
-
-  - id: J3
-    type: journal
-    year: 2025
-    title: "Edge-based freezing of gait recognition in Parkinson's disease"
-    authors: "Borzì L., Sigcha L., Firouzi F., Olmo G., Demrozi F."
-    venue: "Computers and Electrical Engineering, vol. 127, p. 110530"
-    year_str: "2025"
-
-  - id: J4
-    type: journal
-    year: 2025
-    title: "Multimodal AI (MMAI) for Next-Generation Healthcare: Data Domains, Algorithms, Challenges, and Future Perspectives"
-    authors: "Demrozi F., Farmanbar M., Engan K."
-    venue: "Current Opinion in Biomedical Engineering, p. 100632. ISSN: 2468-4511"
-    year_str: "2025"
-
-  - id: J5
-    type: journal
-    year: 2025
-    title: "Cueing Technologies in Parkinson's Disease: A Systematic Review"
-    authors: "Iervasi M., Grødem J.M., Borzì L., Alves G.W., Eftestøl T., Demrozi F."
-    venue: "IEEE Access"
-    doi: "10.1109/ACCESS.2025.3647133"
-    year_str: "2025"
-
-  - id: J6
-    type: journal
-    year: 2024
-    title: "ICT-based solutions for Alzheimer's Disease Care: A systematic review"
-    authors: "Ali M.T., Turetta C., Pravadelli G., Demrozi F."
-    venue: "IEEE Access"
-    year_str: "2024"
-
-  - id: J7
-    type: journal
-    year: 2024
-    title: "Enhancing Safety and Privacy in Industry 4.0: The ICE Laboratory Case Study"
-    authors: "Cunico F., Aldegheri S., Avogaro A., Boldo M., Bombieri N., Capogrosso L., Demrozi F., et al."
-    venue: "IEEE Access"
-    year_str: "2024"
-
-  - id: J8
-    type: journal
-    year: 2024
-    title: "B-HAR: an open-source baseline framework for in-depth study of human activity recognition datasets and workflows"
-    authors: "Turetta C., Demrozi F., Pravadelli G."
-    venue: "IEEE Access"
-    doi: "10.1109/ACCESS.2024.3496497"
-    year_str: "2024"
-
-  - id: J9
-    type: journal
-    year: 2023
-    title: "Towards Posture and Gait Evaluation through Wearable-Based Biofeedback Technologies"
-    authors: "Cesari P., Cristani M., Demrozi F., Pascucci F., Picotti P.M., Pravadelli G., Tomazzoli C., Turetta C., Workneh T.C., Zenti L."
-    venue: "Electronics, 12(3), p. 644"
-    year_str: "2023"
-
-  - id: J10
-    type: journal
-    year: 2023
-    title: "SHPIA 2.0: An Easily Scalable, Low-Cost, Multi-purpose Smart Home Platform for Intelligent Applications"
-    authors: "Demrozi F., Turetta C., Pravadelli G."
-    venue: "SN Computer Science, 5(1), p. 42"
-    year_str: "2023"
-
-  - id: J11
-    type: journal
-    year: 2023
-    title: "A Low-Cost Wireless Body Area Network for Human Activity Recognition in Healthy Life and Medical Applications"
-    authors: "Demrozi F., Turetta C., Kindt P.H., Chiarani F., Bacchin R., Valè N., Pascucci F., Cesari P., Smania N., Tamburin S., et al."
-    venue: "IEEE Transactions on Emerging Topics in Computing"
-    year_str: "2023"
-
-  - id: J12
-    type: journal
-    year: 2022
-    title: "Wearables, sensors, and smart devices for detection and monitoring of chemotherapy-induced peripheral neurotoxicity: Systematic review"
-    authors: "Mantovani E., Demrozi F., Hertz D.L., Turetta C., Ferro O., Argyriou A.A., Pravadelli G., Tamburin S."
-    venue: "Journal of the Peripheral Nervous System, 27(4), pp. 238–258"
-    year_str: "2022"
-
-  - id: J13
-    type: journal
-    year: 2021
-    title: "Estimating indoor occupancy through low-cost BLE devices"
-    authors: "Demrozi F., Turetta C., Chiarani F., Kindt P.H., Pravadelli G."
-    venue: "IEEE Sensors Journal, 21(15), pp. 17053–17063"
-    year_str: "2021"
-
-  - id: J14
-    type: journal
-    year: 2020
-    title: "Human activity recognition using inertial, physiological and environmental sensors: A comprehensive survey"
-    authors: "Demrozi F., Pravadelli G., Bihorac A., Rashidi P."
-    venue: "IEEE Access, vol. 8, pp. 210816–210836"
-    year_str: "2020"
-
-  - id: J15
-    type: journal
-    year: 2019
-    title: "Toward a wearable system for predicting freezing of gait in people affected by Parkinson's disease"
-    authors: "Demrozi F., Bacchin R., Tamburin S., Cristani M., Pravadelli G."
-    venue: "IEEE Journal of Biomedical and Health Informatics, 24(9), pp. 2444–2451"
-    year_str: "2019"
-
-  # ── CONFERENCE ARTICLES ────────────────────────────────────
-
-  - id: C1
-    type: conference
-    year: 2026
-    title: "A Multi-Sensor Approach for Soft Labeling in Human Activity Recognition Domain"
-    authors: "Iervasi M., Turetta C., Pravadelli G., Demrozi F."
-    venue: "Design, Automation & Test in Europe (DATE 2026)"
-    year_str: "2026"
-
-  - id: C2
-    type: conference
-    year: 2025
-    award: "Best Paper Award"
-    title: "A Lightweight CNN for Real-Time Pre-Impact Fall Detection"
-    authors: "Turetta C., Ali M.T., Demrozi F., Pravadelli G."
-    venue: "Design, Automation & Test in Europe (DATE 2025)"
-    year_str: "2025"
-
-  - id: C3
-    type: conference
-    year: 2025
-    title: "AI-based recognition of daily activities in Parkinson's disease using wearable inertial sensors"
-    authors: "Borzi L., Tebaldi M., Demrozi F."
-    venue: "International Conference on Frontiers of Artificial Intelligence, Ethics, and Multidisciplinary Applications. Springer"
-    year_str: "2025"
-
-  - id: C4
-    type: conference
-    year: 2025
-    title: "Few-Shot Learning for Hand-Based Micro Activity Recognition"
-    authors: "Demrozi F., Al Machot F."
-    venue: "IEEE International Conference on Omni-layer Intelligent Systems (COINS 2025)"
-    year_str: "2025"
-
-  - id: C5
-    type: conference
-    year: 2025
-    title: "Exploring Parkinson's Disease Datasets: Key Findings, Challenges, and Recommendations for Motor Symptom Analysis"
-    authors: "Tebaldi M., Borzì L., Olmo G., Giugno R., Pravadelli G., Demrozi F."
-    venue: "47th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC 2025)"
-    doi: "10.1109/EMBC58623.2025.11252635"
-    year_str: "2025"
-
-  - id: C6
-    type: conference
-    year: 2024
-    title: "Recognizing hand-based micro activities using wrist-worn inertial sensors: a zero-shot learning approach"
-    authors: "Al Machot F., Ullah H., Demrozi F."
-    venue: "Essays Dedicated to Tiziana Margaria on the Occasion of Her 60th Birthday. Springer, pp. 215–234"
-    year_str: "2024"
-
-  - id: C7
-    type: conference
-    year: 2024
-    title: "An enhanced subject-independent approach for hand-based micro activities recognition"
-    authors: "Demrozi F., Al Machot F."
-    venue: "IEEE International Conference on Omni-layer Intelligent Systems (COINS 2024)"
-    year_str: "2024"
-
-  - id: C8
-    type: conference
-    year: 2024
-    title: "Artifact: WirelessEye – Seeing over WiFi Made Accessible"
-    authors: "Kindt P.H., Turetta C., Demrozi F., Masrur A., Pravadelli G., Chakraborty S."
-    venue: "IEEE International Conference on Pervasive Computing and Communications Workshops (PerCom 2024), pp. 15–16"
-    doi: "10.1109/PerComWorkshops59983.2024.10502539"
-    year_str: "2024"
-
-  - id: C9
-    type: conference
-    year: 2024
-    title: "WirelessEye – Seeing over WiFi Made Accessible"
-    authors: "Kindt P.H., Turetta C., Demrozi F., Masrur A., Pravadelli G., Chakraborty S."
-    venue: "IEEE PerCom Workshops 2024, pp. 562–567"
-    doi: "10.1109/PerComWorkshops59983.2024.10503162"
-    year_str: "2024"
-
-  - id: C10
-    type: conference
-    year: 2024
-    title: "Enhancing Freezing of Gait Detection in Parkinson's Through Fine-Tuned Deep Learning Models"
-    authors: "Tebaldi M., Pravadelli G., Demrozi F., Giugno R., Turetta C."
-    venue: "IEEE International Conference on Digital Health (ICDH 2024), pp. 87–94"
-    year_str: "2024"
-
-  - id: C11
-    type: conference
-    year: 2024
-    title: "Environmental Microchanges in WiFi Sensing"
-    authors: "Turetta C., Kindt P.H., Masrur A., Chakraborty S., Pravadelli G., Demrozi F."
-    venue: "Design, Automation & Test in Europe (DATE 2024)"
-    year_str: "2024"
-
-  - id: C12
-    type: conference
-    year: 2023
-    title: "Experiences from the first delivery of a new immersive software engineering course: mathematical foundations and data analytics"
-    authors: "Demrozi F., Marchisio M., Margaria T., Sacchet M."
-    venue: "IEEE COMPSAC 2023, pp. 1576–1581"
-    year_str: "2023"
-
-  - id: C13
-    type: conference
-    year: 2023
-    title: "Fostering Human Activity Recognition Workflows: An Open-Source Baseline Framework"
-    authors: "Demrozi F., Turetta C., Pravadelli G."
-    venue: "IEEE International Conference on Digital Health (ICDH 2023), pp. 75–80"
-    year_str: "2023"
-
-  - id: C14
-    type: conference
-    year: 2023
-    title: "CNN-based human activity recognition on edge computing devices"
-    authors: "Singh A., Margaria T., Demrozi F."
-    venue: "IEEE International Conference on Omni-layer Intelligent Systems (COINS 2023)"
-    year_str: "2023"
-
-  - id: C15
-    type: conference
-    year: 2023
-    title: "Non-Invasive Monitoring of Alzheimer's patients through WiFi Channel State Information"
-    authors: "Turetta C., Demrozi F., Franceschi S., Zamboni D., Pravadelli G."
-    venue: "9th International Workshop on Advances in Sensors and Interfaces (IWASI 2023), pp. 103–108"
-    year_str: "2023"
-
-  - id: C16
-    type: conference
-    year: 2023
-    title: "Towards Deep Learning-based Occupancy Detection Via WiFi Sensing in Unconstrained Environments"
-    authors: "Turetta C., Skenderi G., Capogrosso L., Demrozi F., Kindt P.H., Masrur A., Fummi F., Cristani M., Pravadelli G."
-    venue: "Design, Automation & Test in Europe (DATE 2023)"
-    year_str: "2023"
-
-  - id: C17
-    type: conference
-    year: 2022
-    award: "Best Paper Candidate"
-    title: "SHPIA: A Low-Cost Multi-purpose Smart Home Platform for Intelligent Applications"
-    authors: "Demrozi F., Pravadelli G."
-    venue: "IFIP International Internet of Things Conference. Springer, pp. 217–234"
-    year_str: "2022"
-
-  - id: C18
-    type: conference
-    year: 2022
-    title: "A virtual coaching platform to support therapy compliance in obesity"
-    authors: "Bissoli L., Bonacina D., Dalla Riva N., Demrozi F., Jereghi M., Marchiotto N., Perbellini G., Pernice B., Pizzocaro E., Pravadelli G., et al."
-    venue: "IEEE COMPSAC 2022, pp. 694–699"
-    year_str: "2022"
-
-  - id: C19
-    type: conference
-    year: 2022
-    title: "Integrating wearable and camera based monitoring in the digital twin for safety assessment in Industry 4.0"
-    authors: "Boldo M., Bombieri N., Centomo S., De Marchi M., Demrozi F., Pravadelli G., Quaglia D., Turetta C."
-    venue: "International Symposium on Leveraging Applications of Formal Methods. Springer, pp. 184–194"
-    year_str: "2022"
-
-  - id: C20
-    type: conference
-    year: 2022
-    title: "Practical identity recognition using WiFi's channel state information"
-    authors: "Turetta C., Demrozi F., Kindt P.H., Masrur A., Pravadelli G."
-    venue: "Design, Automation & Test in Europe (DATE 2022), pp. 76–79"
-    year_str: "2022"
-
-  - id: C21
-    type: conference
-    year: 2021
-    title: "A low-cost BLE-based distance estimation, occupancy detection and counting system"
-    authors: "Demrozi F., Chiarani F., Pravadelli G."
-    venue: "Design, Automation & Test in Europe (DATE 2021), pp. 1430–1433"
-    year_str: "2021"
-
-  - id: C22
-    type: conference
-    year: 2021
-    title: "Towards the automatic data annotation for human activity recognition based on wearables and BLE beacons"
-    authors: "Demrozi F., Jereghi M., Pravadelli G."
-    venue: "IEEE International Symposium on Inertial Sensors and Systems (INERTIAL 2021)"
-    year_str: "2021"
-
-  - id: C23
-    type: conference
-    year: 2021
-    title: "Exploiting bluetooth low energy smart tags for virtual coaching"
-    authors: "Demrozi F., Serlonghi N., Turetta C., Pravadelli C., Pravadelli G."
-    venue: "IEEE 7th World Forum on Internet of Things (WF-IoT 2021), pp. 470–475"
-    year_str: "2021"
-
-  - id: C24
-    type: conference
-    year: 2020
-    title: "Joint Distribution and Transitions of Pain and Activity in Critically Ill Patients"
-    authors: "Demrozi F., Pravadelli G., Tighe P.J., Bihorac A., Rashidi P."
-    venue: "42nd Annual International Conference of the IEEE Engineering in Medicine & Biology Society (EMBC 2020), pp. 4534–4538"
-    year_str: "2020"
-
-  - id: C25
-    type: conference
-    year: 2019
-    title: "An indoor localization system to detect areas causing the freezing of gait in Parkinsonians"
-    authors: "Demrozi F., Bragoi V., Tramarin F., Pravadelli G."
-    venue: "Design, Automation & Test in Europe (DATE 2019), pp. 952–955"
-    year_str: "2019"
-
-  - id: C26
-    type: conference
-    year: 2018
-    title: "ONTO-PLC: An ontology-driven methodology for converting PLC industrial plants to IoT"
-    authors: "Cristani M., Demrozi F., Tomazzoli C."
-    venue: "Elsevier, vol. 126, pp. 527–536"
-    year_str: "2018"
-
-  - id: C27
-    type: conference
-    year: 2018
-    title: "A graph-based approach for mobile localization exploiting real and virtual landmarks"
-    authors: "Demrozi F., Costa K., Tramarin F., Pravadelli G."
-    venue: "IFIP/IEEE International Conference on Very Large Scale Integration (VLSI-SoC 2018), pp. 249–254"
-    year_str: "2018"
-
-  - id: C28
-    type: conference
-    year: 2017
-    title: "Exploiting sub-graph isomorphism and probabilistic neural networks for the detection of hardware Trojans at RTL"
-    authors: "Demrozi F., Zucchelli R., Pravadelli G."
-    venue: "IEEE International High Level Design Validation and Test Workshop (HLDVT 2017), pp. 67–73"
-    year_str: "2017"
-
-  - id: C29
-    type: conference
-    year: 2016
-    title: "Automatic generation of self-adaptive transactors from PSL assertions"
-    authors: "Demrozi F., Pravadelli G., Stefanni F."
-    venue: "Forum on Specification and Design Languages (FDL 2016)"
-    year_str: "2016"
-
-  # ── PREPRINTS ──────────────────────────────────────────────
-
-  - id: P1
-    type: preprint
-    year: 2023
-    title: "A comprehensive review of automated data annotation techniques in human activity recognition"
-    authors: "Demrozi F., Turetta C., Al Machot F., Pravadelli G., Kindt P.H."
-    venue: "Preprint"
-    year_str: "2023"
-
-  - id: P2
-    type: preprint
-    year: 2023
-    title: "A Dataset on CSI-based Activity Recognition in Real-World Environments"
-    authors: "Demrozi F., Turetta C., Masrur A., Schmidhammer M., Gentner C., Chakraborty S., Pravadelli G., Kindt P."
-    venue: "Preprint"
-    year_str: "2023"
-
-  # ── BOOKS ─────────────────────────────────────────────────
-
-  - id: B1
-    type: book
-    year: 2024
-    title: "Recent Advances in Machine Learning Techniques and Sensor Applications for Human Emotion, Activity Recognition and Support"
-    authors: "Kyamakya K., Al Machot F., Ullah H., Demrozi F."
-    venue: "Book"
-    year_str: "2024"
-
-  - id: B2
-    type: book
-    year: 2024
-    title: "High-tech personalized healthcare in movement disorders"
-    authors: "Zampogna A., Borzì L., Soares C., Demrozi F."
-    venue: "Book"
-    year_str: "2024"
-
-  - id: B3
-    type: book
-    year: 2023
-    title: "Wearable Sensors for Supporting Diagnosis, Prognosis, and Monitoring of Neurodegenerative Diseases"
-    authors: "Olmo G., Demrozi F., Borzì L."
-    venue: "Book"
-    year_str: "2023"
-
-  # ── THESIS ────────────────────────────────────────────────
-
-  - id: T1
-    type: thesis
-    year: 2020
-    title: "An IoT based Virtual Coaching System (VSC) for Assisting Activities of Daily Life"
-    authors: "Demrozi F."
-    venue: "Ph.D. Thesis, University of Verona"
-    year_str: "2020"
+- id: C1
+  type: conference
+  year: 2026
+  title: A Multi-Sensor Approach for Soft Labeling in Human Activity Recognition Domain
+  authors: Iervasi M., Turetta C., Pravadelli G., Demrozi F.
+  venue: Design, Automation & Test in Europe (DATE 2026)
+  year_str: '2026'
+- id: J1
+  type: journal
+  year: 2026
+  title: A multi-level annotated sensor dataset of gait freezing manifestations and severity in Parkinson's disease
+  authors: Borzì L., Demrozi F., Bacchin R.A., Turetta C., Tebaldi M., Sigcha L., Zolfaghari S., Rinaldi D., Fazzina G., Balestro
+    G., et al.
+  venue: Scientific Data
+  year_str: '2026'
+- id: S042
+  type: journal
+  year: 2026
+  year_str: '2026'
+  title: A multi-level annotated sensor dataset of gait freezing manifestations and severity in Parkinson’s disease
+  authors: Luigi Borzì and Demrozi F. and Ruggero Angelo Bacchin and Cristian Turetta and Michele Tebaldi and Luis Sigcha
+    and Samaneh Zolfaghari and Domiziana Rinaldi and Giuliana Fazzina and Giulio Balestro and Alessandro Picelli and Graziano
+    Pravadelli and Gabriella Olmo and Stefano Tamburin and Leonardo Lopiano and Carlo Alberto Artusi
+  venue: Scientific Data
+- id: S043
+  type: conference
+  year: 2026
+  year_str: '2026'
+  title: 'Towards Robust Neuromorphic/Event Vision-Based Fall Detection: Cross-Dataset Generalisation Benchmarking'
+  authors: Muhammad Zeeshan Masood and Muhammad Hamza Zafar and Syed Kumayl Raza Moosavi and Demrozi F. and Furqan Shaukat
+    and Filippo Sanfilippo
+  venue: Expert Systems with Applications
+- id: S045
+  type: conference
+  year: 2026
+  year_str: '2026'
+  title: 'Distributed and Adaptive Machine Learning for Wearable Sensor Time-Series Data in Healthcare Monitoring and Human
+    Activity Recognition: A Review'
+  authors: Demrozi F.
+  venue: ''
+- id: S046
+  type: conference
+  year: 2026
+  year_str: '2026'
+  title: Technological Advances for Gait and Balance Assessment
+  authors: Alessandro Zampogna and Demrozi F. and Silvia Del Din
+  venue: ''
+- id: S049
+  type: conference
+  year: 2026
+  year_str: '2026'
+  title: IMU-based pre-impact, impact, and post-impact fall detection dataset
+  authors: Muhammad Toqeer Ali and Cristian Turetta and Demrozi F. and Graziano Pravadelli
+  venue: ''
+- id: C2
+  type: conference
+  year: 2025
+  award: Best Paper Award
+  title: A Lightweight CNN for Real-Time Pre-Impact Fall Detection
+  authors: Turetta C., Ali M.T., Demrozi F., Pravadelli G.
+  venue: Design, Automation & Test in Europe (DATE 2025)
+  year_str: '2025'
+- id: C3
+  type: conference
+  year: 2025
+  title: AI-based recognition of daily activities in Parkinson's disease using wearable inertial sensors
+  authors: Borzi L., Tebaldi M., Demrozi F.
+  venue: International Conference on Frontiers of Artificial Intelligence, Ethics, and Multidisciplinary Applications. Springer
+  year_str: '2025'
+- id: C4
+  type: conference
+  year: 2025
+  title: Few-Shot Learning for Hand-Based Micro Activity Recognition
+  authors: Demrozi F., Al Machot F.
+  venue: IEEE International Conference on Omni-layer Intelligent Systems (COINS 2025)
+  year_str: '2025'
+- id: C5
+  type: conference
+  year: 2025
+  title: 'Exploring Parkinson''s Disease Datasets: Key Findings, Challenges, and Recommendations for Motor Symptom Analysis'
+  authors: Tebaldi M., Borzì L., Olmo G., Giugno R., Pravadelli G., Demrozi F.
+  venue: 47th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC 2025)
+  doi: 10.1109/EMBC58623.2025.11252635
+  year_str: '2025'
+- id: J2
+  type: journal
+  year: 2025
+  title: 'Freezing of gait detection: the effect of sensor type, position, activities, datasets, and machine learning model'
+  authors: Borzi L., Demrozi F., Bacchin R.A., Turetta C., Sigcha L., Rinaldi D., Fazzina G., Balestro G., Picelli A., Pravadelli
+    G., Olmo G., Tamburin S., Lopiano L., Artusi C.A.
+  venue: Journal of Parkinson's Disease
+  url: https://www.journalofparkinsonsdisease.com/
+  year_str: '2025'
+- id: J3
+  type: journal
+  year: 2025
+  title: Edge-based freezing of gait recognition in Parkinson's disease
+  authors: Borzì L., Sigcha L., Firouzi F., Olmo G., Demrozi F.
+  venue: Computers and Electrical Engineering, vol. 127, p. 110530
+  year_str: '2025'
+- id: J4
+  type: journal
+  year: 2025
+  title: 'Multimodal AI (MMAI) for Next-Generation Healthcare: Data Domains, Algorithms, Challenges, and Future Perspectives'
+  authors: Demrozi F., Farmanbar M., Engan K.
+  venue: 'Current Opinion in Biomedical Engineering, p. 100632. ISSN: 2468-4511'
+  year_str: '2025'
+- id: J5
+  type: journal
+  year: 2025
+  title: 'Cueing Technologies in Parkinson''s Disease: A Systematic Review'
+  authors: Iervasi M., Grødem J.M., Borzì L., Alves G.W., Eftestøl T., Demrozi F.
+  venue: IEEE Access
+  doi: 10.1109/ACCESS.2025.3647133
+  year_str: '2025'
+- id: S026
+  type: journal
+  year: 2025
+  year_str: '2025'
+  title: Edge-based freezing of gait recognition in Parkinson’s disease
+  authors: Luigi Borzì and Luis Sigcha and Farshad Firouzi and Gabriella Olmo and Demrozi F.
+  venue: Computers and Electrical Engineering
+- id: S043
+  type: conference
+  year: 2025
+  year_str: '2025'
+  title: 'Cueing Technologies in Parkinson’s Disease: A Systematic Review'
+  authors: Matteo Iervasi and Jodi Maple-Grødem and Luigi Borzì and Guido Werner Alves and Trygve Eftestøl and Demrozi F.
+  venue: ''
+- id: S045
+  type: conference
+  year: 2025
+  year_str: '2025'
+  title: 'Exploring Parkinson’s Disease Datasets: Key Findings, Challenges, and Recommendations for Motor Symptom Analysis'
+  authors: Michele Tebaldi and Luigi Borzì and Gabriella Olmo and Rosalba Giugno and Graziano Pravadelli and Demrozi F.
+  venue: ''
+- id: B1
+  type: book
+  year: 2024
+  title: Recent Advances in Machine Learning Techniques and Sensor Applications for Human Emotion, Activity Recognition and
+    Support
+  authors: Kyamakya K., Al Machot F., Ullah H., Demrozi F.
+  venue: Book
+  year_str: '2024'
+- id: B2
+  type: book
+  year: 2024
+  title: High-tech personalized healthcare in movement disorders
+  authors: Zampogna A., Borzì L., Soares C., Demrozi F.
+  venue: Book
+  year_str: '2024'
+- id: C10
+  type: conference
+  year: 2024
+  title: Enhancing Freezing of Gait Detection in Parkinson's Through Fine-Tuned Deep Learning Models
+  authors: Tebaldi M., Pravadelli G., Demrozi F., Giugno R., Turetta C.
+  venue: IEEE International Conference on Digital Health (ICDH 2024), pp. 87–94
+  year_str: '2024'
+- id: C11
+  type: conference
+  year: 2024
+  title: Environmental Microchanges in WiFi Sensing
+  authors: Turetta C., Kindt P.H., Masrur A., Chakraborty S., Pravadelli G., Demrozi F.
+  venue: Design, Automation & Test in Europe (DATE 2024)
+  year_str: '2024'
+- id: C6
+  type: conference
+  year: 2024
+  title: 'Recognizing hand-based micro activities using wrist-worn inertial sensors: a zero-shot learning approach'
+  authors: Al Machot F., Ullah H., Demrozi F.
+  venue: Essays Dedicated to Tiziana Margaria on the Occasion of Her 60th Birthday. Springer, pp. 215–234
+  year_str: '2024'
+- id: C7
+  type: conference
+  year: 2024
+  title: An enhanced subject-independent approach for hand-based micro activities recognition
+  authors: Demrozi F., Al Machot F.
+  venue: IEEE International Conference on Omni-layer Intelligent Systems (COINS 2024)
+  year_str: '2024'
+- id: C8
+  type: conference
+  year: 2024
+  title: 'Artifact: WirelessEye – Seeing over WiFi Made Accessible'
+  authors: Kindt P.H., Turetta C., Demrozi F., Masrur A., Pravadelli G., Chakraborty S.
+  venue: IEEE International Conference on Pervasive Computing and Communications Workshops (PerCom 2024), pp. 15–16
+  doi: 10.1109/PerComWorkshops59983.2024.10502539
+  year_str: '2024'
+- id: C9
+  type: conference
+  year: 2024
+  title: WirelessEye – Seeing over WiFi Made Accessible
+  authors: Kindt P.H., Turetta C., Demrozi F., Masrur A., Pravadelli G., Chakraborty S.
+  venue: IEEE PerCom Workshops 2024, pp. 562–567
+  doi: 10.1109/PerComWorkshops59983.2024.10503162
+  year_str: '2024'
+- id: J6
+  type: journal
+  year: 2024
+  title: 'ICT-based solutions for Alzheimer''s Disease Care: A systematic review'
+  authors: Ali M.T., Turetta C., Pravadelli G., Demrozi F.
+  venue: IEEE Access
+  year_str: '2024'
+- id: J7
+  type: journal
+  year: 2024
+  title: 'Enhancing Safety and Privacy in Industry 4.0: The ICE Laboratory Case Study'
+  authors: Cunico F., Aldegheri S., Avogaro A., Boldo M., Bombieri N., Capogrosso L., Demrozi F., et al.
+  venue: IEEE Access
+  year_str: '2024'
+- id: J8
+  type: journal
+  year: 2024
+  title: 'B-HAR: an open-source baseline framework for in-depth study of human activity recognition datasets and workflows'
+  authors: Turetta C., Demrozi F., Pravadelli G.
+  venue: IEEE Access
+  doi: 10.1109/ACCESS.2024.3496497
+  year_str: '2024'
+- id: S008
+  type: conference
+  year: 2024
+  year_str: '2024'
+  title: 'ICT-based solutions for Alzheimer’s disease care: a systematic review'
+  authors: Muhammed Toqeer Ali and Cristian Turetta and Demrozi F. and Graziano Pravadelli
+  venue: ''
+- id: S025
+  type: conference
+  year: 2024
+  year_str: '2024'
+  title: WirelessEye-Seeing over WiFi Made Accessible
+  authors: Philipp H Kindt and Cristian Turetta and Demrozi F. and Alejandro Masrur and Graziano Pravadelli and Samarjit Chakraborty
+  venue: ''
+- id: S038
+  type: conference
+  year: 2024
+  year_str: '2024'
+  title: Enhancing freezing of gait detection in parkinson’s through fine-tuned deep learning models
+  authors: Michele Tebaldi and Graziano Pravadelli and Demrozi F. and Rosalba Giugno and Cristian Turetta
+  venue: ''
+- id: S047
+  type: conference
+  year: 2024
+  year_str: '2024'
+  title: 'Artifact: WirelessEye–Seeing over WiFi Made Accessible'
+  authors: Philipp H Kindt and Cristian Turetta and Demrozi F. and Alejandro Masrur and Graziano Pravadelli and Samarjit Chakraborty
+  venue: ''
+- id: B3
+  type: book
+  year: 2023
+  title: Wearable Sensors for Supporting Diagnosis, Prognosis, and Monitoring of Neurodegenerative Diseases
+  authors: Olmo G., Demrozi F., Borzì L.
+  venue: Book
+  year_str: '2023'
+- id: C12
+  type: conference
+  year: 2023
+  title: 'Experiences from the first delivery of a new immersive software engineering course: mathematical foundations and
+    data analytics'
+  authors: Demrozi F., Marchisio M., Margaria T., Sacchet M.
+  venue: IEEE COMPSAC 2023, pp. 1576–1581
+  year_str: '2023'
+- id: C13
+  type: conference
+  year: 2023
+  title: 'Fostering Human Activity Recognition Workflows: An Open-Source Baseline Framework'
+  authors: Demrozi F., Turetta C., Pravadelli G.
+  venue: IEEE International Conference on Digital Health (ICDH 2023), pp. 75–80
+  year_str: '2023'
+- id: C14
+  type: conference
+  year: 2023
+  title: CNN-based human activity recognition on edge computing devices
+  authors: Singh A., Margaria T., Demrozi F.
+  venue: IEEE International Conference on Omni-layer Intelligent Systems (COINS 2023)
+  year_str: '2023'
+- id: C15
+  type: conference
+  year: 2023
+  title: Non-Invasive Monitoring of Alzheimer's patients through WiFi Channel State Information
+  authors: Turetta C., Demrozi F., Franceschi S., Zamboni D., Pravadelli G.
+  venue: 9th International Workshop on Advances in Sensors and Interfaces (IWASI 2023), pp. 103–108
+  year_str: '2023'
+- id: C16
+  type: conference
+  year: 2023
+  title: Towards Deep Learning-based Occupancy Detection Via WiFi Sensing in Unconstrained Environments
+  authors: Turetta C., Skenderi G., Capogrosso L., Demrozi F., Kindt P.H., Masrur A., Fummi F., Cristani M., Pravadelli G.
+  venue: Design, Automation & Test in Europe (DATE 2023)
+  year_str: '2023'
+- id: J10
+  type: journal
+  year: 2023
+  title: 'SHPIA 2.0: An Easily Scalable, Low-Cost, Multi-purpose Smart Home Platform for Intelligent Applications'
+  authors: Demrozi F., Turetta C., Pravadelli G.
+  venue: SN Computer Science, 5(1), p. 42
+  year_str: '2023'
+- id: J11
+  type: journal
+  year: 2023
+  title: A Low-Cost Wireless Body Area Network for Human Activity Recognition in Healthy Life and Medical Applications
+  authors: Demrozi F., Turetta C., Kindt P.H., Chiarani F., Bacchin R., Valè N., Pascucci F., Cesari P., Smania N., Tamburin
+    S., et al.
+  venue: IEEE Transactions on Emerging Topics in Computing
+  year_str: '2023'
+- id: J9
+  type: journal
+  year: 2023
+  title: Towards Posture and Gait Evaluation through Wearable-Based Biofeedback Technologies
+  authors: Cesari P., Cristani M., Demrozi F., Pascucci F., Picotti P.M., Pravadelli G., Tomazzoli C., Turetta C., Workneh
+    T.C., Zenti L.
+  venue: Electronics, 12(3), p. 644
+  year_str: '2023'
+- id: P1
+  type: preprint
+  year: 2023
+  title: A comprehensive review of automated data annotation techniques in human activity recognition
+  authors: Demrozi F., Turetta C., Al Machot F., Pravadelli G., Kindt P.H.
+  venue: Preprint
+  year_str: '2023'
+- id: P2
+  type: preprint
+  year: 2023
+  title: A Dataset on CSI-based Activity Recognition in Real-World Environments
+  authors: Demrozi F., Turetta C., Masrur A., Schmidhammer M., Gentner C., Chakraborty S., Pravadelli G., Kindt P.
+  venue: Preprint
+  year_str: '2023'
+- id: S036
+  type: conference
+  year: 2023
+  year_str: '2023'
+  title: Non-invasive monitoring of Alzheimer’s patients through WIFI channel state information
+  authors: Cristian Turetta and Demrozi F. and Sofia Franceschi and Davide Zamboni and Graziano Pravadelli
+  venue: ''
+- id: S048
+  type: conference
+  year: 2023
+  year_str: '2023'
+  title: 'A LOW-COST WIRELESS BODY AREA NETWORK FOR CHEMOTHERAPY-INDUCED PERIPHERAL NEUROTOXICITY: DESIGN AND PRELIMINARY
+    DATA'
+  authors: Stefano Tamburin and Demrozi F. and Elisa Mantovani and Cristian Turetta and Graziano Pravadelli
+  venue: ''
+- id: C17
+  type: conference
+  year: 2022
+  award: Best Paper Candidate
+  title: 'SHPIA: A Low-Cost Multi-purpose Smart Home Platform for Intelligent Applications'
+  authors: Demrozi F., Pravadelli G.
+  venue: IFIP International Internet of Things Conference. Springer, pp. 217–234
+  year_str: '2022'
+- id: C18
+  type: conference
+  year: 2022
+  title: A virtual coaching platform to support therapy compliance in obesity
+  authors: Bissoli L., Bonacina D., Dalla Riva N., Demrozi F., Jereghi M., Marchiotto N., Perbellini G., Pernice B., Pizzocaro
+    E., Pravadelli G., et al.
+  venue: IEEE COMPSAC 2022, pp. 694–699
+  year_str: '2022'
+- id: C19
+  type: conference
+  year: 2022
+  title: Integrating wearable and camera based monitoring in the digital twin for safety assessment in Industry 4.0
+  authors: Boldo M., Bombieri N., Centomo S., De Marchi M., Demrozi F., Pravadelli G., Quaglia D., Turetta C.
+  venue: International Symposium on Leveraging Applications of Formal Methods. Springer, pp. 184–194
+  year_str: '2022'
+- id: C20
+  type: conference
+  year: 2022
+  title: Practical identity recognition using WiFi's channel state information
+  authors: Turetta C., Demrozi F., Kindt P.H., Masrur A., Pravadelli G.
+  venue: Design, Automation & Test in Europe (DATE 2022), pp. 76–79
+  year_str: '2022'
+- id: J12
+  type: journal
+  year: 2022
+  title: 'Wearables, sensors, and smart devices for detection and monitoring of chemotherapy-induced peripheral neurotoxicity:
+    Systematic review'
+  authors: Mantovani E., Demrozi F., Hertz D.L., Turetta C., Ferro O., Argyriou A.A., Pravadelli G., Tamburin S.
+  venue: Journal of the Peripheral Nervous System, 27(4), pp. 238–258
+  year_str: '2022'
+- id: S009
+  type: conference
+  year: 2022
+  year_str: '2022'
+  title: Integrating wearable and camera based monitoring in the digital twin for safety assessment in the industry 4.0 era
+  authors: Michele Boldo and Nicola Bombieri and Stefano Centomo and Mirco De Marchi and Demrozi F. and Graziano Pravadelli
+    and Davide Quaglia and Cristian Turetta
+  venue: ''
+  doi: 10.1007/978-3-031-19762-8_13
+- id: S017
+  type: conference
+  year: 2022
+  year_str: '2022'
+  title: 'Wearables, sensors, and smart devices for the detection and monitoring of chemotherapy‐induced peripheral neurotoxicity:
+    Systematic review and directions for future research'
+  authors: Elisa Mantovani and Demrozi F. and Daniel L Hertz and Cristian Turetta and Omar Ferro and Andreas A Argyriou and
+    Graziano Pravadelli and Stefano Tamburin
+  venue: ''
+  doi: 10.1111/jns.12518
+- id: S028
+  type: conference
+  year: 2022
+  year_str: '2022'
+  title: A freely available system for human activity recognition based on a low-cost body area network
+  authors: Cristian Turetta and Demrozi F. and Graziano Pravadelli
+  venue: ''
+- id: S050
+  type: conference
+  year: 2022
+  year_str: '2022'
+  title: 'INFORMATION AND COMMUNICATION TECHNOLOGY DEVICES AND APPLICATIONS FOR CHEMOTHERAPY-INDUCED PERIPHERAL NEUROTOXICITY:
+    A SYSTEMATIC REVIEW'
+  authors: Stefano Tamburin and Elisa Mantovani and Demrozi F. and Daniel Hertz and Cristian Turetta and Omar Ferro and Graziano
+    Pravadelli and Andreas Argyriou
+  venue: ''
+- id: C21
+  type: conference
+  year: 2021
+  title: A low-cost BLE-based distance estimation, occupancy detection and counting system
+  authors: Demrozi F., Chiarani F., Pravadelli G.
+  venue: Design, Automation & Test in Europe (DATE 2021), pp. 1430–1433
+  year_str: '2021'
+- id: C22
+  type: conference
+  year: 2021
+  title: Towards the automatic data annotation for human activity recognition based on wearables and BLE beacons
+  authors: Demrozi F., Jereghi M., Pravadelli G.
+  venue: IEEE International Symposium on Inertial Sensors and Systems (INERTIAL 2021)
+  year_str: '2021'
+- id: C23
+  type: conference
+  year: 2021
+  title: Exploiting bluetooth low energy smart tags for virtual coaching
+  authors: Demrozi F., Serlonghi N., Turetta C., Pravadelli C., Pravadelli G.
+  venue: IEEE 7th World Forum on Internet of Things (WF-IoT 2021), pp. 470–475
+  year_str: '2021'
+- id: J13
+  type: journal
+  year: 2021
+  title: Estimating indoor occupancy through low-cost BLE devices
+  authors: Demrozi F., Turetta C., Chiarani F., Kindt P.H., Pravadelli G.
+  venue: IEEE Sensors Journal, 21(15), pp. 17053–17063
+  year_str: '2021'
+- id: C24
+  type: conference
+  year: 2020
+  title: Joint Distribution and Transitions of Pain and Activity in Critically Ill Patients
+  authors: Demrozi F., Pravadelli G., Tighe P.J., Bihorac A., Rashidi P.
+  venue: 42nd Annual International Conference of the IEEE Engineering in Medicine & Biology Society (EMBC 2020), pp. 4534–4538
+  year_str: '2020'
+- id: J14
+  type: journal
+  year: 2020
+  title: 'Human activity recognition using inertial, physiological and environmental sensors: A comprehensive survey'
+  authors: Demrozi F., Pravadelli G., Bihorac A., Rashidi P.
+  venue: IEEE Access, vol. 8, pp. 210816–210836
+  year_str: '2020'
+- id: T1
+  type: thesis
+  year: 2020
+  title: An IoT based Virtual Coaching System (VSC) for Assisting Activities of Daily Life
+  authors: Demrozi F.
+  venue: Ph.D. Thesis, University of Verona
+  year_str: '2020'
+- id: C25
+  type: conference
+  year: 2019
+  title: An indoor localization system to detect areas causing the freezing of gait in Parkinsonians
+  authors: Demrozi F., Bragoi V., Tramarin F., Pravadelli G.
+  venue: Design, Automation & Test in Europe (DATE 2019), pp. 952–955
+  year_str: '2019'
+- id: J15
+  type: journal
+  year: 2019
+  title: Toward a wearable system for predicting freezing of gait in people affected by Parkinson's disease
+  authors: Demrozi F., Bacchin R., Tamburin S., Cristani M., Pravadelli G.
+  venue: IEEE Journal of Biomedical and Health Informatics, 24(9), pp. 2444–2451
+  year_str: '2019'
+- id: C26
+  type: conference
+  year: 2018
+  title: 'ONTO-PLC: An ontology-driven methodology for converting PLC industrial plants to IoT'
+  authors: Cristani M., Demrozi F., Tomazzoli C.
+  venue: Elsevier, vol. 126, pp. 527–536
+  year_str: '2018'
+- id: C27
+  type: conference
+  year: 2018
+  title: A graph-based approach for mobile localization exploiting real and virtual landmarks
+  authors: Demrozi F., Costa K., Tramarin F., Pravadelli G.
+  venue: IFIP/IEEE International Conference on Very Large Scale Integration (VLSI-SoC 2018), pp. 249–254
+  year_str: '2018'
+- id: C28
+  type: conference
+  year: 2017
+  title: Exploiting sub-graph isomorphism and probabilistic neural networks for the detection of hardware Trojans at RTL
+  authors: Demrozi F., Zucchelli R., Pravadelli G.
+  venue: IEEE International High Level Design Validation and Test Workshop (HLDVT 2017), pp. 67–73
+  year_str: '2017'
+- id: C29
+  type: conference
+  year: 2016
+  title: Automatic generation of self-adaptive transactors from PSL assertions
+  authors: Demrozi F., Pravadelli G., Stefanni F.
+  venue: Forum on Specification and Design Languages (FDL 2016)
+  year_str: '2016'
+- id: S058
+  type: conference
+  year: 2000
+  year_str: Unknown
+  title: This article is protected by copyright. All rights reserved.
+  authors: Tamburin Stefano and Elisa Mantovani and Demrozi F. and Daniel L Hertz and Cristian Turetta and Omar Ferro and
+    Andreas A Argyriou and Graziano Pravadelli and Stefano Tamburina
+  venue: ''
