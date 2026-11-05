@@ -6,7 +6,7 @@
 
 personal:
   name: "Florenc Demrozi"
-  title: "Professor of Biomedical Sensing Systems"
+  title: "Professor in Biomedical Sensing Systems"
   tagline_en: "Run towards the future without forgetting the past"
   tagline_al: "Vrapo drejt se ardhmes duke mos harrua kurrë të kaluarën"
   place_of_birth: "Durres, Albania"
@@ -44,7 +44,7 @@ personal:
       icon: "link"
 
 summary: >
-  I am currently a Full Professor in Biomedical/Medical Engineering/Technology at the
+  I am currently a Full Professor in Biomedical Sensing Systems at the
   Department of Electrical Engineering and Computer Science, University of Stavanger, Norway,
   working on Machine Learning, Human Activity Recognition (HAR), Active and Assisted Living (AAL),
   Internet of Medical Things (IoMT), and AI-driven sensor systems for proactive healthcare.
@@ -63,12 +63,12 @@ research_interests:
   - "Parkinson's Disease Monitoring"
 
 employment:
-  - role: "Professor in Biomedical/Medical Engineering/Technology"
+  - role: "Professor in Biomedical Sensing Systems"
     institution: "University of Stavanger"
     department: "Dept. Electrical Engineering and Computer Science"
     location: "Stavanger, Norway"
     period: "June 2025 – Present"
-    areas: "Biomedical/Medical Engineering/Technology, HAR, AAL, IoMT"
+    areas: "Biomedical Sensing Systems, HAR, AAL, IoMT"
   - role: "Associate Professor in Biomedical/Medical Engineering/Technology"
     institution: "University of Stavanger"
     department: "Dept. Electrical Engineering and Computer Science"
