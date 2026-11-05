@@ -76,6 +76,8 @@ def short_name(display_name: str) -> str:
     if not parts:
         return ""
     last = parts[-1]
+    if last.isupper() and len(last) > 2:
+        last = last.title()
     initials = "".join(p[0].upper() + "." for p in parts[:-1] if p[0].isalpha())
     name = f"{last} {initials}".strip()
     return "Demrozi F." if last.lower() == "demrozi" else name

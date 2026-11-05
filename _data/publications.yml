@@ -23,7 +23,7 @@ items:
   year: 2026
   year_str: '2026'
   title: 'UNIVRFall: IMU-based pre-impact, impact, and post-impact fall detection dataset'
-  authors: ALI M.T., Demrozi F., Turetta C., Pravadelli G.
+  authors: Ali M.T., Demrozi F., Turetta C., Pravadelli G.
   venue: Zenodo (CERN European Organization for Nuclear Research)
   doi: 10.5281/zenodo.18346754
 - id: W7160057967
@@ -64,7 +64,7 @@ items:
   year: 2026
   year_str: '2026'
   title: IMU-based pre-impact, impact, and post-impact fall detection dataset
-  authors: ALI M.T., Turetta C., Demrozi F., Pravadelli G.
+  authors: Ali M.T., Turetta C., Demrozi F., Pravadelli G.
   venue: IEEE International Conference on Pervasive Computing and Communications Workshops (PerCom Workshops)
   doi: 10.1109/percomworkshops68308.2026.11585385
 - id: W7224012376
