@@ -119,7 +119,7 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* ── PAGE HEADER ─────────────────────────────────────────── */
 .page-hero { padding: 3rem var(--pad) 0; }
-.page-hero-inner { max-width: var(--max); margin: 0 auto; padding-bottom: 1.8rem; border-bottom: 1px solid var(--rule); }
+.page-hero-inner { max-width: calc(var(--max) - 2 * var(--pad)); margin: 0 auto; padding-bottom: 1.8rem; border-bottom: 1px solid var(--rule); }
 .page-kicker {
   font: 600 0.75rem/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--muted); margin-bottom: 0.8rem;
