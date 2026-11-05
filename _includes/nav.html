@@ -1,10 +1,10 @@
 {% assign cv = site.data.cv %}
 {% capture theme_switch %}
 <div class="theme-switch" role="group" aria-label="Colour theme">
-  <button type="button" data-theme-choice="auto" aria-pressed="true" title="Follow your device setting"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 2a6 6 0 0 1 0 12z" fill="currentColor"/></svg>Auto</button>
-  <button type="button" data-theme-choice="light" aria-pressed="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1"/></svg>Light</button>
-  <button type="button" data-theme-choice="dark" aria-pressed="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M13.5 10A6 6 0 0 1 6 2.5a6 6 0 1 0 7.5 7.5z"/></svg>Dark</button>
-  <button type="button" data-theme-choice="paper" aria-pressed="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M2.5 3.5h4.5a1.5 1.5 0 0 1 1 .5 1.5 1.5 0 0 1 1-.5h4.5v9H9a1 1 0 0 0-1 1 1 1 0 0 0-1-1H2.5z"/><path d="M8 4v9"/></svg>Paper</button>
+  <button type="button" data-theme-choice="auto" aria-pressed="true" title="Auto: follow your device setting" aria-label="Auto"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 2a6 6 0 0 1 0 12z" fill="currentColor"/></svg><span class="ts-label">Auto</span></button>
+  <button type="button" data-theme-choice="light" aria-pressed="false" title="Light" aria-label="Light"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1"/></svg><span class="ts-label">Light</span></button>
+  <button type="button" data-theme-choice="dark" aria-pressed="false" title="Dark" aria-label="Dark"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M13.5 10A6 6 0 0 1 6 2.5a6 6 0 1 0 7.5 7.5z"/></svg><span class="ts-label">Dark</span></button>
+  <button type="button" data-theme-choice="paper" aria-pressed="false" title="Paper (warm)" aria-label="Paper (warm)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M2.5 3.5h4.5a1.5 1.5 0 0 1 1 .5 1.5 1.5 0 0 1 1-.5h4.5v9H9a1 1 0 0 0-1 1 1 1 0 0 0-1-1H2.5z"/><path d="M8 4v9"/></svg><span class="ts-label">Paper</span></button>
 </div>
 {% endcapture %}
 <nav id="top-nav" aria-label="Main">
