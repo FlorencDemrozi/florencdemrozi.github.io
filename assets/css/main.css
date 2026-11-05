@@ -327,6 +327,23 @@ h2.section-title {
 .thesis-topics li::before { content: '—'; color: var(--accent); flex-shrink: 0; }
 .thesis-topics li:last-child { border-bottom: none; }
 
+/* ── PROJECTS PAGE ───────────────────────────────────────── */
+.project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.project-card {
+  display: flex; flex-direction: column; border: 1px solid var(--rule); border-radius: 4px;
+  padding: 1.75rem; background: #fff; color: var(--ink); text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.project-card:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(26,26,46,0.07); transform: translateY(-2px); text-decoration: none; }
+.project-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.75rem; }
+.project-tag { font-family: var(--sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); }
+.project-acr { font-family: var(--sans); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; color: var(--gold); }
+.project-card h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; line-height: 1.35; margin-bottom: 0.75rem; }
+.project-card p { font-size: 0.88rem; color: var(--slate); line-height: 1.7; margin-bottom: 1rem; flex-grow: 1; }
+.project-foot { font-family: var(--sans); font-size: 0.7rem; color: var(--slate); border-top: 1px solid var(--rule); padding-top: 0.75rem; margin-bottom: 0.9rem; }
+.project-link { font-family: var(--sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); transition: color 0.2s; }
+.project-card:hover .project-link { color: var(--accent); }
+
 /* ── ACTIVITIES ──────────────────────────────────────────── */
 .act-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 .students-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.5rem; }
@@ -420,7 +437,7 @@ footer { background: var(--ink); color: rgba(255,255,255,0.4); padding: 2rem var
   .home-hero-inner { grid-template-columns: 1fr; }
   .hero-card { max-width: 280px; }
   .home-hero { min-height: auto; padding: 3.5rem var(--pad) 3rem; }
-  .about-grid, .two-col, .contact-grid, .act-grid, .thesis-grid { grid-template-columns: 1fr; }
+  .about-grid, .two-col, .contact-grid, .act-grid, .thesis-grid, .project-grid { grid-template-columns: 1fr; }
   .three-col { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 520px) {
