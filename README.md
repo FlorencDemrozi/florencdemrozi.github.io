@@ -74,11 +74,13 @@ fd-jekyll/
 │           └── CV_Demrozi.pdf   ← Place your CV PDF here
 │
 ├── scripts/
-│   └── fetch_publications.py    ← Google Scholar scraper
+│   ├── fetch_scopus.py          ← Scopus updater (run locally)
+│   ├── fetch_publications.py    ← OpenAlex fallback (weekly)
+│   └── collab.py                ← Builds collaboration data
 │
 └── .github/workflows/
     ├── deploy.yml               ← Auto-deploy on push to main
-    └── update_publications.yml  ← Weekly Scholar fetch (Mon 06:00 UTC)
+    └── update_publications.yml  ← Weekly OpenAlex fetch (Mon 06:00 UTC)
 ```
 
 ---
@@ -119,30 +121,38 @@ Place `CV_Demrozi.pdf` at `assets/files/CV_Demrozi.pdf`. The Bio page links to i
 
 ---
 
-## Publication Auto-Update
+## Publications & Collaborations Update
 
-Publications are fetched weekly from your Google Scholar profile via `scripts/fetch_publications.py`.
+### Main source: Scopus (run locally at UiS)
+`scripts/fetch_scopus.py` fetches every document of Scopus author `57193860991` and updates
+`_data/publications.yml` and `_data/collaborations.json` (map, partner institutions,
+co-authors, co-author network, citations, h-index).
 
-### How it works
-1. GitHub Actions runs the script every Monday at 06:00 UTC
-2. The script fetches all publications from Scholar ID `gF5XNDIAAAAJ`
-3. New publications are added to `_data/publications.yml`
-4. Existing hand-curated entries (with `doi`, `award`, custom `id`) are preserved
-5. Changes are committed automatically and trigger a site rebuild
+Run it on the UiS network (or VPN). Scopus only returns full author/affiliation data there.
 
-### Run locally
-```bash
-pip install scholarly pyyaml
-python scripts/fetch_publications.py
+```powershell
+pip install pyyaml
+$env:SCOPUS_API_KEY = "<your key>"      # or put the key in scripts/.scopus_key (git-ignored)
+python scripts/fetch_scopus.py
+git add _data scripts/geo_cache.json
+git commit -m "Update publications and collaborations from Scopus"
+git push
 ```
 
-### Trigger manually on GitHub
-Go to **Actions → Update Publications from Google Scholar → Run workflow**.
+New partner cities are geocoded once with OpenStreetMap and cached in `scripts/geo_cache.json`.
 
-### Important notes
-- The `scholarly` library scrapes Google Scholar and may occasionally be rate-limited by Google. The GitHub Actions run retries automatically.
-- Hand-added fields (`doi`, `award`, `id`, `url`) are never overwritten by the auto-fetch.
-- If you want to pin specific publication details (e.g., add a DOI or award badge), edit `_data/publications.yml` directly — those changes will survive future auto-updates.
+### Fallback: OpenAlex (automatic, weekly)
+GitHub Actions runs `scripts/fetch_publications.py` every Monday at 06:00 UTC. It only **adds**
+papers that are not in the list yet; entries from Scopus (`E…` ids) and hand-curated entries
+(`C`, `J`, `B`, `P`, `T` ids) are never overwritten. The site redeploys afterwards.
+Trigger it manually under **Actions → Update Publications from OpenAlex → Run workflow**.
+
+`python scripts/fetch_publications.py --collaborations` rebuilds the collaboration data from
+OpenAlex instead of Scopus (backup only).
+
+### Notes
+- Hand-added fields (`award`, `url`) survive every update.
+- Papers with more than 50 authors are left out of the collaboration statistics.
 
 ---
 
@@ -192,5 +202,5 @@ Also set `url` in `_config.yml` to your domain.
 | `bundle install` fails | Make sure Ruby ≥ 3.0 is installed. On macOS use `brew install ruby`. |
 | `jekyll serve` gives port error | Use `jekyll serve --port 4001` |
 | Photo not showing | Check file is at `assets/img/florenc-demrozi.jpg` (case-sensitive on Linux) |
-| Publications not updating | Trigger workflow manually in GitHub Actions; check for Scholar rate limits |
+| Publications not updating | Run `scripts/fetch_scopus.py` at UiS, or trigger the OpenAlex workflow in GitHub Actions |
 | Liquid syntax error | Check `_data/cv.yml` for correct YAML indentation (use spaces, not tabs) |

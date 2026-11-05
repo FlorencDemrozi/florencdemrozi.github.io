@@ -1,0 +1,82 @@
+---
+layout: page
+title: Collaborations &amp; Network
+kicker: Who I Work With
+permalink: /network/
+description: "International collaborations, partner institutions and co-author network of Prof. Florenc Demrozi."
+---
+{% assign co = site.data.collaborations %}
+{% assign maxc = co.countries.first.papers %}
+
+<p class="section-intro">My research is built with colleagues across {{ co.countries | size }} countries. The map shows where my co-authors are based, and the network shows who has published with whom. Hover over a country, an institution or a person for details.</p>
+
+<div class="pub-stats collab-stats">
+  <div class="pub-stat"><span class="num">{{ co.coauthors | size }}</span><span class="lbl">Co-authors</span></div>
+  <div class="pub-stat"><span class="num">{{ co.institutions | size }}</span><span class="lbl">Partner institutions</span></div>
+  <div class="pub-stat"><span class="num">{{ co.countries | size }}</span><span class="lbl">Countries</span></div>
+  <div class="pub-stat"><span class="num">{{ co.profile.citations }}</span><span class="lbl">Citations</span></div>
+  <div class="pub-stat"><span class="num">{{ co.profile.h_index }}</span><span class="lbl">h-index</span></div>
+</div>
+
+<div class="section-label mt-5">International collaboration</div>
+<h2 class="section-title">Collaboration map</h2>
+<div class="collab-map-wrap">
+  <div class="collab-map" data-compact="false"></div>
+  <div class="collab-map-legend">
+    <span><i class="lg-country"></i>Country (darker = more joint papers)</span>
+    <span><i class="lg-inst"></i>Partner institution (size = joint papers)</span>
+    <span><i class="lg-home"></i>University of Stavanger</span>
+  </div>
+</div>
+
+<div class="collab-lists">
+  <div>
+    <h3 class="collab-h">Countries</h3>
+    <ul class="collab-bars">
+      {% for c in co.countries %}
+      <li><span class="cb-name">{{ c.name }}</span><span class="cb-bar"><i style="width: {{ c.papers | times: 100 | divided_by: maxc }}%"></i></span><span class="cb-num">{{ c.papers }}</span></li>
+      {% endfor %}
+    </ul>
+    <p class="collab-note">Joint papers per country.</p>
+  </div>
+  <div>
+    <h3 class="collab-h">Partner institutions</h3>
+    <ul class="collab-list" id="inst-list">
+      {% for i in co.institutions %}
+      <li{% if forloop.index > 10 %} class="extra"{% endif %}>
+        <span class="cl-main">{{ i.name }}</span>
+        <span class="cl-sub">{{ i.city }}{% if i.city and i.country %}, {% endif %}{{ i.country }} · {{ i.papers }} joint</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% if co.institutions.size > 10 %}<button class="collab-more" type="button" data-collab-toggle="inst-list" data-label="Show all {{ co.institutions | size }}">Show all {{ co.institutions | size }}</button>{% endif %}
+  </div>
+  <div>
+    <h3 class="collab-h">Collaborators</h3>
+    <ul class="collab-list" id="people-list">
+      {% for p in co.coauthors %}
+      <li{% if forloop.index > 12 %} class="extra"{% endif %}>
+        <span class="cl-main">{{ p.name }}</span>
+        <span class="cl-sub">{{ p.institution }}{% if p.country %}, {{ p.country }}{% endif %} · {{ p.papers }} joint</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% if co.coauthors.size > 12 %}<button class="collab-more" type="button" data-collab-toggle="people-list" data-label="Show all {{ co.coauthors | size }}">Show all {{ co.coauthors | size }}</button>{% endif %}
+  </div>
+</div>
+
+<div class="section-label mt-5">Co-authorship</div>
+<h2 class="section-title">Co-author network</h2>
+<p class="collab-note mb-0">Each dot is a co-author; bigger dots mean more joint papers. Lines connect people who published together. Colours show the co-author's country. Drag dots to rearrange, use the buttons to zoom, and hover to see a person's links.</p>
+<div class="collab-net-tools">
+  <div class="collab-legend" id="collab-network-legend"></div>
+  <input type="search" id="collab-search" class="collab-search" placeholder="Find a co-author…" aria-label="Find a co-author">
+</div>
+<div class="collab-network" id="collab-network"></div>
+
+<p class="collab-source">Source: {{ co.source }}, updated {{ co.updated }}. Based on {{ co.papers_counted }} co-authored publications; papers with more than 50 authors are left out. Partner institutions exclude the University of Stavanger.</p>
+
+<script id="collab-data" type="application/json">{{ co | jsonify }}</script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/collab.js?v={{ site.time | date: '%s' }}"></script>

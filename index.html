@@ -134,3 +134,31 @@ title: Home
     </div>
   </div>
 </div>
+
+<!-- COLLABORATIONS -->
+{% assign co = site.data.collaborations %}
+<div class="home-section">
+  <div class="home-section-inner">
+    <div class="section-label">Collaborations</div>
+    <h2 class="section-title">An international network</h2>
+    <div class="home-collab">
+      <div>
+        <p class="home-collab-text">I have published with <strong>{{ co.coauthors | size }} co-authors</strong> from <strong>{{ co.institutions | size }} partner institutions</strong> in <strong>{{ co.countries | size }} countries</strong>, including
+          {% for i in co.institutions limit:4 %}{{ i.name }}{% if forloop.last %}{% elsif forloop.rindex == 2 %} and {% else %}, {% endif %}{% endfor %}.</p>
+        <div class="pub-stats home-collab-stats">
+          <div class="pub-stat"><span class="num">{{ co.profile.citations }}</span><span class="lbl">Citations</span></div>
+          <div class="pub-stat"><span class="num">{{ co.profile.h_index }}</span><span class="lbl">h-index</span></div>
+          <div class="pub-stat"><span class="num">{{ co.countries | size }}</span><span class="lbl">Countries</span></div>
+        </div>
+        <div class="btn-gap">
+          <a href="{{ site.baseurl }}/network/" class="btn btn-primary">Explore collaborations &amp; network →</a>
+        </div>
+      </div>
+      <div class="collab-map collab-map-small" data-compact="true"></div>
+    </div>
+  </div>
+</div>
+<script id="collab-data" type="application/json">{{ co | jsonify }}</script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/collab.js?v={{ site.time | date: '%s' }}"></script>

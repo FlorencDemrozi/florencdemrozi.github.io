@@ -1,0 +1,3993 @@
+{
+ "updated": "2026-11-05",
+ "source": "OpenAlex",
+ "profile": {
+  "documents": 62,
+  "citations": 881,
+  "h_index": 14,
+  "first_year": 2016
+ },
+ "papers_counted": 59,
+ "countries": [
+  {
+   "name": "Italy",
+   "papers": 48,
+   "people": 84
+  },
+  {
+   "name": "United States",
+   "papers": 9,
+   "people": 8
+  },
+  {
+   "name": "Germany",
+   "papers": 7,
+   "people": 2
+  },
+  {
+   "name": "Norway",
+   "papers": 5,
+   "people": 7
+  },
+  {
+   "name": "Ireland",
+   "papers": 4,
+   "people": 5
+  },
+  {
+   "name": "Portugal",
+   "papers": 3,
+   "people": 2
+  },
+  {
+   "name": "China",
+   "papers": 2,
+   "people": 1
+  },
+  {
+   "name": "Austria",
+   "papers": 1,
+   "people": 1
+  },
+  {
+   "name": "France",
+   "papers": 1,
+   "people": 1
+  },
+  {
+   "name": "Greece",
+   "papers": 1,
+   "people": 1
+  },
+  {
+   "name": "Pakistan",
+   "papers": 1,
+   "people": 1
+  },
+  {
+   "name": "Sweden",
+   "papers": 1,
+   "people": 1
+  },
+  {
+   "name": "Switzerland",
+   "papers": 1,
+   "people": 1
+  },
+  {
+   "name": "The Netherlands",
+   "papers": 1,
+   "people": 2
+  },
+  {
+   "name": "United Kingdom",
+   "papers": 1,
+   "people": 1
+  }
+ ],
+ "institutions": [
+  {
+   "name": "University of Verona",
+   "city": "Verona",
+   "country": "Italy",
+   "lat": 45.43854,
+   "lon": 10.9938,
+   "papers": 41,
+   "people": [
+    "Graziano Pravadelli",
+    "Cristian Turetta",
+    "Philipp H. Kindt",
+    "Alejandro Masrur",
+    "Stefano Tamburin",
+    "Ruggero Angelo Bacchin",
+    "Marco Cristani",
+    "Fabio Chiarani",
+    "Michele Tebaldi",
+    "Michele Boldo",
+    "Franco Fummi",
+    "Mirco De Marchi",
+    "Paola Cesari",
+    "Alessandro Picelli",
+    "Claudio Tomazzoli",
+    "Davide Quaglia",
+    "Nicola Bombieri",
+    "MUHAMMAD  TOQEER ALI",
+    "Luigi Capogrosso",
+    "Stefano Centomo",
+    "Marin Jereghi",
+    "Francesco Pascucci",
+    "Matteo Cristani",
+    "Rosalba Giugno",
+    "Giulio Balestro",
+    "Tewabe Chekole Workneh",
+    "Cristiano Pravadelli",
+    "Mauro Musa Zamboni",
+    "Dong Seon Cheng",
+    "Stefano Aldegheri",
+    "Damiano Carra B",
+    "Ariel Caputo",
+    "Kevin Costa",
+    "Nicola Marchiotto",
+    "Silvia Francesca Storti",
+    "Tiziano Villa",
+    "Federico Cunico",
+    "Vladislav Bragoi",
+    "Elisa Quintarelli",
+    "Nicola Smania",
+    "Riccardo Zucchelli",
+    "Federica Paci",
+    "Enrico Martini",
+    "Sofia Franceschi",
+    "Geri Skenderi",
+    "Federico Girella",
+    "Luca Zenti",
+    "Bruno Pernice",
+    "Marco Emporio",
+    "Samuele Germiniani",
+    "Ilaria Siviero",
+    "Ettore Cinquetti",
+    "Nicola Serlonghi",
+    "Carlo Tadiello",
+    "Andrea Avogaro",
+    "Luca Geretti",
+    "Nicola Valè",
+    "Erica Pizzocaro",
+    "Giuseppe Recchia",
+    "Andrea Giachetti",
+    "Muhammad Toqeer Ali",
+    "Anna Lia Sacerdoti",
+    "Marco Panato",
+    "Gloria Menegaz",
+    "Davide Zamboni",
+    "Graziano Pravadelli",
+    "Elisa Mantovani",
+    "Omar Ferro",
+    "Muhammed Toqeer Ali"
+   ]
+  },
+  {
+   "name": "Chemnitz University of Technology",
+   "city": "Chemnitz",
+   "country": "Germany",
+   "lat": 50.8357,
+   "lon": 12.92922,
+   "papers": 7,
+   "people": [
+    "Philipp H. Kindt",
+    "Alejandro Masrur"
+   ]
+  },
+  {
+   "name": "Politecnico di Torino",
+   "city": "Turin",
+   "country": "Italy",
+   "lat": 45.07049,
+   "lon": 7.68682,
+   "papers": 7,
+   "people": [
+    "Luigi Borzì",
+    "Gabriella Olmo"
+   ]
+  },
+  {
+   "name": "Sapienza University of Rome",
+   "city": "Rome",
+   "country": "Italy",
+   "lat": 41.89193,
+   "lon": 12.51133,
+   "papers": 4,
+   "people": [
+    "Domiziana Rinaldi",
+    "Alessandro Zampogna"
+   ]
+  },
+  {
+   "name": "University of Limerick",
+   "city": "Limerick",
+   "country": "Ireland",
+   "lat": 52.66472,
+   "lon": -8.62306,
+   "papers": 4,
+   "people": [
+    "Luis Sigcha",
+    "Tiziana Margaria",
+    "Amandeep Singh",
+    "Marina Marchisio",
+    "Matteo Sacchet"
+   ]
+  },
+  {
+   "name": "University of North Carolina at Chapel Hill",
+   "city": "Chapel Hill",
+   "country": "United States",
+   "lat": 35.9132,
+   "lon": -79.05584,
+   "papers": 4,
+   "people": [
+    "Graziano Pravadelli",
+    "Samarjit Chakraborty"
+   ]
+  },
+  {
+   "name": "EDALab (Italy)",
+   "city": "Verona",
+   "country": "Italy",
+   "lat": 45.394344329833984,
+   "lon": 11.021376609802246,
+   "papers": 3,
+   "people": [
+    "Graziano Pravadelli",
+    "Giovanni Perbellini",
+    "Nicolo Dalla Riva",
+    "Francesco Stefanni"
+   ]
+  },
+  {
+   "name": "Norwegian University of Life Sciences",
+   "city": "Ås",
+   "country": "Norway",
+   "lat": 59.66471862792969,
+   "lon": 10.794650077819824,
+   "papers": 3,
+   "people": [
+    "Fadi Al Machot",
+    "Habib Ullah"
+   ]
+  },
+  {
+   "name": "Ospedale Santa Chiara",
+   "city": "Trento",
+   "country": "Italy",
+   "lat": 46.06787109375,
+   "lon": 11.12108039855957,
+   "papers": 3,
+   "people": [
+    "Ruggero Angelo Bacchin"
+   ]
+  },
+  {
+   "name": "University of Turin",
+   "city": "Turin",
+   "country": "Italy",
+   "lat": 45.07049,
+   "lon": 7.68682,
+   "papers": 3,
+   "people": [
+    "Carlo Alberto Artusi",
+    "Tiziana Margaria",
+    "Leonardo Lopiano",
+    "Giuliana Fazzina"
+   ]
+  },
+  {
+   "name": "Azienda Ospedaliera Sant'Andrea",
+   "city": "Rome",
+   "country": "Italy",
+   "lat": 41.89193,
+   "lon": 12.51133,
+   "papers": 2,
+   "people": [
+    "Domiziana Rinaldi"
+   ]
+  },
+  {
+   "name": "Istituto Neurologico Mediterraneo",
+   "city": "Pozzilli",
+   "country": "Italy",
+   "lat": 41.51142,
+   "lon": 14.06252,
+   "papers": 2,
+   "people": [
+    "Alessandro Zampogna"
+   ]
+  },
+  {
+   "name": "University of Florida",
+   "city": "Gainesville",
+   "country": "United States",
+   "lat": 29.65163,
+   "lon": -82.32483,
+   "papers": 2,
+   "people": [
+    "Azra Bihorac",
+    "Parisa Rashidi",
+    "Parisa Rashidi",
+    "Patrick J Tighe"
+   ]
+  },
+  {
+   "name": "University of Minho",
+   "city": "Braga",
+   "country": "Portugal",
+   "lat": 41.5514,
+   "lon": -8.42311,
+   "papers": 2,
+   "people": [
+    "Luis Sigcha"
+   ]
+  },
+  {
+   "name": "University of Padua",
+   "city": "Padua",
+   "country": "Italy",
+   "lat": 45.40797,
+   "lon": 11.88586,
+   "papers": 2,
+   "people": [
+    "Federico Tramarin"
+   ]
+  },
+  {
+   "name": "Wenzhou Business College",
+   "city": "Wenzhou",
+   "country": "China",
+   "lat": 27.99942,
+   "lon": 120.66682,
+   "papers": 2,
+   "people": [
+    "Cristian Turetta"
+   ]
+  },
+  {
+   "name": "Agios Andreas Hospital",
+   "city": "Pátrai",
+   "country": "Greece",
+   "lat": 38.24444,
+   "lon": 21.73444,
+   "papers": 1,
+   "people": [
+    "Andreas A. Argyriou"
+   ]
+  },
+  {
+   "name": "Arizona State University",
+   "city": "Tempe",
+   "country": "United States",
+   "lat": 33.41477,
+   "lon": -111.90931,
+   "papers": 1,
+   "people": [
+    "Farshad Firouzi"
+   ]
+  },
+  {
+   "name": "Azienda Ospedaliera Citta' della Salute e della Scienza di Torino",
+   "city": "Turin",
+   "country": "Italy",
+   "lat": 45.07049,
+   "lon": 7.68682,
+   "papers": 1,
+   "people": [
+    "Carlo Alberto Artusi",
+    "Leonardo Lopiano",
+    "Giuliana Fazzina"
+   ]
+  },
+  {
+   "name": "Azienda Ospedaliera Universitaria Integrata Verona",
+   "city": "Verona",
+   "country": "Italy",
+   "lat": 45.43854,
+   "lon": 10.9938,
+   "papers": 1,
+   "people": [
+    "Luisa Bissoli",
+    "Davide Bonacina"
+   ]
+  },
+  {
+   "name": "Centro ALGORITMI",
+   "city": "Guimarães",
+   "country": "Portugal",
+   "lat": 41.44443130493164,
+   "lon": -8.29619026184082,
+   "papers": 1,
+   "people": [
+    "Luis Sigcha"
+   ]
+  },
+  {
+   "name": "Duke University",
+   "city": "Durham",
+   "country": "United States",
+   "lat": 35.99403,
+   "lon": -78.89862,
+   "papers": 1,
+   "people": [
+    "Farshad Firouzi"
+   ]
+  },
+  {
+   "name": "ETH Zurich",
+   "city": "Zurich",
+   "country": "Switzerland",
+   "lat": 47.36667,
+   "lon": 8.55,
+   "papers": 1,
+   "people": [
+    "Michele Magno"
+   ]
+  },
+  {
+   "name": "Eindhoven University of Technology",
+   "city": "Eindhoven",
+   "country": "The Netherlands",
+   "lat": 51.44083,
+   "lon": 5.47778,
+   "papers": 1,
+   "people": [
+    "Niek Muijs",
+    "Nicola Zannone"
+   ]
+  },
+  {
+   "name": "Hospital de São João",
+   "city": "Porto",
+   "country": "Portugal",
+   "lat": 41.14960861206055,
+   "lon": -8.610989570617676,
+   "papers": 1,
+   "people": [
+    "Carolina Soares"
+   ]
+  },
+  {
+   "name": "Interdisciplinary Transformation University Austria",
+   "city": "Linz",
+   "country": "Austria",
+   "lat": 48.30639,
+   "lon": 14.28611,
+   "papers": 1,
+   "people": [
+    "Luigi Capogrosso"
+   ]
+  },
+  {
+   "name": "Mälardalen University",
+   "city": "Västerås",
+   "country": "Sweden",
+   "lat": 59.61616897583008,
+   "lon": 16.552759170532227,
+   "papers": 1,
+   "people": [
+    "Samaneh Zolfaghari"
+   ]
+  },
+  {
+   "name": "NIHR Newcastle Biomedical Research Centre",
+   "city": "Newcastle upon Tyne",
+   "country": "United Kingdom",
+   "lat": 54.97328,
+   "lon": -1.61396,
+   "papers": 1,
+   "people": [
+    "Silvia Del Din"
+   ]
+  },
+  {
+   "name": "National Institute for Health and Care Research",
+   "city": "London",
+   "country": "United Kingdom",
+   "lat": 51.50853,
+   "lon": -0.12574,
+   "papers": 1,
+   "people": [
+    "Silvia Del Din"
+   ]
+  },
+  {
+   "name": "Newcastle University",
+   "city": "Newcastle upon Tyne",
+   "country": "United Kingdom",
+   "lat": 54.97328,
+   "lon": -1.61396,
+   "papers": 1,
+   "people": [
+    "Silvia Del Din"
+   ]
+  },
+  {
+   "name": "Provincia Autonoma di Trento",
+   "city": "Trento",
+   "country": "Italy",
+   "lat": 46.06787,
+   "lon": 11.12108,
+   "papers": 1,
+   "people": [
+    "Ruggero Angelo Bacchin"
+   ]
+  },
+  {
+   "name": "Stavanger University Hospital",
+   "city": "Stavanger",
+   "country": "Norway",
+   "lat": 58.97005,
+   "lon": 5.73332,
+   "papers": 1,
+   "people": [
+    "Jodi Maple‐Grødem",
+    "Guido Werner Alves"
+   ]
+  },
+  {
+   "name": "Universidade do Porto",
+   "city": "Porto",
+   "country": "Portugal",
+   "lat": 41.1485,
+   "lon": -8.61097,
+   "papers": 1,
+   "people": [
+    "Carolina Soares"
+   ]
+  },
+  {
+   "name": "University of Agder",
+   "city": "Kristiansand",
+   "country": "Norway",
+   "lat": 58.14670944213867,
+   "lon": 7.99560022354126,
+   "papers": 1,
+   "people": [
+    "Filippo Sanfilippo",
+    "Syed Kumayl Raza Moosavi",
+    "Muhammad Hamza Zafar"
+   ]
+  },
+  {
+   "name": "University of Engineering and Technology Taxila",
+   "city": "Rawalpindi",
+   "country": "Pakistan",
+   "lat": 33.59733,
+   "lon": 73.0479,
+   "papers": 1,
+   "people": [
+    "Furqan Shaukat"
+   ]
+  },
+  {
+   "name": "University of Florida Health",
+   "city": "Gainesville",
+   "country": "United States",
+   "lat": 29.65163,
+   "lon": -82.32483,
+   "papers": 1,
+   "people": [
+    "Patrick J Tighe"
+   ]
+  },
+  {
+   "name": "University of Michigan",
+   "city": "Ann Arbor",
+   "country": "United States",
+   "lat": 42.27756,
+   "lon": -83.74088,
+   "papers": 1,
+   "people": [
+    "Daniel L. Hertz"
+   ]
+  },
+  {
+   "name": "University of Trento",
+   "city": "Trento",
+   "country": "Italy",
+   "lat": 46.06787109375,
+   "lon": 11.12108039855957,
+   "papers": 1,
+   "people": [
+    "Francesco Tonini"
+   ]
+  },
+  {
+   "name": "Université Jean Monnet",
+   "city": "Saint-Etienne",
+   "country": "France",
+   "lat": 45.43389,
+   "lon": 4.39,
+   "papers": 1,
+   "people": [
+    "Muhammad Zeeshan Masood"
+   ]
+  },
+  {
+   "name": "Université Jean Monnet",
+   "city": "Saint-Etienne",
+   "country": "France",
+   "lat": 45.43389,
+   "lon": 4.39,
+   "papers": 1,
+   "people": [
+    "Muhammad Zeeshan Masood"
+   ]
+  }
+ ],
+ "coauthors": [
+  {
+   "id": "https://openalex.org/A5025088388",
+   "name": "Graziano Pravadelli",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 41
+  },
+  {
+   "id": "https://openalex.org/A5082029992",
+   "name": "Cristian Turetta",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 31
+  },
+  {
+   "id": "https://openalex.org/A5023565335",
+   "name": "Philipp H. Kindt",
+   "institution": "Chemnitz University of Technology",
+   "country": "Germany",
+   "home": false,
+   "papers": 11
+  },
+  {
+   "id": "https://openalex.org/A5052362859",
+   "name": "Alejandro Masrur",
+   "institution": "Chemnitz University of Technology",
+   "country": "Germany",
+   "home": false,
+   "papers": 8
+  },
+  {
+   "id": "https://openalex.org/A5031417684",
+   "name": "Luigi Borzì",
+   "institution": "Politecnico di Torino",
+   "country": "Italy",
+   "home": false,
+   "papers": 8
+  },
+  {
+   "id": "https://openalex.org/A5100737286",
+   "name": "Samarjit Chakraborty",
+   "institution": "University of North Carolina at Chapel Hill",
+   "country": "United States",
+   "home": false,
+   "papers": 6
+  },
+  {
+   "id": "https://openalex.org/A5060617430",
+   "name": "Stefano Tamburin",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 5
+  },
+  {
+   "id": "https://openalex.org/A5030607647",
+   "name": "Gabriella Olmo",
+   "institution": "Politecnico di Torino",
+   "country": "Italy",
+   "home": false,
+   "papers": 5
+  },
+  {
+   "id": "https://openalex.org/A5003773371",
+   "name": "Ruggero Angelo Bacchin",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 4
+  },
+  {
+   "id": "https://openalex.org/A5079537650",
+   "name": "Luis Sigcha",
+   "institution": "University of Minho",
+   "country": "Portugal",
+   "home": false,
+   "papers": 4
+  },
+  {
+   "id": "https://openalex.org/A5073646721",
+   "name": "Fadi Al Machot",
+   "institution": "Norwegian University of Life Sciences",
+   "country": "Norway",
+   "home": false,
+   "papers": 4
+  },
+  {
+   "id": "https://openalex.org/A5033671063",
+   "name": "Marco Cristani",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 3
+  },
+  {
+   "id": "https://openalex.org/A5013151277",
+   "name": "Fabio Chiarani",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 3
+  },
+  {
+   "id": "https://openalex.org/A5111304304",
+   "name": "Michele Tebaldi",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 3
+  },
+  {
+   "id": "https://openalex.org/A5119198967",
+   "name": "Matteo Iervasi",
+   "institution": "University of Stavanger",
+   "country": "Norway",
+   "home": true,
+   "papers": 3
+  },
+  {
+   "id": "https://openalex.org/A5016909804",
+   "name": "Azra Bihorac",
+   "institution": "University of Florida",
+   "country": "United States",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5015240777",
+   "name": "Michele Boldo",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5088231786",
+   "name": "Nicola Bombieri",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5021904143",
+   "name": "Luigi Capogrosso",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5035313573",
+   "name": "Stefano Centomo",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5000326355",
+   "name": "Mirco De Marchi",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5040302302",
+   "name": "Franco Fummi",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5050479727",
+   "name": "Davide Quaglia",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5005238696",
+   "name": "Francesco Pascucci",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5022530591",
+   "name": "Paola Cesari",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5024819065",
+   "name": "Domiziana Rinaldi",
+   "institution": "Azienda Ospedaliera Sant'Andrea",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5116647394",
+   "name": "Giuliana Fazzina",
+   "institution": "Azienda Ospedaliera Citta' della Salute e della Scienza di Torino",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5092573128",
+   "name": "Giulio Balestro",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5030658386",
+   "name": "Alessandro Picelli",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5052765423",
+   "name": "Leonardo Lopiano",
+   "institution": "Azienda Ospedaliera Citta' della Salute e della Scienza di Torino",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5081285710",
+   "name": "Carlo Alberto Artusi",
+   "institution": "Azienda Ospedaliera Citta' della Salute e della Scienza di Torino",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5013165259",
+   "name": "Tiziana Margaria",
+   "institution": "University of Limerick",
+   "country": "Ireland",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5087797803",
+   "name": "Matteo Cristani",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5054093778",
+   "name": "Claudio Tomazzoli",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5073035456",
+   "name": "Federico Tramarin",
+   "institution": "University of Padua",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5018615087",
+   "name": "Farshad Firouzi",
+   "institution": "Arizona State University",
+   "country": "United States",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5002057785",
+   "name": "Rosalba Giugno",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5016354644",
+   "name": "Marin Jereghi",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5053113062",
+   "name": "Martin Schmidhammer",
+   "institution": "University of Stavanger",
+   "country": "Norway",
+   "home": true,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5032476098",
+   "name": "Christian Gentner",
+   "institution": "University of Stavanger",
+   "country": "Norway",
+   "home": true,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5024030643",
+   "name": "Alessandro Zampogna",
+   "institution": "Istituto Neurologico Mediterraneo",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5123998087",
+   "name": "MUHAMMAD  TOQEER ALI",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5007040136",
+   "name": "Parisa Rashidi",
+   "institution": "University of Florida",
+   "country": "United States",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5101632993",
+   "name": "Muhammed Toqeer Ali",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5034845651",
+   "name": "Federico Cunico",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5012002728",
+   "name": "Stefano Aldegheri",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5083001091",
+   "name": "Andrea Avogaro",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5005164066",
+   "name": "Ariel Caputo",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5046888162",
+   "name": "Damiano Carra B",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5088913411",
+   "name": "Dong Seon Cheng",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5114262976",
+   "name": "Ettore Cinquetti",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5012367054",
+   "name": "Marco Emporio",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5072093273",
+   "name": "Luca Geretti",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5005661044",
+   "name": "Samuele Germiniani",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5056042099",
+   "name": "Andrea Giachetti",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5033008214",
+   "name": "Federico Girella",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5048521637",
+   "name": "Enrico Martini",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5042078827",
+   "name": "Gloria Menegaz",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5114262977",
+   "name": "Niek Muijs",
+   "institution": "Eindhoven University of Technology",
+   "country": "The Netherlands",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5083730359",
+   "name": "Federica Paci",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5032373473",
+   "name": "Marco Panato",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5003455353",
+   "name": "Elisa Quintarelli",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5082366228",
+   "name": "Ilaria Siviero",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5074934100",
+   "name": "Silvia Francesca Storti",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5040184391",
+   "name": "Carlo Tadiello",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5084281460",
+   "name": "Tiziano Villa",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5083686418",
+   "name": "Nicola Zannone",
+   "institution": "Eindhoven University of Technology",
+   "country": "The Netherlands",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5041674466",
+   "name": "Nicola Valè",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5038454882",
+   "name": "Nicola Smania",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5069799848",
+   "name": "Elisa Mantovani",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5075359631",
+   "name": "Daniel L. Hertz",
+   "institution": "University of Michigan",
+   "country": "United States",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5087827421",
+   "name": "Omar Ferro",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5068666260",
+   "name": "Andreas A. Argyriou",
+   "institution": "Agios Andreas Hospital",
+   "country": "Greece",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5064622136",
+   "name": "Mina Farmanbar",
+   "institution": "University of Stavanger",
+   "country": "Norway",
+   "home": true,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5068843545",
+   "name": "Kjersti Engan",
+   "institution": "University of Stavanger",
+   "country": "Norway",
+   "home": true,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5060453305",
+   "name": "Geri Skenderi",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "name:muhammad toqeer ali",
+   "name": "Muhammad Toqeer Ali",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5079111567",
+   "name": "Riccardo Zucchelli",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5060182857",
+   "name": "Amandeep Singh",
+   "institution": "University of Limerick",
+   "country": "Ireland",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5003826657",
+   "name": "Vladislav Bragoi",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5050990740",
+   "name": "Nicola Serlonghi",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5044882489",
+   "name": "Cristiano Pravadelli",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5109597381",
+   "name": "Pietro Maria Picotti",
+   "institution": "",
+   "country": "",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5069658778",
+   "name": "Tewabe Chekole Workneh",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5052051547",
+   "name": "Luca Zenti",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "name:graziano pravadelli",
+   "name": "Graziano Pravadelli",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "name:patrick j tighe",
+   "name": "Patrick J Tighe",
+   "institution": "University of Florida Health",
+   "country": "United States",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "name:parisa rashidi",
+   "name": "Parisa Rashidi",
+   "institution": "University of Florida",
+   "country": "United States",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5090005014",
+   "name": "Marina Marchisio",
+   "institution": "University of Limerick",
+   "country": "Ireland",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5031024958",
+   "name": "Matteo Sacchet",
+   "institution": "University of Limerick",
+   "country": "Ireland",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5104138382",
+   "name": "Sofia Franceschi",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5065793296",
+   "name": "Davide Zamboni",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "name:kevin costa",
+   "name": "Kevin Costa",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5044793388",
+   "name": "Habib Ullah",
+   "institution": "Norwegian University of Life Sciences",
+   "country": "Norway",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5104090354",
+   "name": "Luisa Bissoli",
+   "institution": "Azienda Ospedaliera Universitaria Integrata Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5011256420",
+   "name": "Davide Bonacina",
+   "institution": "Azienda Ospedaliera Universitaria Integrata Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "name:nicolo dalla riva",
+   "name": "Nicolo Dalla Riva",
+   "institution": "EDALab (Italy)",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5037132726",
+   "name": "Nicola Marchiotto",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5048894152",
+   "name": "Giovanni Perbellini",
+   "institution": "EDALab (Italy)",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5073255724",
+   "name": "Bruno Pernice",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5032265610",
+   "name": "Erica Pizzocaro",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5025832606",
+   "name": "Giuseppe Recchia",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5086967780",
+   "name": "Anna Lia Sacerdoti",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5073751203",
+   "name": "Mauro Musa Zamboni",
+   "institution": "University of Verona",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5088330527",
+   "name": "Samaneh Zolfaghari",
+   "institution": "Mälardalen University",
+   "country": "Sweden",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5091065734",
+   "name": "Carolina Soares",
+   "institution": "Universidade do Porto",
+   "country": "Portugal",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5072344860",
+   "name": "Francesco Stefanni",
+   "institution": "EDALab (Italy)",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5060848060",
+   "name": "Amit Kumar Singh",
+   "institution": "",
+   "country": "",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5056157061",
+   "name": "Payam Mamaani Barnaghi",
+   "institution": "",
+   "country": "",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5001556143",
+   "name": "Geoff V. Merrett",
+   "institution": "",
+   "country": "",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5061493803",
+   "name": "Eiman Kanjo",
+   "institution": "",
+   "country": "",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5077777787",
+   "name": "Rishad Shafik",
+   "institution": "",
+   "country": "",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "name:aurora gil de castro",
+   "name": "Aurora Gil de Castro",
+   "institution": "",
+   "country": "",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5050594256",
+   "name": "Federica Zonzini",
+   "institution": "",
+   "country": "",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5031158253",
+   "name": "Amna Anwar",
+   "institution": "",
+   "country": "",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5048595299",
+   "name": "Bipin Rajendran",
+   "institution": "",
+   "country": "",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5017736224",
+   "name": "Osvaldo Simeone",
+   "institution": "",
+   "country": "",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5005926970",
+   "name": "Jodi Maple‐Grødem",
+   "institution": "Stavanger University Hospital",
+   "country": "Norway",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5078678815",
+   "name": "Guido Werner Alves",
+   "institution": "Stavanger University Hospital",
+   "country": "Norway",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5033070399",
+   "name": "Trygve Eftestøl",
+   "institution": "University of Stavanger",
+   "country": "Norway",
+   "home": true,
+   "papers": 1
+  },
+  {
+   "id": "name:muhammad zeeshan masood",
+   "name": "Muhammad Zeeshan Masood",
+   "institution": "Université Jean Monnet",
+   "country": "France",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "name:muhammad hamza zafar",
+   "name": "Muhammad Hamza Zafar",
+   "institution": "University of Agder",
+   "country": "Norway",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5011760960",
+   "name": "Syed Kumayl Raza Moosavi",
+   "institution": "University of Agder",
+   "country": "Norway",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5068742594",
+   "name": "Furqan Shaukat",
+   "institution": "University of Engineering and Technology Taxila",
+   "country": "Pakistan",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5087578160",
+   "name": "Filippo Sanfilippo",
+   "institution": "University of Agder",
+   "country": "Norway",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5059213065",
+   "name": "Silvia Del Din",
+   "institution": "National Institute for Health and Care Research",
+   "country": "United Kingdom",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5101868306",
+   "name": "Francesco Tonini",
+   "institution": "University of Trento",
+   "country": "Italy",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5130325754",
+   "name": "Luigi Capogrosso",
+   "institution": "Interdisciplinary Transformation University Austria",
+   "country": "Austria",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5066423975",
+   "name": "Michele Magno",
+   "institution": "ETH Zurich",
+   "country": "Switzerland",
+   "home": false,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5160203728",
+   "name": "Tawite Noe Marthe",
+   "institution": "University of Stavanger",
+   "country": "Norway",
+   "home": true,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5160220044",
+   "name": "Mascuud Mohamed Ali",
+   "institution": "University of Stavanger",
+   "country": "Norway",
+   "home": true,
+   "papers": 1
+  },
+  {
+   "id": "https://openalex.org/A5160203285",
+   "name": "Abdulaziz Abdulkadir Hassan",
+   "institution": "University of Stavanger",
+   "country": "Norway",
+   "home": true,
+   "papers": 1
+  }
+ ],
+ "links": [
+  {
+   "source": "https://openalex.org/A5007040136",
+   "target": "https://openalex.org/A5016909804",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5007040136",
+   "target": "https://openalex.org/A5025088388",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5016909804",
+   "target": "https://openalex.org/A5025088388",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5025088388",
+   "weight": 4
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5033671063",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5060617430",
+   "weight": 4
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5033671063",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5060617430",
+   "weight": 5
+  },
+  {
+   "source": "https://openalex.org/A5033671063",
+   "target": "https://openalex.org/A5060617430",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 30
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5101632993",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "https://openalex.org/A5101632993",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5013151277",
+   "target": "https://openalex.org/A5023565335",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5013151277",
+   "target": "https://openalex.org/A5025088388",
+   "weight": 3
+  },
+  {
+   "source": "https://openalex.org/A5013151277",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5023565335",
+   "target": "https://openalex.org/A5025088388",
+   "weight": 11
+  },
+  {
+   "source": "https://openalex.org/A5023565335",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 11
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5005238696",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5013151277",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5022530591",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5023565335",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5038454882",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5041674466",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 3
+  },
+  {
+   "source": "https://openalex.org/A5005238696",
+   "target": "https://openalex.org/A5013151277",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5005238696",
+   "target": "https://openalex.org/A5022530591",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5005238696",
+   "target": "https://openalex.org/A5023565335",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5005238696",
+   "target": "https://openalex.org/A5025088388",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5005238696",
+   "target": "https://openalex.org/A5038454882",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5005238696",
+   "target": "https://openalex.org/A5041674466",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5005238696",
+   "target": "https://openalex.org/A5060617430",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5005238696",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5013151277",
+   "target": "https://openalex.org/A5022530591",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5013151277",
+   "target": "https://openalex.org/A5038454882",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5013151277",
+   "target": "https://openalex.org/A5041674466",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5013151277",
+   "target": "https://openalex.org/A5060617430",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5022530591",
+   "target": "https://openalex.org/A5023565335",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5022530591",
+   "target": "https://openalex.org/A5025088388",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5022530591",
+   "target": "https://openalex.org/A5038454882",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5022530591",
+   "target": "https://openalex.org/A5041674466",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5022530591",
+   "target": "https://openalex.org/A5060617430",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5022530591",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5023565335",
+   "target": "https://openalex.org/A5038454882",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5023565335",
+   "target": "https://openalex.org/A5041674466",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5023565335",
+   "target": "https://openalex.org/A5060617430",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5038454882",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5041674466",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5038454882",
+   "target": "https://openalex.org/A5041674466",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5038454882",
+   "target": "https://openalex.org/A5060617430",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5038454882",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5041674466",
+   "target": "https://openalex.org/A5060617430",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5041674466",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5060617430",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 4
+  },
+  {
+   "source": "https://openalex.org/A5023565335",
+   "target": "https://openalex.org/A5052362859",
+   "weight": 8
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5052362859",
+   "weight": 8
+  },
+  {
+   "source": "https://openalex.org/A5052362859",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 8
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5024819065",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5030607647",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5030658386",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5031417684",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5052765423",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5079537650",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5081285710",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5092573128",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5116647394",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5024819065",
+   "target": "https://openalex.org/A5025088388",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5024819065",
+   "target": "https://openalex.org/A5030607647",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5024819065",
+   "target": "https://openalex.org/A5030658386",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5024819065",
+   "target": "https://openalex.org/A5031417684",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5024819065",
+   "target": "https://openalex.org/A5052765423",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5024819065",
+   "target": "https://openalex.org/A5060617430",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5024819065",
+   "target": "https://openalex.org/A5079537650",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5024819065",
+   "target": "https://openalex.org/A5081285710",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5024819065",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5024819065",
+   "target": "https://openalex.org/A5092573128",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5024819065",
+   "target": "https://openalex.org/A5116647394",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5030607647",
+   "weight": 3
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5030658386",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5031417684",
+   "weight": 3
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5052765423",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5079537650",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5081285710",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5092573128",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5116647394",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5030607647",
+   "target": "https://openalex.org/A5030658386",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5030607647",
+   "target": "https://openalex.org/A5031417684",
+   "weight": 5
+  },
+  {
+   "source": "https://openalex.org/A5030607647",
+   "target": "https://openalex.org/A5052765423",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5030607647",
+   "target": "https://openalex.org/A5060617430",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5030607647",
+   "target": "https://openalex.org/A5079537650",
+   "weight": 3
+  },
+  {
+   "source": "https://openalex.org/A5030607647",
+   "target": "https://openalex.org/A5081285710",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5030607647",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5030607647",
+   "target": "https://openalex.org/A5092573128",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5030607647",
+   "target": "https://openalex.org/A5116647394",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5030658386",
+   "target": "https://openalex.org/A5031417684",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5030658386",
+   "target": "https://openalex.org/A5052765423",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5030658386",
+   "target": "https://openalex.org/A5060617430",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5030658386",
+   "target": "https://openalex.org/A5079537650",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5030658386",
+   "target": "https://openalex.org/A5081285710",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5030658386",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5030658386",
+   "target": "https://openalex.org/A5092573128",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5030658386",
+   "target": "https://openalex.org/A5116647394",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5031417684",
+   "target": "https://openalex.org/A5052765423",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5031417684",
+   "target": "https://openalex.org/A5060617430",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5031417684",
+   "target": "https://openalex.org/A5079537650",
+   "weight": 4
+  },
+  {
+   "source": "https://openalex.org/A5031417684",
+   "target": "https://openalex.org/A5081285710",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5031417684",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5031417684",
+   "target": "https://openalex.org/A5092573128",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5031417684",
+   "target": "https://openalex.org/A5116647394",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5052765423",
+   "target": "https://openalex.org/A5060617430",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5052765423",
+   "target": "https://openalex.org/A5079537650",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5052765423",
+   "target": "https://openalex.org/A5081285710",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5052765423",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5052765423",
+   "target": "https://openalex.org/A5092573128",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5052765423",
+   "target": "https://openalex.org/A5116647394",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5060617430",
+   "target": "https://openalex.org/A5079537650",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5060617430",
+   "target": "https://openalex.org/A5081285710",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5060617430",
+   "target": "https://openalex.org/A5092573128",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5060617430",
+   "target": "https://openalex.org/A5116647394",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5079537650",
+   "target": "https://openalex.org/A5081285710",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5079537650",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5079537650",
+   "target": "https://openalex.org/A5092573128",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5079537650",
+   "target": "https://openalex.org/A5116647394",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5081285710",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5081285710",
+   "target": "https://openalex.org/A5092573128",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5081285710",
+   "target": "https://openalex.org/A5116647394",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "https://openalex.org/A5092573128",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "https://openalex.org/A5116647394",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5092573128",
+   "target": "https://openalex.org/A5116647394",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5068666260",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5069799848",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5075359631",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5087827421",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5060617430",
+   "target": "https://openalex.org/A5068666260",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5060617430",
+   "target": "https://openalex.org/A5069799848",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5060617430",
+   "target": "https://openalex.org/A5075359631",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5060617430",
+   "target": "https://openalex.org/A5087827421",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5068666260",
+   "target": "https://openalex.org/A5069799848",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5068666260",
+   "target": "https://openalex.org/A5075359631",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5068666260",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5068666260",
+   "target": "https://openalex.org/A5087827421",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5069799848",
+   "target": "https://openalex.org/A5075359631",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5069799848",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5069799848",
+   "target": "https://openalex.org/A5087827421",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5075359631",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5075359631",
+   "target": "https://openalex.org/A5087827421",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "https://openalex.org/A5087827421",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5064622136",
+   "target": "https://openalex.org/A5068843545",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5021904143",
+   "target": "https://openalex.org/A5023565335",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5021904143",
+   "target": "https://openalex.org/A5025088388",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5021904143",
+   "target": "https://openalex.org/A5033671063",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5021904143",
+   "target": "https://openalex.org/A5040302302",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5021904143",
+   "target": "https://openalex.org/A5052362859",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5021904143",
+   "target": "https://openalex.org/A5060453305",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5021904143",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5023565335",
+   "target": "https://openalex.org/A5033671063",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5023565335",
+   "target": "https://openalex.org/A5040302302",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5023565335",
+   "target": "https://openalex.org/A5060453305",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5040302302",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5060453305",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5033671063",
+   "target": "https://openalex.org/A5040302302",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5033671063",
+   "target": "https://openalex.org/A5052362859",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5033671063",
+   "target": "https://openalex.org/A5060453305",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5033671063",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5040302302",
+   "target": "https://openalex.org/A5052362859",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5040302302",
+   "target": "https://openalex.org/A5060453305",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5040302302",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5052362859",
+   "target": "https://openalex.org/A5060453305",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5060453305",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "name:muhammad toqeer ali",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "name:muhammad toqeer ali",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5079111567",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5013165259",
+   "target": "https://openalex.org/A5060182857",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5054093778",
+   "target": "https://openalex.org/A5087797803",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5003826657",
+   "target": "https://openalex.org/A5025088388",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5003826657",
+   "target": "https://openalex.org/A5073035456",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5073035456",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5000326355",
+   "target": "https://openalex.org/A5015240777",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5000326355",
+   "target": "https://openalex.org/A5025088388",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5000326355",
+   "target": "https://openalex.org/A5035313573",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5000326355",
+   "target": "https://openalex.org/A5050479727",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5000326355",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5000326355",
+   "target": "https://openalex.org/A5088231786",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5015240777",
+   "target": "https://openalex.org/A5025088388",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5015240777",
+   "target": "https://openalex.org/A5035313573",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5015240777",
+   "target": "https://openalex.org/A5050479727",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5015240777",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5015240777",
+   "target": "https://openalex.org/A5088231786",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5035313573",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5050479727",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5088231786",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5035313573",
+   "target": "https://openalex.org/A5050479727",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5035313573",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5035313573",
+   "target": "https://openalex.org/A5088231786",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5050479727",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5050479727",
+   "target": "https://openalex.org/A5088231786",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "https://openalex.org/A5088231786",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5018615087",
+   "target": "https://openalex.org/A5030607647",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5018615087",
+   "target": "https://openalex.org/A5031417684",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5018615087",
+   "target": "https://openalex.org/A5079537650",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5002057785",
+   "target": "https://openalex.org/A5025088388",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5002057785",
+   "target": "https://openalex.org/A5030607647",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5002057785",
+   "target": "https://openalex.org/A5031417684",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5002057785",
+   "target": "https://openalex.org/A5111304304",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5111304304",
+   "weight": 3
+  },
+  {
+   "source": "https://openalex.org/A5030607647",
+   "target": "https://openalex.org/A5111304304",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5031417684",
+   "target": "https://openalex.org/A5111304304",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5016354644",
+   "target": "https://openalex.org/A5025088388",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5044882489",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5050990740",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5044882489",
+   "target": "https://openalex.org/A5050990740",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5044882489",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5050990740",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5005238696",
+   "target": "https://openalex.org/A5052051547",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5005238696",
+   "target": "https://openalex.org/A5054093778",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5005238696",
+   "target": "https://openalex.org/A5069658778",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5005238696",
+   "target": "https://openalex.org/A5087797803",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5005238696",
+   "target": "https://openalex.org/A5109597381",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5022530591",
+   "target": "https://openalex.org/A5052051547",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5022530591",
+   "target": "https://openalex.org/A5054093778",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5022530591",
+   "target": "https://openalex.org/A5069658778",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5022530591",
+   "target": "https://openalex.org/A5087797803",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5022530591",
+   "target": "https://openalex.org/A5109597381",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5052051547",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5054093778",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5069658778",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5087797803",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5109597381",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5052051547",
+   "target": "https://openalex.org/A5054093778",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5052051547",
+   "target": "https://openalex.org/A5069658778",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5052051547",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5052051547",
+   "target": "https://openalex.org/A5087797803",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5052051547",
+   "target": "https://openalex.org/A5109597381",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5054093778",
+   "target": "https://openalex.org/A5069658778",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5054093778",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5054093778",
+   "target": "https://openalex.org/A5109597381",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5069658778",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5069658778",
+   "target": "https://openalex.org/A5087797803",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5069658778",
+   "target": "https://openalex.org/A5109597381",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "https://openalex.org/A5087797803",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "https://openalex.org/A5109597381",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5087797803",
+   "target": "https://openalex.org/A5109597381",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5016909804",
+   "target": "name:graziano pravadelli",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5016909804",
+   "target": "name:parisa rashidi",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5016909804",
+   "target": "name:patrick j tighe",
+   "weight": 1
+  },
+  {
+   "source": "name:graziano pravadelli",
+   "target": "name:parisa rashidi",
+   "weight": 1
+  },
+  {
+   "source": "name:graziano pravadelli",
+   "target": "name:patrick j tighe",
+   "weight": 1
+  },
+  {
+   "source": "name:parisa rashidi",
+   "target": "name:patrick j tighe",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5013165259",
+   "target": "https://openalex.org/A5031024958",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5013165259",
+   "target": "https://openalex.org/A5090005014",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5031024958",
+   "target": "https://openalex.org/A5090005014",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5065793296",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5104138382",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5065793296",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5065793296",
+   "target": "https://openalex.org/A5104138382",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "https://openalex.org/A5104138382",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5002057785",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "https://openalex.org/A5111304304",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5023565335",
+   "target": "https://openalex.org/A5100737286",
+   "weight": 6
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5100737286",
+   "weight": 6
+  },
+  {
+   "source": "https://openalex.org/A5052362859",
+   "target": "https://openalex.org/A5100737286",
+   "weight": 6
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "https://openalex.org/A5100737286",
+   "weight": 6
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "name:kevin costa",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5073035456",
+   "target": "name:kevin costa",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5044793388",
+   "target": "https://openalex.org/A5073646721",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5011256420",
+   "target": "https://openalex.org/A5016354644",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5011256420",
+   "target": "https://openalex.org/A5025088388",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5011256420",
+   "target": "https://openalex.org/A5025832606",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5011256420",
+   "target": "https://openalex.org/A5032265610",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5011256420",
+   "target": "https://openalex.org/A5037132726",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5011256420",
+   "target": "https://openalex.org/A5048894152",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5011256420",
+   "target": "https://openalex.org/A5073255724",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5011256420",
+   "target": "https://openalex.org/A5073751203",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5011256420",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5011256420",
+   "target": "https://openalex.org/A5086967780",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5011256420",
+   "target": "https://openalex.org/A5104090354",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5011256420",
+   "target": "name:nicolo dalla riva",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5016354644",
+   "target": "https://openalex.org/A5025832606",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5016354644",
+   "target": "https://openalex.org/A5032265610",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5016354644",
+   "target": "https://openalex.org/A5037132726",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5016354644",
+   "target": "https://openalex.org/A5048894152",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5016354644",
+   "target": "https://openalex.org/A5073255724",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5016354644",
+   "target": "https://openalex.org/A5073751203",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5016354644",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5016354644",
+   "target": "https://openalex.org/A5086967780",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5016354644",
+   "target": "https://openalex.org/A5104090354",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5016354644",
+   "target": "name:nicolo dalla riva",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5025832606",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5032265610",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5037132726",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5048894152",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5073255724",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5073751203",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5086967780",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5104090354",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "name:nicolo dalla riva",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025832606",
+   "target": "https://openalex.org/A5032265610",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025832606",
+   "target": "https://openalex.org/A5037132726",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025832606",
+   "target": "https://openalex.org/A5048894152",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025832606",
+   "target": "https://openalex.org/A5073255724",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025832606",
+   "target": "https://openalex.org/A5073751203",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025832606",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025832606",
+   "target": "https://openalex.org/A5086967780",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025832606",
+   "target": "https://openalex.org/A5104090354",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025832606",
+   "target": "name:nicolo dalla riva",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5032265610",
+   "target": "https://openalex.org/A5037132726",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5032265610",
+   "target": "https://openalex.org/A5048894152",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5032265610",
+   "target": "https://openalex.org/A5073255724",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5032265610",
+   "target": "https://openalex.org/A5073751203",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5032265610",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5032265610",
+   "target": "https://openalex.org/A5086967780",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5032265610",
+   "target": "https://openalex.org/A5104090354",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5032265610",
+   "target": "name:nicolo dalla riva",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5037132726",
+   "target": "https://openalex.org/A5048894152",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5037132726",
+   "target": "https://openalex.org/A5073255724",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5037132726",
+   "target": "https://openalex.org/A5073751203",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5037132726",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5037132726",
+   "target": "https://openalex.org/A5086967780",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5037132726",
+   "target": "https://openalex.org/A5104090354",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5037132726",
+   "target": "name:nicolo dalla riva",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5048894152",
+   "target": "https://openalex.org/A5073255724",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5048894152",
+   "target": "https://openalex.org/A5073751203",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5048894152",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5048894152",
+   "target": "https://openalex.org/A5086967780",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5048894152",
+   "target": "https://openalex.org/A5104090354",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5048894152",
+   "target": "name:nicolo dalla riva",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5073255724",
+   "target": "https://openalex.org/A5073751203",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5073255724",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5073255724",
+   "target": "https://openalex.org/A5086967780",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5073255724",
+   "target": "https://openalex.org/A5104090354",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5073255724",
+   "target": "name:nicolo dalla riva",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5073751203",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5073751203",
+   "target": "https://openalex.org/A5086967780",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5073751203",
+   "target": "https://openalex.org/A5104090354",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5073751203",
+   "target": "name:nicolo dalla riva",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "https://openalex.org/A5086967780",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "https://openalex.org/A5104090354",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "name:nicolo dalla riva",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5086967780",
+   "target": "https://openalex.org/A5104090354",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5086967780",
+   "target": "name:nicolo dalla riva",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5104090354",
+   "target": "name:nicolo dalla riva",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5023565335",
+   "target": "https://openalex.org/A5073646721",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5073646721",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5073646721",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5088330527",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5003773371",
+   "target": "https://openalex.org/A5111304304",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5024819065",
+   "target": "https://openalex.org/A5088330527",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5024819065",
+   "target": "https://openalex.org/A5111304304",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5088330527",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5030607647",
+   "target": "https://openalex.org/A5088330527",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5030658386",
+   "target": "https://openalex.org/A5088330527",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5030658386",
+   "target": "https://openalex.org/A5111304304",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5031417684",
+   "target": "https://openalex.org/A5088330527",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5052765423",
+   "target": "https://openalex.org/A5088330527",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5052765423",
+   "target": "https://openalex.org/A5111304304",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5060617430",
+   "target": "https://openalex.org/A5088330527",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5060617430",
+   "target": "https://openalex.org/A5111304304",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5079537650",
+   "target": "https://openalex.org/A5088330527",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5079537650",
+   "target": "https://openalex.org/A5111304304",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5081285710",
+   "target": "https://openalex.org/A5088330527",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5081285710",
+   "target": "https://openalex.org/A5111304304",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "https://openalex.org/A5088330527",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5088330527",
+   "target": "https://openalex.org/A5092573128",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5088330527",
+   "target": "https://openalex.org/A5111304304",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5088330527",
+   "target": "https://openalex.org/A5116647394",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5092573128",
+   "target": "https://openalex.org/A5111304304",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5111304304",
+   "target": "https://openalex.org/A5116647394",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5023565335",
+   "target": "https://openalex.org/A5032476098",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5023565335",
+   "target": "https://openalex.org/A5053113062",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5032476098",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5053113062",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5032476098",
+   "target": "https://openalex.org/A5052362859",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5032476098",
+   "target": "https://openalex.org/A5053113062",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5032476098",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5032476098",
+   "target": "https://openalex.org/A5100737286",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5052362859",
+   "target": "https://openalex.org/A5053113062",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5053113062",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5053113062",
+   "target": "https://openalex.org/A5100737286",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5024030643",
+   "target": "https://openalex.org/A5031417684",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5024030643",
+   "target": "https://openalex.org/A5091065734",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5031417684",
+   "target": "https://openalex.org/A5091065734",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5072344860",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5001556143",
+   "target": "https://openalex.org/A5017736224",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5001556143",
+   "target": "https://openalex.org/A5031158253",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5001556143",
+   "target": "https://openalex.org/A5048595299",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5001556143",
+   "target": "https://openalex.org/A5050594256",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5001556143",
+   "target": "https://openalex.org/A5056157061",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5001556143",
+   "target": "https://openalex.org/A5060848060",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5001556143",
+   "target": "https://openalex.org/A5061493803",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5001556143",
+   "target": "https://openalex.org/A5077777787",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5001556143",
+   "target": "name:aurora gil de castro",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5017736224",
+   "target": "https://openalex.org/A5031158253",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5017736224",
+   "target": "https://openalex.org/A5048595299",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5017736224",
+   "target": "https://openalex.org/A5050594256",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5017736224",
+   "target": "https://openalex.org/A5056157061",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5017736224",
+   "target": "https://openalex.org/A5060848060",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5017736224",
+   "target": "https://openalex.org/A5061493803",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5017736224",
+   "target": "https://openalex.org/A5077777787",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5017736224",
+   "target": "name:aurora gil de castro",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5031158253",
+   "target": "https://openalex.org/A5048595299",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5031158253",
+   "target": "https://openalex.org/A5050594256",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5031158253",
+   "target": "https://openalex.org/A5056157061",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5031158253",
+   "target": "https://openalex.org/A5060848060",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5031158253",
+   "target": "https://openalex.org/A5061493803",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5031158253",
+   "target": "https://openalex.org/A5077777787",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5031158253",
+   "target": "name:aurora gil de castro",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5048595299",
+   "target": "https://openalex.org/A5050594256",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5048595299",
+   "target": "https://openalex.org/A5056157061",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5048595299",
+   "target": "https://openalex.org/A5060848060",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5048595299",
+   "target": "https://openalex.org/A5061493803",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5048595299",
+   "target": "https://openalex.org/A5077777787",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5048595299",
+   "target": "name:aurora gil de castro",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5050594256",
+   "target": "https://openalex.org/A5056157061",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5050594256",
+   "target": "https://openalex.org/A5060848060",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5050594256",
+   "target": "https://openalex.org/A5061493803",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5050594256",
+   "target": "https://openalex.org/A5077777787",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5050594256",
+   "target": "name:aurora gil de castro",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5056157061",
+   "target": "https://openalex.org/A5060848060",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5056157061",
+   "target": "https://openalex.org/A5061493803",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5056157061",
+   "target": "https://openalex.org/A5077777787",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5056157061",
+   "target": "name:aurora gil de castro",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5060848060",
+   "target": "https://openalex.org/A5061493803",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5060848060",
+   "target": "https://openalex.org/A5077777787",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5060848060",
+   "target": "name:aurora gil de castro",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5061493803",
+   "target": "https://openalex.org/A5077777787",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5061493803",
+   "target": "name:aurora gil de castro",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5077777787",
+   "target": "name:aurora gil de castro",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5005926970",
+   "target": "https://openalex.org/A5031417684",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5005926970",
+   "target": "https://openalex.org/A5033070399",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5005926970",
+   "target": "https://openalex.org/A5078678815",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5005926970",
+   "target": "https://openalex.org/A5119198967",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5031417684",
+   "target": "https://openalex.org/A5033070399",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5031417684",
+   "target": "https://openalex.org/A5078678815",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5031417684",
+   "target": "https://openalex.org/A5119198967",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5033070399",
+   "target": "https://openalex.org/A5078678815",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5033070399",
+   "target": "https://openalex.org/A5119198967",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5078678815",
+   "target": "https://openalex.org/A5119198967",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5123998087",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "https://openalex.org/A5123998087",
+   "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5011760960",
+   "target": "https://openalex.org/A5068742594",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5011760960",
+   "target": "https://openalex.org/A5087578160",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5011760960",
+   "target": "name:muhammad hamza zafar",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5011760960",
+   "target": "name:muhammad zeeshan masood",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5068742594",
+   "target": "https://openalex.org/A5087578160",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5068742594",
+   "target": "name:muhammad hamza zafar",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5068742594",
+   "target": "name:muhammad zeeshan masood",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5087578160",
+   "target": "name:muhammad hamza zafar",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5087578160",
+   "target": "name:muhammad zeeshan masood",
+   "weight": 1
+  },
+  {
+   "source": "name:muhammad hamza zafar",
+   "target": "name:muhammad zeeshan masood",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5024030643",
+   "target": "https://openalex.org/A5059213065",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5119198967",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "https://openalex.org/A5119198967",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5101868306",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5082029992",
+   "target": "https://openalex.org/A5101868306",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5018615087",
+   "target": "https://openalex.org/A5066423975",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5018615087",
+   "target": "https://openalex.org/A5130325754",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5066423975",
+   "target": "https://openalex.org/A5130325754",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5119198967",
+   "target": "https://openalex.org/A5160203285",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5119198967",
+   "target": "https://openalex.org/A5160203728",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5119198967",
+   "target": "https://openalex.org/A5160220044",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5160203285",
+   "target": "https://openalex.org/A5160203728",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5160203285",
+   "target": "https://openalex.org/A5160220044",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5160203728",
+   "target": "https://openalex.org/A5160220044",
+   "weight": 1
+  }
+ ]
+}

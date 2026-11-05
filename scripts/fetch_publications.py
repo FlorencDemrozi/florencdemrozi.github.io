@@ -43,8 +43,9 @@ SCHOLAR_ID = "gF5XNDIAAAAJ"
 REPO_ROOT  = Path(__file__).parent.parent
 PUBS_FILE  = REPO_ROOT / "_data" / "publications.yml"
 API        = "https://api.openalex.org/works"
-CURATED_PREFIXES = ("C", "J", "B", "P", "T")
-SELECT = "id,doi,title,publication_year,type,primary_location,authorships"
+# C/J/B/P/T = hand-curated, E = from Scopus (fetch_scopus.py): never overwritten here
+CURATED_PREFIXES = ("C", "J", "B", "P", "T", "E")
+SELECT = "id,doi,title,publication_year,type,primary_location,authorships,cited_by_count"
 
 
 def norm_title(title: str) -> str:
@@ -101,23 +102,25 @@ def map_type(work: dict) -> str:
     return "journal"
 
 
+def http_json(url: str) -> dict:
+    for attempt in range(3):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "personal-website-publication-updater"})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return json.load(r)
+        except Exception as e:  # noqa: BLE001
+            print(f"  attempt {attempt + 1} failed: {e}")
+            time.sleep(5 * (attempt + 1))
+    print("ERROR: could not reach OpenAlex")
+    sys.exit(1)
+
+
 def fetch_openalex() -> list:
     works, cursor = [], "*"
     while cursor:
         url = (f"{API}?filter=author.orcid:{ORCID}&per-page=200"
                f"&select={SELECT}&cursor={cursor}")
-        for attempt in range(3):
-            try:
-                req = urllib.request.Request(url, headers={"User-Agent": "personal-website-publication-updater"})
-                with urllib.request.urlopen(req, timeout=60) as r:
-                    data = json.load(r)
-                break
-            except Exception as e:  # noqa: BLE001
-                print(f"  attempt {attempt + 1} failed: {e}")
-                time.sleep(5 * (attempt + 1))
-        else:
-            print("ERROR: could not reach OpenAlex")
-            sys.exit(1)
+        data = http_json(url)
         works += data.get("results", [])
         cursor = data.get("meta", {}).get("next_cursor")
         if not data.get("results"):
@@ -193,6 +196,38 @@ def merge(existing: list, fetched: list) -> list:
     return out
 
 
+def build_openalex_collaborations(works: list):
+    """Backup source for _data/collaborations.json (main source: fetch_scopus.py)."""
+    from collab import build_collaborations, h_index, write_collaborations
+    inst_ids = {i["id"] for w in works for a in w.get("authorships", []) for i in a.get("institutions", []) if i.get("id")}
+    geo, ids = {}, sorted(inst_ids)
+    for k in range(0, len(ids), 50):
+        chunk = "|".join(i.rsplit("/", 1)[-1] for i in ids[k:k + 50])
+        res = http_json(f"https://api.openalex.org/institutions?filter=openalex_id:{chunk}&per-page=50&select=id,display_name,geo")
+        for r in res.get("results", []):
+            geo[r["id"]] = r
+    self_ids, papers = set(), []
+    for w in works:
+        authors = []
+        for a in w.get("authorships", []):
+            au = a.get("author") or {}
+            if (au.get("orcid") or "").endswith(ORCID):
+                self_ids.add(au.get("id"))
+            affs = []
+            for i in a.get("institutions", []):
+                g = (geo.get(i.get("id")) or {}).get("geo") or {}
+                affs.append({"id": i.get("id"), "name": i.get("display_name", ""),
+                             "city": g.get("city") or "", "country": g.get("country") or "",
+                             "lat": g.get("latitude"), "lon": g.get("longitude")})
+            authors.append({"id": au.get("id"), "name": au.get("display_name", ""), "affiliations": affs})
+        papers.append({"title": w.get("title") or "", "year": w.get("publication_year") or 0,
+                       "citations": w.get("cited_by_count") or 0, "authors": authors})
+    cites = [p["citations"] for p in papers]
+    profile = {"documents": len(papers), "citations": sum(cites), "h_index": h_index(cites),
+               "first_year": min((p["year"] for p in papers if p["year"]), default=None)}
+    write_collaborations(build_collaborations(papers, self_ids, "OpenAlex", profile))
+
+
 def main():
     data = {}
     if PUBS_FILE.exists():
@@ -200,7 +235,8 @@ def main():
     existing = data.get("items", [])
     print(f"Existing entries: {len(existing)}")
 
-    fetched = [to_entry(w) for w in fetch_openalex()]
+    works = fetch_openalex()
+    fetched = [to_entry(w) for w in works]
     merged = merge(existing, fetched)
     print(f"Merged total:     {len(merged)}")
 
@@ -214,6 +250,9 @@ def main():
         encoding="utf-8",
     )
     print(f"Updated {PUBS_FILE}")
+
+    if "--collaborations" in sys.argv:
+        build_openalex_collaborations(works)
 
 
 if __name__ == "__main__":
