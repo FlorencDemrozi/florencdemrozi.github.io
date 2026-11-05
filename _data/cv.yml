@@ -366,6 +366,14 @@ service:
     - "Data in Brief"
 
   conference_chair:
+    - role: "General Chair"
+      event: "IEEE International Conference on Omni-Layer Intelligent Systems (COINS)"
+      location: "Stavanger, Norway"
+      year: 2027
+    - role: "Program Chair"
+      event: "Forum on Specification & Design Languages (FDL)"
+      location: ""
+      year: 2027
     - role: "Program Chair"
       event: "IEEE International Conference on Omni-Layer Intelligent Systems (COINS)"
       location: "Bologna, Italy"

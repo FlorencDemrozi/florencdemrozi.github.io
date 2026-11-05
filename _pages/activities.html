@@ -145,7 +145,7 @@ permalink: /activities/
     <div class="ri-title">Conference Chair Roles</div>
     <ul class="committee-list">
       {% for r in cv.service.conference_chair %}
-      <li><strong>{{ r.role }}</strong> — {{ r.event }}, {{ r.location }}, {{ r.year }}</li>
+      <li><strong>{{ r.role }}</strong> — {{ r.event }}{% if r.location and r.location != "" %}, {{ r.location }}{% endif %}, {{ r.year }}</li>
       {% endfor %}
     </ul>
 
