@@ -17,7 +17,7 @@ personal:
   scopus_id: "57193860991"
   email: "florenc.demrozi@uis.no"
   address: "UiS Kjølv Egelands Hus, University of Stavanger, Norway"
-  photo: "assets/img/florenc-demrozi.jpg"
+  photo: "assets/img/florenc-demrozi-640.jpg"
 
   profiles:
     - label: "LinkedIn"
@@ -323,6 +323,25 @@ projects:
     period: "2017–2019"
     funder: "Piccola Fraternità Onlus / University of Verona"
     funding: "€36,200"
+
+# News on the Home page (newest first). "url" is optional.
+news:
+  - year: 2026
+    title: "General Chair, ECMS 2026"
+    detail: "University of Agder, Grimstad, Norway · June 23–26"
+  - year: 2026
+    title: "Program Chair, IEEE COINS 2026"
+    url: "https://coinsconf.com"
+    detail: "University of Bologna, Italy · September 7–9"
+  - year: 2026
+    title: "Program Chair, IEEE/IFIP VLSI-SoC 2026"
+    detail: "Limassol, Cyprus · October 11–14"
+  - year: 2025
+    title: "Promoted to Full Professor in Biomedical Sensing Systems"
+    detail: "Dept. Electrical Engineering and Computer Science, University of Stavanger · June 2025"
+  - year: 2025
+    title: "SpareBank 1 Sør-Norge Innovation Award"
+    detail: "Stavanger, Norway"
 
 service:
   journal_editor:

@@ -33,7 +33,7 @@ title: Home
       <p class="lead">I design wearable and ambient sensing systems, and the machine learning behind them, to monitor health and daily activity outside the clinic.</p>
       <div class="prose">
         <p>{{ cv.summary }}</p>
-        <p>I am a co-founder of the <a href="https://cisd.di.univr.it/area/7/" target="_blank" rel="noopener">IoT for Care (IoT4Care)</a> research group at the University of Verona, and a member of the <strong>Biomedical Data Analysis Lab (BMDLab)</strong> and the <strong>Stavanger AI Lab (SAIL)</strong> at UiS. I also serve as Associate Editor of the <em>IEEE Sensors Journal</em>.</p>
+        <p>I am a co-founder of the <a href="https://github.com/IoT4CareLab" target="_blank" rel="noopener">IoT for Care (IoT4Care)</a> research group at the University of Verona, and a member of the <strong>Biomedical Data Analysis Lab (BMDLab)</strong> and the <strong>Stavanger AI Lab (SAIL)</strong> at UiS. I also serve as Associate Editor of the <em>IEEE Sensors Journal</em>.</p>
       </div>
       <ul class="tags" aria-label="Research interests">
         {% for interest in cv.research_interests %}<li>{{ interest }}</li>{% endfor %}
@@ -71,20 +71,18 @@ title: Home
       <div class="collab-map" data-compact="true"></div>
       <p class="small">Partners include {% for i in co.institutions limit:4 %}{{ i.name }}{% if forloop.last %}{% elsif forloop.rindex == 2 %} and {% else %}, {% endif %}{% endfor %}. Source: {{ co.source }}. <a class="more" href="{{ site.baseurl }}/network/">Explore the network →</a></p>
     </section>
-    <script id="collab-data" type="application/json">{{ co | jsonify }}</script>
-    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+    <script id="collab-data" type="application/json">{{ co | jsonify | replace: "</", "<\/" }}</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous"></script>
     <script src="{{ site.baseurl }}/assets/js/collab.js?v={{ site.time | date: '%s' }}"></script>
 
     <!-- NEWS -->
     <section>
       <h2>News</h2>
       <ul class="dated">
-        <li><span class="yr">2026</span><div><div class="item-title">General Chair, ECMS 2026</div><div class="item-meta">University of Agder, Grimstad, Norway · June 23–26</div></div></li>
-        <li><span class="yr">2026</span><div><div class="item-title">Program Chair, <a href="https://coinsconf.com" target="_blank" rel="noopener">IEEE COINS 2026</a></div><div class="item-meta">University of Bologna, Italy · September 7–9</div></div></li>
-        <li><span class="yr">2026</span><div><div class="item-title">Program Chair, IEEE/IFIP VLSI-SoC 2026</div><div class="item-meta">Limassol, Cyprus · October 11–14</div></div></li>
-        <li><span class="yr">2025</span><div><div class="item-title">Promoted to Full Professor in Biomedical Sensing Systems</div><div class="item-meta">Dept. Electrical Engineering and Computer Science, University of Stavanger · June 2025</div></div></li>
-        <li><span class="yr">2025</span><div><div class="item-title">SpareBank 1 Sør-Norge Innovation Award</div><div class="item-meta">Stavanger, Norway</div></div></li>
+        {% for n in cv.news %}
+        <li><span class="yr">{{ n.year }}</span><div><div class="item-title">{% if n.url %}<a href="{{ n.url }}" target="_blank" rel="noopener">{{ n.title | escape }}</a>{% else %}{{ n.title | escape }}{% endif %}</div><div class="item-meta">{{ n.detail | escape }}</div></div></li>
+        {% endfor %}
       </ul>
     </section>
 
@@ -95,8 +93,8 @@ title: Home
       <ol class="dated">
         {% for pub in recent limit:5 %}
         <li><span class="yr">{{ pub.year }}</span><div>
-          <div class="item-title">{% if pub.doi %}<a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener" style="color:inherit">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</div>
-          <div class="item-meta">{{ pub.authors | replace: "Demrozi F.", "<strong>Demrozi F.</strong>" }} · <i>{{ pub.venue }}</i><span class="chip">{{ pub.type }}</span></div>
+          <div class="item-title">{% if pub.doi %}<a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener" style="color:inherit">{{ pub.title | escape }}</a>{% else %}{{ pub.title | escape }}{% endif %}</div>
+          <div class="item-meta">{{ pub.authors | escape | replace: "Demrozi F.", "<strong>Demrozi F.</strong>" }} · <i>{{ pub.venue | escape }}</i><span class="chip">{{ pub.type }}</span></div>
         </div></li>
         {% endfor %}
       </ol>
@@ -110,13 +108,9 @@ title: Home
     <section id="projects">
       <h2>Projects and datasets</h2>
       <div class="project-links">
-        <a href="https://sensing4health.ux.uis.no/sosc.html" target="_blank" rel="noopener"><strong>SOSC</strong><span>Smart Objects for Smart Care · NFR, PI</span></a>
-        <a href="https://florencdemrozi.github.io/flair/"><strong>FLAIR</strong><span>Free-living activity dataset, wrist IMU</span></a>
-        <a href="https://zenodo.org/records/17838806" target="_blank" rel="noopener"><strong>FoG-STAR</strong><span>Freezing of gait dataset, 22 PD patients</span></a>
-        <a href="https://zenodo.org/records/18346755" target="_blank" rel="noopener"><strong>UNIVRFall</strong><span>IMU fall detection dataset, 39 participants</span></a>
-        <a href="https://florencdemrozi.github.io/mmai-lab/"><strong>MMAI Lab</strong><span>Multimodal AI Lab</span></a>
-        <a href="https://florencdemrozi.github.io/pcc/"><strong>PCC</strong><span>Program Chair Copilot, conference management tool</span></a>
-        <a href="https://atlas.ux.uis.no/#/" target="_blank" rel="noopener"><strong>ATLAS</strong><span>UiS Researcher Atlas</span></a>
+        {% for p in site.data.projects %}
+        <a href="{{ p.url }}"{% if p.external %} target="_blank" rel="noopener"{% endif %}><strong>{{ p.acr }}</strong><span>{{ p.short | escape }}</span></a>
+        {% endfor %}
       </div>
       <div><a class="more" href="{{ site.baseurl }}/projects/">All projects →</a></div>
     </section>

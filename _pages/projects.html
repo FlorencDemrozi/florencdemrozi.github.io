@@ -9,63 +9,15 @@ description: "Research projects, datasets, lab and software tools led by Prof. F
 <p class="section-intro">A selection of the projects I lead in biomedical sensing systems at the University of Stavanger: sensing infrastructures, datasets, my research lab, and software tools for the research community. Each card opens the project's own page.</p>
 
 <div class="project-grid">
-
-  <a class="project-card" href="https://sensing4health.ux.uis.no/sosc.html" target="_blank" rel="noopener">
-    <div class="project-meta"><span class="project-tag">Research Project</span><span class="project-acr">SOSC</span></div>
-    <h3>Smart Objects for Smart Care</h3>
-    <p>A sensing infrastructure that instruments everyday objects with smart tags and combines them with smartwatch data, capturing how people interact with objects of daily living to infer activity labels without manual annotation. Deployed at Helse Campus Stavanger.</p>
-    <div class="project-foot">NFR Commercialization · Project 347595 · PI</div>
-    <span class="project-link">Visit project →</span>
+  {% for p in site.data.projects %}
+  <a class="project-card" href="{{ p.url }}"{% if p.external %} target="_blank" rel="noopener"{% endif %}>
+    <div class="project-meta"><span class="project-tag">{{ p.tag }}</span><span class="project-acr">{{ p.acr }}</span></div>
+    <h3>{{ p.title | escape }}</h3>
+    <p>{{ p.desc | escape }}</p>
+    <div class="project-foot">{{ p.foot | escape }}</div>
+    <span class="project-link">{{ p.cta }} →</span>
   </a>
-
-  <a class="project-card" href="https://florencdemrozi.github.io/flair/">
-    <div class="project-meta"><span class="project-tag">Dataset</span><span class="project-acr">FLAIR</span></div>
-    <h3>Free-Living Activities for Independent-living Recognition</h3>
-    <p>A wrist-worn inertial dataset of daily activities recorded in self-paced, unscripted, free-living conditions, built to support clinically grounded activity recognition for elderly home care that works in real homes, not just in the lab.</p>
-    <div class="project-foot">Human Activity Recognition · Ambient Assisted Living</div>
-    <span class="project-link">Visit project →</span>
-  </a>
-
-  <a class="project-card" href="https://zenodo.org/records/17838806" target="_blank" rel="noopener">
-    <div class="project-meta"><span class="project-tag">Dataset</span><span class="project-acr">FoG-STAR</span></div>
-    <h3>Freezing of Gait Severity, Tasks, Activities, and Ratings</h3>
-    <p>Wearable IMU recordings (ankles, back and wrist, 60 Hz) from 22 people with Parkinson's disease performing seven gait-challenging mobility tasks, with freezing-of-gait episodes and severity labelled by experts from video, plus demographic and clinical assessments.</p>
-    <div class="project-foot">Zenodo · DOI 10.5281/zenodo.17838806 · CC BY 4.0</div>
-    <span class="project-link">View dataset →</span>
-  </a>
-
-  <a class="project-card" href="https://zenodo.org/records/18346755" target="_blank" rel="noopener">
-    <div class="project-meta"><span class="project-tag">Dataset</span><span class="project-acr">UNIVRFall</span></div>
-    <h3>IMU-based Pre-impact, Impact and Post-impact Fall Detection</h3>
-    <p>Lower-back IMU recordings (100 Hz) of falls in daily life and construction work: 39 participants, 24 daily activities and 21 fall types, including elevation-related falls, for about 46 hours of data and 573 fall events.</p>
-    <div class="project-foot">Zenodo · DOI 10.5281/zenodo.18346755 · CC BY 4.0</div>
-    <span class="project-link">View dataset →</span>
-  </a>
-
-  <a class="project-card" href="https://florencdemrozi.github.io/mmai-lab/">
-    <div class="project-meta"><span class="project-tag">Research Lab</span><span class="project-acr">MMAI Lab</span></div>
-    <h3>Multimodal AI Lab</h3>
-    <p>Sensing. Understanding. Improving Lives. The lab combines motion and biomechanics, physiological and neural sensing, vision and contactless sensing with AI and edge computing for health and well-being.</p>
-    <div class="project-foot">Dept. of Electrical Engineering &amp; Computer Science (IDE), UiS</div>
-    <span class="project-link">Visit lab →</span>
-  </a>
-
-  <a class="project-card" href="https://florencdemrozi.github.io/pcc/">
-    <div class="project-meta"><span class="project-tag">Software Tool</span><span class="project-acr">PCC</span></div>
-    <h3>Program Chair Copilot</h3>
-    <p>A free desktop tool that automates the repetitive work of running a conference program: PDF compliance checks, conflict-of-interest detection, review analysis and program building. It runs locally, and AI features use your own chosen LLM provider.</p>
-    <div class="project-foot">Open tool for conference organizers</div>
-    <span class="project-link">Visit project →</span>
-  </a>
-
-  <a class="project-card" href="https://atlas.ux.uis.no/#/" target="_blank" rel="noopener">
-    <div class="project-meta"><span class="project-tag">Platform</span><span class="project-acr">ATLAS</span></div>
-    <h3>UiS Researcher Atlas</h3>
-    <p>An interactive atlas of researchers at the University of Stavanger, making it easier to explore expertise across the university and find potential collaborators.</p>
-    <div class="project-foot">University of Stavanger</div>
-    <span class="project-link">Open atlas →</span>
-  </a>
-
+  {% endfor %}
 </div>
 
 <div class="info-box mt-5">

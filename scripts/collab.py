@@ -19,6 +19,7 @@ import datetime
 import json
 import re
 import time
+import unicodedata
 import urllib.parse
 import urllib.request
 from collections import Counter, defaultdict
@@ -36,6 +37,8 @@ MAX_AUTHORS = 50
 # Co-author <-> co-author links are only drawn for papers up to this size,
 # otherwise one big paper turns the graph into a hairball.
 MAX_AUTHORS_FOR_LINKS = 20
+# OpenStreetMap's usage policy asks for a User-Agent that identifies the application.
+USER_AGENT = "florencdemrozi.github.io collaboration map (https://florencdemrozi.github.io)"
 
 
 def is_home(aff_name: str) -> bool:
@@ -60,7 +63,7 @@ def geocode(city: str, country: str, cache: dict):
     url = "https://nominatim.openstreetmap.org/search?" + urllib.parse.urlencode(
         {"q": q, "format": "json", "limit": 1})
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "personal-website-collaboration-map/1.0"})
+        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
         with urllib.request.urlopen(req, timeout=30) as r:
             res = json.load(r)
         val = [round(float(res[0]["lat"]), 4), round(float(res[0]["lon"]), 4)] if res else None
@@ -73,13 +76,33 @@ def geocode(city: str, country: str, cache: dict):
 
 
 # ── main builder ───────────────────────────────────────────────
+def name_key(name: str) -> str:
+    """'Graziano  Pravadelli' / 'GRAZIANO PRAVADELLI' -> 'graziano pravadelli' (accents removed)."""
+    n = unicodedata.normalize("NFKD", name or "").encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z]+", " ", n.lower()).strip()
+
+
 def build_collaborations(papers: list, self_ids: set, source: str, profile: dict) -> dict:
     papers = [p for p in papers if 1 < len(p["authors"]) <= MAX_AUTHORS]
-    for p in papers:  # authors without a source id get a name-based id
+    # One person can appear under several ids (a missing OpenAlex id, or OpenAlex
+    # splitting one person into two profiles). Merge co-authors by normalised name;
+    # the id seen on most papers wins.
+    id_count = Counter(a["id"] for p in papers for a in p["authors"] if a.get("id"))
+    canon = {}
+    for aid, _ in id_count.most_common():
+        name = next(a.get("name", "") for p in papers for a in p["authors"] if a.get("id") == aid)
+        canon.setdefault(name_key(name), aid)
+    for p in papers:
+        seen = set()
         for a in p["authors"]:
-            if not a.get("id"):
-                a["id"] = "name:" + re.sub(r"\s+", " ", a.get("name", "")).strip().lower()
+            if a.get("id") in self_ids:
+                continue
+            key = name_key(a.get("name", ""))
+            a["id"] = canon.get(key) or a.get("id") or "name:" + key
+        # the same person listed twice on one paper counts once
+        p["authors"] = [a for a in p["authors"] if not (a["id"] in seen or seen.add(a["id"]))]
     cache = _load_cache()
+    cache_before = dict(cache)
 
     coauthor_papers = Counter()
     coauthor_name = {}
@@ -135,7 +158,7 @@ def build_collaborations(papers: list, self_ids: set, source: str, profile: dict
             ll = geocode(aff.get("city", ""), aff.get("country", ""), cache)
             if ll:
                 lat, lon = ll
-        people = sorted(inst_people[aid], key=lambda c: -coauthor_papers[c])
+        people = sorted(inst_people[aid], key=lambda c: (-coauthor_papers[c], names[c]))  # stable order
         institutions.append({
             "name": aff.get("name", ""),
             "city": aff.get("city", ""),
@@ -152,7 +175,8 @@ def build_collaborations(papers: list, self_ids: set, source: str, profile: dict
 
     links = [{"source": a, "target": b, "weight": w} for (a, b), w in pair_weight.items()]
 
-    GEO_CACHE.write_text(json.dumps(cache, indent=1, ensure_ascii=False, sort_keys=True), encoding="utf-8")
+    if cache != cache_before:
+        GEO_CACHE.write_text(json.dumps(cache, indent=1, ensure_ascii=False, sort_keys=True), encoding="utf-8")
     return {
         "updated": datetime.date.today().isoformat(),
         "source": source,
@@ -166,9 +190,15 @@ def build_collaborations(papers: list, self_ids: set, source: str, profile: dict
 
 
 def write_collaborations(data: dict):
+    summary = (f"{len(data['coauthors'])} co-authors, {len(data['institutions'])} institutions, "
+               f"{len(data['countries'])} countries")
+    if COLLAB_FILE.exists():  # keep the old date (and file) when nothing else changed
+        old = json.loads(COLLAB_FILE.read_text(encoding="utf-8"))
+        if {**old, "updated": None} == {**data, "updated": None}:
+            print(f"Collaborations unchanged ({summary}).")
+            return
     COLLAB_FILE.write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
-    print(f"Updated {COLLAB_FILE}: {len(data['coauthors'])} co-authors, "
-          f"{len(data['institutions'])} institutions, {len(data['countries'])} countries")
+    print(f"Updated {COLLAB_FILE}: {summary}")
 
 
 def h_index(citations: list) -> int:

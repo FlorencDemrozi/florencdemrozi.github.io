@@ -82,7 +82,6 @@ h1, h2, h3 { text-wrap: balance; }
   color: var(--ink); white-space: nowrap; flex-shrink: 0;
 }
 .nav-logo:hover { text-decoration: none; }
-.nav-dot { display: none; }
 .nav-right { display: flex; align-items: center; gap: 1.4rem; }
 .nav-links { display: flex; flex-wrap: nowrap; gap: 1.3rem; list-style: none; }
 .nav-links li a {
@@ -192,25 +191,11 @@ h1, h2, h3 { text-wrap: balance; }
 h2.section-title { font-family: var(--serif); font-weight: 400; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.25; margin-bottom: 0.6rem; }
 .section-intro { color: var(--muted); font-size: 1.05rem; max-width: 42em; margin-bottom: 2.4rem; }
 
-/* ── ABOUT (legacy) ──────────────────────────────────────── */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-.about-text p { color: var(--muted); margin-bottom: 1rem; }
-.about-text strong { color: var(--ink); }
+/* ── SMALL HEADINGS (Activities) ─────────────────────────── */
 .ri-title {
   font: 600 0.75rem/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--muted); margin-bottom: 0.9rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--rule);
 }
-.ri-list { list-style: none; }
-.ri-list li { padding: 0.6rem 0; border-bottom: 1px solid var(--rule); font-size: 0.92rem; color: var(--muted); }
-.ri-list li:last-child { border-bottom: none; }
-
-/* ── TIMELINE (legacy) ───────────────────────────────────── */
-.timeline { display: grid; margin-top: 1.5rem; }
-.tl-item { padding: 1rem 0; border-bottom: 1px solid var(--rule); }
-.tl-item:last-child { border-bottom: none; }
-.tl-date { font: 500 0.82rem/1.4 var(--mono); color: var(--muted); margin-bottom: 0.3rem; }
-.tl-item h4 { font-weight: 500; font-size: 1rem; margin-bottom: 0.2rem; }
-.tl-item p { font-size: 0.9rem; color: var(--muted); }
 
 /* ── POSITIONS / EDUCATION ───────────────────────────────── */
 .pos-item, .edu-item {
@@ -365,7 +350,6 @@ h2.section-title { font-family: var(--serif); font-weight: 400; font-size: clamp
 .collab-source { margin-top: 1.25rem; font-size: 0.8rem; color: var(--muted); }
 
 /* ── ACTIVITIES ──────────────────────────────────────────── */
-.act-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 .students-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 0.5rem; }
 .students-table th { font: 600 0.72rem/1 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 0.6rem 0; border-bottom: 1px solid var(--ink); }
 .students-table td { padding: 0.55rem 0.5rem 0.55rem 0; border-bottom: 1px solid var(--rule); color: var(--muted); vertical-align: top; }
@@ -398,7 +382,6 @@ h2.section-title { font-family: var(--serif); font-weight: 400; font-size: clamp
 .social-card:hover { border-color: var(--accent); text-decoration: none; }
 .social-card svg { width: 18px; height: 18px; fill: var(--accent); flex-shrink: 0; }
 .social-card .sname { font-weight: 500; font-size: 0.92rem; color: var(--ink); }
-.social-card .sdesc { font-size: 0.8rem; color: var(--muted); }
 
 /* ── BUTTONS ─────────────────────────────────────────────── */
 .btn {
@@ -430,9 +413,7 @@ footer { border-top: 1px solid var(--rule); padding: 1.6rem var(--pad) 2.4rem; }
 
 /* ── UTILITY ─────────────────────────────────────────────── */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; }
-.two-col > *, .act-grid > * { min-width: 0; }
-.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
-.mt-2 { margin-top: 1rem; }
+.two-col > * { min-width: 0; }
 .mt-3 { margin-top: 1.5rem; }
 .mt-4 { margin-top: 2rem; }
 .mt-5 { margin-top: 2.5rem; }
@@ -451,8 +432,7 @@ footer { border-top: 1px solid var(--rule); padding: 1.6rem var(--pad) 2.4rem; }
   .profile { position: static; grid-template-columns: 140px minmax(0, 1fr); column-gap: 1.4rem; align-items: start; }
   .profile-photo { grid-row: span 4; }
   .profile-links { grid-column: 1 / -1; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
-  .about-grid, .two-col, .contact-grid, .act-grid, .project-grid, .collab-lists { grid-template-columns: 1fr; }
-  .three-col { grid-template-columns: 1fr 1fr; }
+  .two-col, .contact-grid, .project-grid, .collab-lists { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
   .upcoming, .project-links { grid-template-columns: 1fr; }
@@ -461,7 +441,7 @@ footer { border-top: 1px solid var(--rule); padding: 1.6rem var(--pad) 2.4rem; }
   .stats div:nth-child(n+4) { border-top: 1px solid var(--rule); }
   .pub-item, .dated li { grid-template-columns: 1fr; gap: 0.2rem; }
   .pos-item, .edu-item, .award-item { grid-template-columns: 1fr; gap: 0.2rem; }
-  .social-grid, .three-col { grid-template-columns: 1fr; }
+  .social-grid { grid-template-columns: 1fr; }
   .collab-bars li { grid-template-columns: 6rem 1fr 2rem; }
 }
 @media (max-width: 460px) {

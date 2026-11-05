@@ -8,16 +8,19 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
+  actions: write   # to start the deploy workflow after a data update
+
+concurrency:
+  group: update-publications
+  cancel-in-progress: false
 
 jobs:
   update-publications:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -25,19 +28,23 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: |
-          pip install pyyaml
+        run: pip install "pyyaml==6.0.2"
 
+      # The script exits with an error (and writes nothing) if OpenAlex is unreachable
+      # or returns no works, so a failed run never commits partial data.
       - name: Fetch publications and collaborations from OpenAlex
         run: python scripts/fetch_publications.py --collaborations
 
       - name: Check for changes
         id: diff
         run: |
-          if git diff --quiet _data/publications.yml _data/collaborations.json scripts/geo_cache.json; then
-            echo "changed=false" >> $GITHUB_OUTPUT
+          git status --short _data scripts/geo_cache.json
+          if git diff --quiet -- _data/publications.yml _data/collaborations.json scripts/geo_cache.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No changes to commit." >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git diff --stat -- _data scripts/geo_cache.json >> "$GITHUB_STEP_SUMMARY"
           fi
 
       - name: Commit and push if changed
@@ -47,4 +54,15 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add _data/publications.yml _data/collaborations.json scripts/geo_cache.json
           git commit -m "chore: auto-update publications and collaborations from OpenAlex [$(date +'%Y-%m-%d')]"
-          git push
+          # retry in case someone pushed to main while the job was running
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            echo "Push failed (attempt $i), retrying..."; sleep 10
+          done
+          exit 1
+
+      - name: Redeploy the site
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main

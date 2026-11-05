@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.data.cv.personal.name }}</title>
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   <meta name="google-site-verification" content="cXQCZEbopcCMYSECtkDV0vBvA2YTMi6TkTZLyKQWLQo" />
   <link rel="icon" href="{{ site.baseurl }}/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/img/favicon-32.png">
@@ -18,7 +16,7 @@
     try { var t = localStorage.getItem("fd-theme"); if (t && t !== "auto") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
   </script>
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css?v={{ site.time | date: '%s' }}">
-  {% seo %}
+  {% seo %}{% comment %} title, description, canonical and social-share tags {% endcomment %}
 </head>
 <body>
 

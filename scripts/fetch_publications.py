@@ -26,6 +26,7 @@ GitHub Actions runs this weekly (see .github/workflows/update_publications.yml).
 ─────────────────────────────────────────────────────────────────
 """
 
+import copy
 import datetime
 import difflib
 import json
@@ -46,6 +47,7 @@ PUBS_FILE  = REPO_ROOT / "_data" / "publications.yml"
 API        = "https://api.openalex.org/works"
 # C/J/B/P/T (and old E) ids = hand-curated: never overwritten here
 CURATED_PREFIXES = ("C", "J", "B", "P", "T", "E")
+USER_AGENT = "florencdemrozi.github.io publication updater (https://florencdemrozi.github.io)"
 SELECT = "id,doi,title,publication_year,type,primary_location,authorships,cited_by_count"
 
 
@@ -58,10 +60,15 @@ def norm_title(title: str) -> str:
 JUNK_TITLES = re.compile(r"protected by copyright|all rights reserved", re.I)
 
 
-def find_fuzzy(title: str, fetched: list, cutoff: float = 0.86):
+def find_fuzzy(title: str, fetched: list, year=None, cutoff: float = 0.86):
+    """Closest title above `cutoff`. When the year is known, only papers from the
+    same or a neighbouring year count, so a conference paper and its later
+    journal extension (similar titles) are not merged into one entry."""
     key = norm_title(title)
     best, best_r = None, cutoff
     for f in fetched:
+        if year and f.get("year") and abs(int(year) - int(f["year"])) > 1:
+            continue
         r = difflib.SequenceMatcher(None, key, norm_title(f["title"])).ratio()
         if r >= best_r:
             best, best_r = f, r
@@ -72,15 +79,23 @@ def norm_doi(doi: str) -> str:
     return re.sub(r"^https?://(dx\.)?doi\.org/", "", (doi or "").strip(), flags=re.I).lower()
 
 
+# surname particles: "Silvia Del Din" -> "Del Din S.", "Jan van der Berg" -> "van der Berg J."
+PARTICLES = {"da", "dal", "dalla", "de", "dei", "del", "della", "der", "di", "do", "dos", "du",
+             "la", "le", "van", "von", "ter", "ten", "zu"}
+
+
 def short_name(display_name: str) -> str:
     """'Ruggero Angelo Bacchin' -> 'Bacchin R.A.'; Demrozi -> 'Demrozi F.'"""
     parts = (display_name or "").replace(".", ". ").split()
     if not parts:
         return ""
-    last = parts[-1]
-    if last.isupper() and len(last) > 2:
-        last = last.title()
-    initials = "".join(p[0].upper() + "." for p in parts[:-1] if p[0].isalpha())
+    if len(parts) > 1 and parts[-1].isupper() and len(parts[-1]) > 2:
+        parts[-1] = parts[-1].title()
+    cut = len(parts) - 1          # surname starts at the last word, plus any particles before it
+    while cut > 1 and parts[cut - 1].lower() in PARTICLES:
+        cut -= 1
+    last = " ".join(parts[cut:])
+    initials = "".join(p[0].upper() + "." for p in parts[:cut] if p[0].isalpha())
     name = f"{last} {initials}".strip()
     return "Demrozi F." if last.lower() == "demrozi" else name
 
@@ -106,13 +121,13 @@ def map_type(work: dict) -> str:
 def http_json(url: str) -> dict:
     for attempt in range(3):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": "personal-website-publication-updater"})
+            req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
             with urllib.request.urlopen(req, timeout=60) as r:
                 return json.load(r)
         except Exception as e:  # noqa: BLE001
             print(f"  attempt {attempt + 1} failed: {e}")
             time.sleep(5 * (attempt + 1))
-    print("ERROR: could not reach OpenAlex")
+    print(f"ERROR: could not reach OpenAlex ({url.split('?')[0]}). Nothing was changed.")
     sys.exit(1)
 
 
@@ -132,10 +147,13 @@ def fetch_openalex() -> list:
 
 def to_entry(work: dict) -> dict:
     src = ((work.get("primary_location") or {}).get("source") or {})
-    venue = (src.get("display_name") or "").replace(" s ", "'s ")
+    # OpenAlex drops apostrophes: "Parkinson s Disease" -> "Parkinson's Disease"
+    venue = re.sub(r"(?<=[A-Za-z]) s (?=[A-Z])", "'s ", src.get("display_name") or "")
     authors = ", ".join(short_name((a.get("author") or {}).get("display_name", ""))
                         for a in work.get("authorships", []))
-    year = work.get("publication_year") or 2000
+    year = work.get("publication_year")
+    if not year:
+        return None
     entry = {
         "id": "W" + work["id"].rsplit("/W", 1)[-1],
         "type": map_type(work),
@@ -169,7 +187,7 @@ def merge(existing: list, fetched: list) -> list:
         doi = norm_doi(e.get("doi"))
         oa = by_doi.get(doi) if doi else None
         oa = oa or by_title.get(norm_title(e.get("title", "")))
-        oa = oa or find_fuzzy(e.get("title", ""), [f for f in fetched if id(f) not in used])
+        oa = oa or find_fuzzy(e.get("title", ""), [f for f in fetched if id(f) not in used], e.get("year"))
         if oa:
             used.add(id(oa))
             if is_curated(e):
@@ -185,7 +203,7 @@ def merge(existing: list, fetched: list) -> list:
         out.append(e)
 
     for oa in fetched:
-        if id(oa) in used or not oa["title"]:
+        if id(oa) in used or not oa["title"] or JUNK_TITLES.search(oa["title"]):
             continue
         keys = {norm_title(oa["title"])} | ({oa["doi"]} if oa.get("doi") else set())
         if keys & seen:
@@ -226,7 +244,11 @@ def build_openalex_collaborations(works: list):
     cites = [p["citations"] for p in papers]
     profile = {"documents": len(papers), "citations": sum(cites), "h_index": h_index(cites),
                "first_year": min((p["year"] for p in papers if p["year"]), default=None)}
-    write_collaborations(build_collaborations(papers, self_ids, "OpenAlex", profile))
+    data = build_collaborations(papers, self_ids, "OpenAlex", profile)
+    if not data["coauthors"]:
+        print("ERROR: no co-authors found; keeping the existing collaborations.json.")
+        sys.exit(1)
+    write_collaborations(data)
 
 
 def main():
@@ -237,20 +259,31 @@ def main():
     print(f"Existing entries: {len(existing)}")
 
     works = fetch_openalex()
-    fetched = [to_entry(w) for w in works]
+    if not works:
+        # An empty answer means an OpenAlex problem, not that all papers vanished.
+        print("ERROR: OpenAlex returned no works for this ORCID. Nothing was changed.")
+        sys.exit(1)
+    fetched = [e for e in (to_entry(w) for w in works) if e]
+    skipped = len(works) - len(fetched)
+    if skipped:
+        print(f"  Skipped {skipped} work(s) without a publication year")
+    before = copy.deepcopy(existing)   # merge() edits curated entries in place
     merged = merge(existing, fetched)
-    print(f"Merged total:     {len(merged)}")
+    print(f"Merged total:     {len(merged)} ({len(merged) - len(existing):+d})")
 
-    output = {
-        "last_updated": datetime.date.today().isoformat(),
-        "scholar_url": f"https://scholar.google.com/citations?user={SCHOLAR_ID}&hl=en",
-        "items": merged,
-    }
-    PUBS_FILE.write_text(
-        yaml.dump(output, allow_unicode=True, default_flow_style=False, sort_keys=False, width=120),
-        encoding="utf-8",
-    )
-    print(f"Updated {PUBS_FILE}")
+    if merged == before:
+        print("Publications unchanged.")
+    else:
+        output = {
+            "last_updated": datetime.date.today().isoformat(),
+            "scholar_url": f"https://scholar.google.com/citations?user={SCHOLAR_ID}&hl=en",
+            "items": merged,
+        }
+        PUBS_FILE.write_text(
+            yaml.dump(output, allow_unicode=True, default_flow_style=False, sort_keys=False, width=120),
+            encoding="utf-8",
+        )
+        print(f"Updated {PUBS_FILE}")
 
     if "--collaborations" in sys.argv:
         build_openalex_collaborations(works)

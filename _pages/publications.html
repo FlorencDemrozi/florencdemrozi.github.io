@@ -58,9 +58,9 @@ permalink: /publications/
           {% endcase %}
         </span>
       </div>
-      <h4>{{ pub.title }}</h4>
-      <div class="pub-authors">{{ pub.authors | replace: "Demrozi F.", "<strong>Demrozi F.</strong>" }}</div>
-      <div class="pub-venue">{{ pub.venue }}</div>
+      <h4>{{ pub.title | escape }}</h4>
+      <div class="pub-authors">{{ pub.authors | escape | replace: "Demrozi F.", "<strong>Demrozi F.</strong>" }}</div>
+      <div class="pub-venue">{{ pub.venue | escape }}</div>
       {% if pub.doi %}
       <a class="pub-doi" href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener">↗ DOI: {{ pub.doi }}</a>
       {% elsif pub.url %}

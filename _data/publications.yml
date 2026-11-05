@@ -48,7 +48,7 @@ items:
   year: 2026
   year_str: '2026'
   title: 'Editorial: Technological Advances for Gait and Balance Assessment'
-  authors: Zampogna A., Demrozi F., Din S.D.
+  authors: Zampogna A., Demrozi F., Del Din S.
   venue: Bioengineering
   doi: 10.3390/bioengineering13060651
 - id: W7166672411
@@ -156,7 +156,7 @@ items:
   title: Proceedings of NORA’s annual conference 2025
   authors: Halnes G., Javaid A., Solvang M., Nichele S., Riegler M., Singstad B., Beferull‐Lozano B., Ruiz-Moreno E., López-Ramos
     L.M., Khalife M.A., Ramstad O.H., Issa H., Surko A., Sandvig A., Oğul H., Fantin D.S.M., Sandvig I., Vibe C.M.S., Visoka
-    K., HoushmandSarkhoosh M., Leyos A.D., Umu S.U., Johannsen K., Indrehus K., McMillan M., Kropiunig J., Marinelli R.A.,
+    K., HoushmandSarkhoosh M., De Leyos A., Umu S.U., Johannsen K., Indrehus K., McMillan M., Kropiunig J., Marinelli R.A.,
     Machot F.A., Tai X., Gasparini A.A., Parkes D., Sari S.O., Fonnes G., Midoglu C., Tkachenko A., Bashir M.A., Lyng K.,
     Demrozi F., Briggs K., You J., Riemer–Sørensen S., Adolphi B., Horsch M., Subramaniam A., Hallac I.R., Plataniti L., Liu
     H., Lepperød M.E., Choi C., Castberg P., Qassi A., Chan R.H., Stein A., Preisig H.A., Stasik A.J., Sabet S.S., Handegard
@@ -266,7 +266,7 @@ items:
   year: 2024
   year_str: '2024'
   title: Welcome Message from the Chairs
-  authors: Singh A.K., Barnaghi P.M., Merrett G.V., Kanjo E., Shafik R., Castro A.G.D., Demrozi F., Zonzini F., Anwar A.,
+  authors: Singh A.K., Barnaghi P.M., Merrett G.V., Kanjo E., Shafik R., de Castro A.G., Demrozi F., Zonzini F., Anwar A.,
     Rajendran B., Simeone O.
   venue: IEEE International Conference on Omni-layer Intelligent Systems (COINS)
   doi: 10.1109/coins61597.2024.10622452
@@ -365,10 +365,10 @@ items:
   type: conference
   year: 2023
   year_str: '2023'
-  title: 'A LOW-COST WIRELESS BODY AREA NETWORK FOR CHEMOTHERAPY-INDUCED PERIPHERAL NEUROTOXICITY: DESIGN AND PRELIMINARY
-    DATA'
-  authors: Stefano Tamburin and Demrozi F. and Elisa Mantovani and Cristian Turetta and Graziano Pravadelli
-  venue: ''
+  title: 'A low-cost wireless body area network for chemotherapy-induced peripheral neurotoxicity: design and preliminary
+    data'
+  authors: Tamburin S., Demrozi F., Mantovani E., Turetta C., Pravadelli G.
+  venue: Conference abstract
 - id: C17
   type: conference
   year: 2022
@@ -416,11 +416,10 @@ items:
   type: conference
   year: 2022
   year_str: '2022'
-  title: 'INFORMATION AND COMMUNICATION TECHNOLOGY DEVICES AND APPLICATIONS FOR CHEMOTHERAPY-INDUCED PERIPHERAL NEUROTOXICITY:
-    A SYSTEMATIC REVIEW'
-  authors: Stefano Tamburin and Elisa Mantovani and Demrozi F. and Daniel Hertz and Cristian Turetta and Omar Ferro and Graziano
-    Pravadelli and Andreas Argyriou
-  venue: ''
+  title: 'Information and communication technology devices and applications for chemotherapy-induced peripheral neurotoxicity:
+    a systematic review'
+  authors: Tamburin S., Mantovani E., Demrozi F., Hertz D., Turetta C., Ferro O., Pravadelli G., Argyriou A.
+  venue: Conference abstract
 - id: W4226059247
   type: preprint
   year: 2022

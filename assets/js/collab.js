@@ -6,6 +6,8 @@
   const SELF = 'Florenc Demrozi';
   const HOME = { name: 'University of Stavanger', lat: 58.938, lon: 5.694 };
   const WORLD_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json';
+  const WORLD_SRI = 'sha384-yOCJ+8ShBm8UDqtAVtAvxTDDf4gXo5edxl/YG0FmVC5OTmqVLl7utuVGBDEeZWHf';
+  const HINT = 'Drag to move · pinch, or click then scroll, to zoom';
 
   // OpenAlex country names -> world-atlas names
   const ALIAS = {
@@ -38,6 +40,23 @@
   };
   const hideTip = () => { tip.style.opacity = 0; };
 
+  // Phones and tablets have no hover: a tap on a country, institution or person
+  // shows the same details as hovering with a mouse; a tap elsewhere hides them.
+  document.addEventListener('pointerup', e => {
+    if (e.pointerType === 'mouse') return;
+    const t = e.target.closest && e.target.closest('.collab-country.is-partner, .collab-inst, .collab-home, .net-node');
+    if (!t) return hideTip();
+    t.dispatchEvent(new MouseEvent('mousemove', { clientX: e.clientX, clientY: e.clientY, bubbles: true }));
+  });
+
+  // Mouse wheel zooms only after the map was clicked, so scrolling the page
+  // does not get stuck on it. Touchpad pinch (wheel + ctrlKey) always zooms.
+  const zoomFilter = sel => {
+    let active = false;
+    sel.on('pointerdown.gate', () => { active = true; }).on('mouseleave.gate', () => { active = false; });
+    return ev => ev.type === 'wheel' ? (ev.ctrlKey || active) : (!ev.ctrlKey && !ev.button);
+  };
+
   const byCountry = {};
   DATA.coauthors.forEach(c => { if (c.country) (byCountry[c.country] = byCountry[c.country] || []).push(c.name); });
   const countryInfo = {};
@@ -46,7 +65,7 @@
   // ── MAP ──────────────────────────────────────────────────────
   document.querySelectorAll('.collab-map').forEach(el => {
     const compact = el.dataset.compact === 'true';
-    fetch(WORLD_URL).then(r => r.json()).then(world => {
+    fetch(WORLD_URL, { integrity: WORLD_SRI }).then(r => r.json()).then(world => {
       const countries = topojson.feature(world, world.objects.countries).features
         .filter(f => f.properties.name !== 'Antarctica');
       // frame on the band of the world that holds the partners (lon/lat box from the data)
@@ -111,16 +130,16 @@
         .on('mouseleave', hideTip);
 
       {
-        const zoom = d3.zoom().scaleExtent([1, 8]).translateExtent([[0, 0], [W, H]])
+        const zoom = d3.zoom().filter(zoomFilter(svg)).scaleExtent([1, 8]).translateExtent([[0, 0], [W, H]])
           .on('zoom', ev => {
             const k = ev.transform.k, f = Math.pow(k, 0.75);
             g.attr('transform', ev.transform);
             g.selectAll('circle.collab-inst').attr('r', d => r(d.papers) / f).attr('stroke-width', 1 / k);
             g.selectAll('circle.collab-home').attr('r', (compact ? 4 : 6) / f).attr('stroke-width', 2 / k);
           });
-        // drag to pan, mouse wheel / two-finger pinch on a touchpad / pinch on a phone to zoom
+        // drag to pan; pinch (touchpad or phone), or click then mouse wheel, to zoom
         svg.call(zoom).on('dblclick.zoom', null);
-        d3.select(el).append('div').attr('class', 'collab-hint').text('Drag to move · scroll or pinch to zoom');
+        d3.select(el).append('div').attr('class', 'collab-hint').text(HINT);
         const ctr = d3.select(el).append('div').attr('class', 'collab-zoom');
         ctr.append('button').attr('type', 'button').attr('aria-label', 'Zoom in').text('+').on('click', () => svg.transition().call(zoom.scaleBy, 1.6));
         ctr.append('button').attr('type', 'button').attr('aria-label', 'Zoom out').text('−').on('click', () => svg.transition().call(zoom.scaleBy, 1 / 1.6));
@@ -208,10 +227,10 @@
       .on('drag', (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
       .on('end', (ev, d) => { if (!ev.active) sim.alphaTarget(0); if (!d.self) { d.fx = null; d.fy = null; } }));
 
-    const zoom = d3.zoom().scaleExtent([0.5, 5]).on('zoom', ev => g.attr('transform', ev.transform));
-    // drag the background to pan, mouse wheel / touchpad pinch to zoom
+    const zoom = d3.zoom().filter(zoomFilter(svg)).scaleExtent([0.5, 5]).on('zoom', ev => g.attr('transform', ev.transform));
+    // drag the background to pan; pinch, or click then mouse wheel, to zoom
     svg.call(zoom).on('dblclick.zoom', null);
-    d3.select(netEl).append('div').attr('class', 'collab-hint').text('Drag to move · scroll or pinch to zoom');
+    d3.select(netEl).append('div').attr('class', 'collab-hint').text(HINT);
     const ctr = d3.select(netEl).append('div').attr('class', 'collab-zoom');
     ctr.append('button').attr('type', 'button').attr('aria-label', 'Zoom in').text('+').on('click', () => svg.transition().call(zoom.scaleBy, 1.4));
     ctr.append('button').attr('type', 'button').attr('aria-label', 'Zoom out').text('−').on('click', () => svg.transition().call(zoom.scaleBy, 1 / 1.4));

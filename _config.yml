@@ -1,7 +1,7 @@
 title: "Florenc Demrozi"
 description: "Full Professor in Biomedical Sensing Systems — University of Stavanger, Norway"
 baseurl: ""
-url: ""  # set to your GitHub Pages URL, e.g. "https://florencdemrozi.github.io"
+url: "https://florencdemrozi.github.io"
 
 author:
   name: "Florenc Demrozi"
@@ -14,7 +14,6 @@ permalink: pretty
 
 # Plugins
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
 
 # Exclude from build

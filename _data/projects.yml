@@ -1,0 +1,73 @@
+# Projects, datasets, lab and tools.
+# Shown as cards on /projects/ and as a short list on the Home page.
+#   acr:      short name          tag:   card label
+#   short:    one line for Home    desc:  card text (Projects page)
+#   foot:     small card footer    cta:   link text on the card
+#   external: true = opens in a new tab
+
+- acr: "SOSC"
+  tag: "Research Project"
+  title: "Smart Objects for Smart Care"
+  url: "https://sensing4health.ux.uis.no/sosc.html"
+  external: true
+  short: "Smart Objects for Smart Care · NFR, PI"
+  desc: "A sensing infrastructure that instruments everyday objects with smart tags and combines them with smartwatch data, capturing how people interact with objects of daily living to infer activity labels without manual annotation. Deployed at Helse Campus Stavanger."
+  foot: "NFR Commercialization · Project 347595 · PI"
+  cta: "Visit project"
+
+- acr: "FLAIR"
+  tag: "Dataset"
+  title: "Free-Living Activities for Independent-living Recognition"
+  url: "https://florencdemrozi.github.io/flair/"
+  short: "Free-living activity dataset, wrist IMU"
+  desc: "A wrist-worn inertial dataset of daily activities recorded in self-paced, unscripted, free-living conditions, built to support clinically grounded activity recognition for elderly home care that works in real homes, not just in the lab."
+  foot: "Human Activity Recognition · Ambient Assisted Living"
+  cta: "Visit project"
+
+- acr: "FoG-STAR"
+  tag: "Dataset"
+  title: "Freezing of Gait Severity, Tasks, Activities, and Ratings"
+  url: "https://zenodo.org/records/17838806"
+  external: true
+  short: "Freezing of gait dataset, 22 PD patients"
+  desc: "Wearable IMU recordings (ankles, back and wrist, 60 Hz) from 22 people with Parkinson's disease performing seven gait-challenging mobility tasks, with freezing-of-gait episodes and severity labelled by experts from video, plus demographic and clinical assessments."
+  foot: "Zenodo · DOI 10.5281/zenodo.17838806 · CC BY 4.0"
+  cta: "View dataset"
+
+- acr: "UNIVRFall"
+  tag: "Dataset"
+  title: "IMU-based Pre-impact, Impact and Post-impact Fall Detection"
+  url: "https://zenodo.org/records/18346755"
+  external: true
+  short: "IMU fall detection dataset, 39 participants"
+  desc: "Lower-back IMU recordings (100 Hz) of falls in daily life and construction work: 39 participants, 24 daily activities and 21 fall types, including elevation-related falls, for about 46 hours of data and 573 fall events."
+  foot: "Zenodo · DOI 10.5281/zenodo.18346755 · CC BY 4.0"
+  cta: "View dataset"
+
+- acr: "MMAI Lab"
+  tag: "Research Lab"
+  title: "Multimodal AI Lab"
+  url: "https://florencdemrozi.github.io/mmai-lab/"
+  short: "Multimodal AI Lab"
+  desc: "Sensing. Understanding. Improving Lives. The lab combines motion and biomechanics, physiological and neural sensing, vision and contactless sensing with AI and edge computing for health and well-being."
+  foot: "Dept. of Electrical Engineering & Computer Science (IDE), UiS"
+  cta: "Visit lab"
+
+- acr: "PCC"
+  tag: "Software Tool"
+  title: "Program Chair Copilot"
+  url: "https://florencdemrozi.github.io/pcc/"
+  short: "Program Chair Copilot, conference management tool"
+  desc: "A free desktop tool that automates the repetitive work of running a conference program: PDF compliance checks, conflict-of-interest detection, review analysis and program building. It runs locally, and AI features use your own chosen LLM provider."
+  foot: "Open tool for conference organizers"
+  cta: "Visit project"
+
+- acr: "ATLAS"
+  tag: "Platform"
+  title: "UiS Researcher Atlas"
+  url: "https://atlas.ux.uis.no/#/"
+  external: true
+  short: "UiS Researcher Atlas"
+  desc: "An interactive atlas of researchers at the University of Stavanger, making it easier to explore expertise across the university and find potential collaborators."
+  foot: "University of Stavanger"
+  cta: "Open atlas"

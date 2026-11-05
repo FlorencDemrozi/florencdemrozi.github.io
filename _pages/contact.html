@@ -37,17 +37,6 @@ permalink: /contact/
       Please include your CV, transcript, and a brief description of your research interests when writing.
     </div>
 
-    <!-- REFEREES -->
-    <div class="section-label mt-5">Referees</div>
-    {% for ref in cv.referees %}
-    <div class="pos-item" style="padding:0.9rem 0">
-      <div class="pos-year" style="min-width:100px;font-size:0.62rem">{{ ref.title | split: " " | first }}</div>
-      <div>
-        <div class="pos-role" style="font-size:0.92rem">{{ ref.name }}</div>
-        <div class="pos-inst">{{ ref.title }}<br>{{ ref.institution }}<br><a href="mailto:{{ ref.email }}">{{ ref.email }}</a></div>
-      </div>
-    </div>
-    {% endfor %}
   </div>
 
   <div>
