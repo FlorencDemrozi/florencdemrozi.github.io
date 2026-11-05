@@ -3,6 +3,12 @@ name: Build and Deploy Jekyll Site
 on:
   push:
     branches: ["main"]
+  workflow_run:
+    # Commits made by the publication updater (GITHUB_TOKEN) do not trigger
+    # "push", so redeploy after that workflow finishes.
+    workflows: ["Update Publications from OpenAlex"]
+    types: [completed]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:

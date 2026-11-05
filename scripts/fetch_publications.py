@@ -2,215 +2,216 @@
 """
 fetch_publications.py
 ─────────────────────────────────────────────────────────────────
-Fetches publication data from Google Scholar and updates
-_data/publications.yml in the Jekyll repository.
+Updates _data/publications.yml from OpenAlex (https://openalex.org),
+using the author's ORCID. OpenAlex is a free, open scholarly index
+that allows automated access (Google Scholar blocks CI servers).
 
 Usage:
   python scripts/fetch_publications.py
 
 Dependencies:
-  pip install scholarly pyyaml
+  pip install pyyaml
 
-The script:
-1. Fetches all publications from the configured Google Scholar profile
-2. Merges with existing hand-curated entries in _data/publications.yml
-   (hand-curated entries with matching title are updated, not replaced)
-3. Writes the updated YAML back to _data/publications.yml
-4. Preserves hand-added fields (doi, url, award, id) for matched entries
+Merge rules:
+  - Hand-curated entries (ids starting with C, J, B, P, T) are kept as
+    written; only a missing DOI is filled in.
+  - Auto-generated entries (old Scholar "S..." ids and OpenAlex "W..." ids)
+    are refreshed from OpenAlex (type, venue, year, authors, DOI).
+  - Entries not found in OpenAlex are kept.
+  - Duplicates (same DOI or same normalised title) are removed,
+    preferring the hand-curated entry.
 
 GitHub Actions runs this weekly (see .github/workflows/update_publications.yml).
 ─────────────────────────────────────────────────────────────────
 """
 
-import sys
-import os
-import yaml
-import re
 import datetime
+import difflib
+import json
+import re
+import sys
+import time
+import unicodedata
+import urllib.request
 from pathlib import Path
 
+import yaml
+
 # ── CONFIG ────────────────────────────────────────────────────
+ORCID      = "0000-0002-5422-9826"
 SCHOLAR_ID = "gF5XNDIAAAAJ"
 REPO_ROOT  = Path(__file__).parent.parent
 PUBS_FILE  = REPO_ROOT / "_data" / "publications.yml"
-
-# Mapping of Google Scholar "cites_id" venue patterns → type
-TYPE_PATTERNS = {
-    "journal": [
-        r"IEEE Access", r"IEEE Transactions", r"IEEE Journal", r"IEEE Sensors",
-        r"Scientific Data", r"Journal of Parkinson", r"Electronics",
-        r"SN Computer Science", r"Computers and Electrical",
-        r"Current Opinion", r"Peripheral Nervous System",
-    ],
-    "conference": [
-        r"Conference", r"Workshop", r"Symposium", r"DATE", r"COINS",
-        r"EMBC", r"COMPSAC", r"INERTIAL", r"WF-IoT", r"PerCom", r"ICDH",
-        r"VLSI", r"HLDVT", r"FDL",
-    ],
-}
+API        = "https://api.openalex.org/works"
+CURATED_PREFIXES = ("C", "J", "B", "P", "T")
+SELECT = "id,doi,title,publication_year,type,primary_location,authorships"
 
 
-def guess_type(venue: str) -> str:
-    """Guess publication type from venue string."""
-    if not venue:
+def norm_title(title: str) -> str:
+    t = unicodedata.normalize("NFKD", title or "").encode("ascii", "ignore").decode().lower()
+    t = re.sub(r"^\s*editorial\s*:\s*", "", t)
+    return re.sub(r"[^a-z0-9]", "", t)
+
+
+JUNK_TITLES = re.compile(r"protected by copyright|all rights reserved", re.I)
+
+
+def find_fuzzy(title: str, fetched: list, cutoff: float = 0.86):
+    key = norm_title(title)
+    best, best_r = None, cutoff
+    for f in fetched:
+        r = difflib.SequenceMatcher(None, key, norm_title(f["title"])).ratio()
+        if r >= best_r:
+            best, best_r = f, r
+    return best
+
+
+def norm_doi(doi: str) -> str:
+    return re.sub(r"^https?://(dx\.)?doi\.org/", "", (doi or "").strip(), flags=re.I).lower()
+
+
+def short_name(display_name: str) -> str:
+    """'Ruggero Angelo Bacchin' -> 'Bacchin R.A.'; Demrozi -> 'Demrozi F.'"""
+    parts = (display_name or "").replace(".", ". ").split()
+    if not parts:
+        return ""
+    last = parts[-1]
+    initials = "".join(p[0].upper() + "." for p in parts[:-1] if p[0].isalpha())
+    name = f"{last} {initials}".strip()
+    return "Demrozi F." if last.lower() == "demrozi" else name
+
+
+def map_type(work: dict) -> str:
+    t = work.get("type") or ""
+    src_type = (((work.get("primary_location") or {}).get("source") or {}).get("type") or "")
+    if t == "dataset":
+        return "dataset"
+    if t == "preprint":
+        return "preprint"
+    if t in ("book", "book-chapter"):
+        return "book"
+    if t == "dissertation":
+        return "thesis"
+    if t == "conference-paper" or src_type == "conference":
         return "conference"
-    for pub_type, patterns in TYPE_PATTERNS.items():
-        for pat in patterns:
-            if re.search(pat, venue, re.IGNORECASE):
-                return pub_type
-    return "conference"
+    if src_type == "book series":
+        return "conference"
+    return "journal"
 
 
-def normalize_title(title: str) -> str:
-    """Normalize title for matching."""
-    return re.sub(r'\s+', ' ', title.strip().lower())
+def fetch_openalex() -> list:
+    works, cursor = [], "*"
+    while cursor:
+        url = (f"{API}?filter=author.orcid:{ORCID}&per-page=200"
+               f"&select={SELECT}&cursor={cursor}")
+        for attempt in range(3):
+            try:
+                req = urllib.request.Request(url, headers={"User-Agent": "personal-website-publication-updater"})
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    data = json.load(r)
+                break
+            except Exception as e:  # noqa: BLE001
+                print(f"  attempt {attempt + 1} failed: {e}")
+                time.sleep(5 * (attempt + 1))
+        else:
+            print("ERROR: could not reach OpenAlex")
+            sys.exit(1)
+        works += data.get("results", [])
+        cursor = data.get("meta", {}).get("next_cursor")
+        if not data.get("results"):
+            break
+    print(f"  Found {len(works)} works on OpenAlex")
+    return works
 
 
-def scholar_to_entry(pub, idx: int) -> dict:
-    """Convert a scholarly publication to our YAML format."""
-    bib = pub.get("bib", {})
-    title = bib.get("title", "").strip()
-    authors_raw = bib.get("author", "")
-    venue = bib.get("venue", "") or bib.get("journal", "") or ""
-    year = bib.get("pub_year") or bib.get("year") or "Unknown"
-
-    # Format authors: highlight "Demrozi" entries
-    if isinstance(authors_raw, list):
-        authors = ", ".join(authors_raw)
-    else:
-        authors = str(authors_raw)
-    # Normalize "Florenc Demrozi" variations → "Demrozi F."
-    authors = re.sub(r"Florenc Demrozi|F\. Demrozi|Demrozi, Florenc|Demrozi, F\.",
-                     "Demrozi F.", authors, flags=re.IGNORECASE)
-
-    pub_type = guess_type(venue)
-    try:
-        year_int = int(year)
-    except (ValueError, TypeError):
-        year_int = 2000
-
+def to_entry(work: dict) -> dict:
+    src = ((work.get("primary_location") or {}).get("source") or {})
+    venue = (src.get("display_name") or "").replace(" s ", "'s ")
+    authors = ", ".join(short_name((a.get("author") or {}).get("display_name", ""))
+                        for a in work.get("authorships", []))
+    year = work.get("publication_year") or 2000
     entry = {
-        "id": f"S{idx+1:03d}",
-        "type": pub_type,
-        "year": year_int,
+        "id": "W" + work["id"].rsplit("/W", 1)[-1],
+        "type": map_type(work),
+        "year": int(year),
         "year_str": str(year),
-        "title": title,
+        "title": (work.get("title") or "").strip(),
         "authors": authors,
         "venue": venue,
     }
-
-    # Add DOI if present
-    eprint = pub.get("eprint_url") or pub.get("pub_url") or ""
-    doi_match = re.search(r"10\.\d{4,}/\S+", eprint)
-    if doi_match:
-        entry["doi"] = doi_match.group(0).rstrip(".")
-
+    doi = norm_doi(work.get("doi"))
+    if doi:
+        entry["doi"] = doi
     return entry
 
 
-def load_existing(path: Path) -> dict:
-    """Load existing publications YAML."""
-    if not path.exists():
-        return {"last_updated": "", "scholar_url": "", "items": []}
-    with open(path, encoding="utf-8") as f:
-        data = yaml.safe_load(f) or {}
-    if "items" not in data:
-        data["items"] = []
-    return data
+def is_curated(entry: dict) -> bool:
+    return str(entry.get("id", "")).startswith(CURATED_PREFIXES)
 
 
-def merge_entries(existing: list, fetched: list) -> list:
-    """
-    Merge fetched entries into existing, preserving hand-curated fields.
-    Strategy:
-    - If a fetched entry title matches an existing entry → update venue/year,
-      keep existing id, doi, url, award.
-    - New entries (no match) are appended with Scholar-generated IDs.
-    - Existing entries with no match in Scholar are kept as-is.
-    """
-    existing_by_title = {normalize_title(e.get("title", "")): e for e in existing}
-    fetched_by_title  = {normalize_title(f.get("title", "")): f for f in fetched}
+def merge(existing: list, fetched: list) -> list:
+    by_doi = {e["doi"]: e for e in fetched if e.get("doi")}
+    by_title = {norm_title(e["title"]): e for e in fetched}
+    used = set()
+    out, seen = [], set()
 
-    merged = []
+    # curated first so they win duplicate checks
+    ordered = sorted(existing, key=lambda e: 0 if is_curated(e) else 1)
+    for e in ordered:
+        if JUNK_TITLES.search(e.get("title", "")):
+            continue
+        doi = norm_doi(e.get("doi"))
+        oa = by_doi.get(doi) if doi else None
+        oa = oa or by_title.get(norm_title(e.get("title", "")))
+        oa = oa or find_fuzzy(e.get("title", ""), [f for f in fetched if id(f) not in used])
+        if oa:
+            used.add(id(oa))
+            if is_curated(e):
+                if not e.get("doi") and oa.get("doi"):
+                    e["doi"] = oa["doi"]
+            else:
+                keep = {k: e[k] for k in ("award", "url") if e.get(k)}
+                e = {**oa, **keep}
+        keys = {norm_title(e.get("title", ""))} | ({norm_doi(e.get("doi"))} if e.get("doi") else set())
+        if keys & seen:
+            continue
+        seen |= keys
+        out.append(e)
 
-    # Keep all existing entries, update fields from Scholar where matched
-    for entry in existing:
-        norm = normalize_title(entry.get("title", ""))
-        if norm in fetched_by_title:
-            scholar = fetched_by_title[norm]
-            # Update only non-critical fields; preserve hand-curated ones
-            entry.setdefault("authors", scholar.get("authors", ""))
-            if not entry.get("venue") and scholar.get("venue"):
-                entry["venue"] = scholar["venue"]
-            entry["year"] = scholar.get("year", entry.get("year"))
-            entry["year_str"] = str(entry["year"])
-        merged.append(entry)
+    for oa in fetched:
+        if id(oa) in used or not oa["title"]:
+            continue
+        keys = {norm_title(oa["title"])} | ({oa["doi"]} if oa.get("doi") else set())
+        if keys & seen:
+            continue
+        seen |= keys
+        out.append(oa)
 
-    # Add genuinely new entries (not already in existing)
-    for fetch in fetched:
-        norm = normalize_title(fetch.get("title", ""))
-        if norm not in existing_by_title:
-            merged.append(fetch)
-
-    # Sort by year descending, then by id
-    merged.sort(key=lambda x: (-int(x.get("year", 0)), x.get("id", "")))
-    return merged
-
-
-def fetch_from_scholar() -> list:
-    """Fetch publications from Google Scholar using scholarly."""
-    try:
-        from scholarly import scholarly as sch
-        print(f"Fetching publications for Scholar ID: {SCHOLAR_ID}")
-        author = sch.search_author_id(SCHOLAR_ID)
-        sch.fill(author, sections=["publications"])
-        pubs = author.get("publications", [])
-        print(f"  Found {len(pubs)} publications on Scholar")
-        entries = []
-        for i, pub in enumerate(pubs):
-            try:
-                sch.fill(pub)
-                entry = scholar_to_entry(pub, i)
-                if entry["title"]:
-                    entries.append(entry)
-            except Exception as e:
-                print(f"  Warning: could not process publication {i}: {e}")
-        return entries
-    except ImportError:
-        print("ERROR: 'scholarly' package not installed. Run: pip install scholarly")
-        sys.exit(1)
-    except Exception as e:
-        print(f"ERROR fetching from Scholar: {e}")
-        sys.exit(1)
+    out.sort(key=lambda x: (-int(x.get("year", 0)), str(x.get("id", ""))))
+    return out
 
 
 def main():
-    print("=" * 60)
-    print("IEEE COINS / Florenc Demrozi — Publication Fetcher")
-    print("=" * 60)
+    data = {}
+    if PUBS_FILE.exists():
+        data = yaml.safe_load(PUBS_FILE.read_text(encoding="utf-8")) or {}
+    existing = data.get("items", [])
+    print(f"Existing entries: {len(existing)}")
 
-    existing_data = load_existing(PUBS_FILE)
-    existing_items = existing_data.get("items", [])
-    print(f"Existing entries in YAML: {len(existing_items)}")
-
-    fetched = fetch_from_scholar()
-    print(f"Fetched from Scholar:     {len(fetched)}")
-
-    merged = merge_entries(existing_items, fetched)
-    print(f"Merged total:             {len(merged)}")
+    fetched = [to_entry(w) for w in fetch_openalex()]
+    merged = merge(existing, fetched)
+    print(f"Merged total:     {len(merged)}")
 
     output = {
         "last_updated": datetime.date.today().isoformat(),
-        "scholar_url": f"https://scholar.google.it/citations?user={SCHOLAR_ID}&hl=en",
+        "scholar_url": f"https://scholar.google.com/citations?user={SCHOLAR_ID}&hl=en",
         "items": merged,
     }
-
-    with open(PUBS_FILE, "w", encoding="utf-8") as f:
-        yaml.dump(output, f, allow_unicode=True, default_flow_style=False,
-                  sort_keys=False, width=120)
-
-    print(f"\n✅  Updated {PUBS_FILE}")
-    print(f"    Total publications: {len(merged)}")
+    PUBS_FILE.write_text(
+        yaml.dump(output, allow_unicode=True, default_flow_style=False, sort_keys=False, width=120),
+        encoding="utf-8",
+    )
+    print(f"Updated {PUBS_FILE}")
 
 
 if __name__ == "__main__":

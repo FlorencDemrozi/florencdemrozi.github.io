@@ -1,4 +1,4 @@
-name: Update Publications from Google Scholar
+name: Update Publications from OpenAlex
 
 on:
   schedule:
@@ -26,9 +26,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install scholarly pyyaml
+          pip install pyyaml
 
-      - name: Fetch publications from Google Scholar
+      - name: Fetch publications from OpenAlex
         run: python scripts/fetch_publications.py
 
       - name: Check for changes
@@ -46,5 +46,5 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add _data/publications.yml
-          git commit -m "chore: auto-update publications from Google Scholar [$(date +'%Y-%m-%d')]"
+          git commit -m "chore: auto-update publications from OpenAlex [$(date +'%Y-%m-%d')]"
           git push

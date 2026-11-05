@@ -300,6 +300,8 @@ h2.section-title {
 .pub-type-badge.conference { background: #f0f0e8; color: #5a5a20; }
 .pub-type-badge.book { background: #f4ece8; color: #7a3020; }
 .pub-type-badge.preprint { background: #f0e8f4; color: #5a2080; }
+.pub-type-badge.dataset { background: #e8f4ec; color: #1f6a3a; }
+.pub-type-badge.thesis { background: #efefef; color: #4a5568; }
 .pub-award { display: inline-flex; align-items: center; gap: 0.3rem; font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); background: rgba(184,134,11,0.1); padding: 0.15rem 0.5rem; border-radius: 2px; margin-right: 0.5rem; }
 .pub-item h4 { font-family: var(--body); font-size: 0.97rem; font-weight: 400; color: var(--ink); line-height: 1.5; margin-bottom: 0.35rem; }
 .pub-authors { font-size: 0.83rem; color: var(--slate); line-height: 1.5; }

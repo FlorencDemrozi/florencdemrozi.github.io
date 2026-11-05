@@ -2,7 +2,7 @@
 layout: page
 title: Publications
 kicker: Research Output
-description: "Full publication list. Auto-updated from Google Scholar via GitHub Actions."
+description: "Full publication list, updated automatically every week from OpenAlex."
 permalink: /publications/
 ---
 {% assign pubs = site.data.publications %}
@@ -11,6 +11,7 @@ permalink: /publications/
 {% assign conferences = all | where: "type", "conference" %}
 {% assign books = all | where: "type", "book" %}
 {% assign preprints = all | where: "type", "preprint" %}
+{% assign datasets = all | where: "type", "dataset" %}
 
 <!-- Stats -->
 <div class="pub-stats">
@@ -33,6 +34,7 @@ permalink: /publications/
   <button class="pub-filter-btn" data-filter="conference">Conferences ({{ conferences | size }})</button>
   <button class="pub-filter-btn" data-filter="book">Books ({{ books | size }})</button>
   <button class="pub-filter-btn" data-filter="preprint">Preprints ({{ preprints | size }})</button>
+  {% if datasets.size > 0 %}<button class="pub-filter-btn" data-filter="dataset">Datasets ({{ datasets | size }})</button>{% endif %}
 </div>
 
 <!-- Publication list -->
@@ -50,6 +52,7 @@ permalink: /publications/
           {% when "conference" %}Conference
           {% when "book" %}Book
           {% when "preprint" %}Preprint
+          {% when "dataset" %}Dataset
           {% when "thesis" %}Thesis
           {% else %}{{ pub.type }}
           {% endcase %}

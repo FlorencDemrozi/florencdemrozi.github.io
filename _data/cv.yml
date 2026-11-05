@@ -39,8 +39,8 @@ personal:
     - label: "UiS Profile"
       url: "https://www.uis.no/nb/profile/florenc-demrozi"
       icon: "university"
-    - label: "Publons"
-      url: "https://publons.com/researcher/3564180/florenc-demrozi/"
+    - label: "Web of Science"
+      url: "https://www.webofscience.com/wos/author/rid/AAL-3978-2020"
       icon: "link"
 
 summary: >
@@ -69,12 +69,12 @@ employment:
     location: "Stavanger, Norway"
     period: "June 2025 – Present"
     areas: "Biomedical Sensing Systems, HAR, AAL, IoMT"
-  - role: "Associate Professor in Biomedical/Medical Engineering/Technology"
+  - role: "Associate Professor in Biomedical Sensing Systems"
     institution: "University of Stavanger"
     department: "Dept. Electrical Engineering and Computer Science"
     location: "Stavanger, Norway"
     period: "October 2022 – June 2025"
-    areas: "Biomedical/Medical Engineering/Technology, HAR, Ambient Intelligence, AAL, IoMT"
+    areas: "Biomedical Sensing Systems, HAR, Ambient Intelligence, AAL, IoMT"
   - role: "AWS Fellow"
     institution: "University of Limerick"
     department: "Dept. Computer Science and Information Systems"
@@ -255,14 +255,14 @@ awards:
     year: 2019
     type: "International"
     location: "New York, USA"
-  - title: "ICT for Families (IFs) — Italian Semifinals, Global Social Venture Competition (GSVC)"
-    year: 2018
-    type: "International"
-    location: "Milan, Italy"
   - title: "BipBip — First Place, European Social Fund (ESF) – Veneto Region"
     year: 2019
     type: "National"
     location: "Padua, Italy"
+  - title: "ICT for Families (IFs) — Italian Semifinals, Global Social Venture Competition (GSVC)"
+    year: 2018
+    type: "International"
+    location: "Milan, Italy"
   - title: "ICT for Families — Best Social Innovation Project in Italy, National Innovation Award (PNI)"
     year: 2017
     type: "National"
