@@ -58,8 +58,9 @@ fd-jekyll/
 │
 ├── _pages/
 │   ├── bio.html             ← Biography page
+│   ├── projects.html        ← Projects & datasets
+│   ├── network.html         ← Collaboration map & co-author network
 │   ├── publications.html    ← Publications page (filterable)
-│   ├── thesis.html          ← Thesis & stage proposals
 │   ├── activities.html      ← Teaching, supervision, service
 │   └── contact.html         ← Contact & social links
 │
@@ -67,15 +68,15 @@ fd-jekyll/
 │
 ├── assets/
 │   ├── css/main.css         ← All styles
-│   ├── js/main.js           ← Filter, mobile nav, scroll reveal
+│   ├── js/main.js           ← Filter, mobile nav, colour theme switch
+│   ├── js/collab.js         ← Collaboration map & network (d3)
 │   └── img/
 │       └── florenc-demrozi.jpg  ← Place your photo here
 │       └── files/
 │           └── CV_Demrozi.pdf   ← Place your CV PDF here
 │
 ├── scripts/
-│   ├── fetch_scopus.py          ← Scopus updater (run locally)
-│   ├── fetch_publications.py    ← OpenAlex fallback (weekly)
+│   ├── fetch_publications.py    ← OpenAlex updater (weekly)
 │   └── collab.py                ← Builds collaboration data
 │
 └── .github/workflows/
@@ -91,7 +92,7 @@ fd-jekyll/
 
 | What to change | Where in cv.yml |
 |---|---|
-| Name, email, phone, ORCID | `personal:` |
+| Name, email, ORCID | `personal:` |
 | Profile links (Scholar, LinkedIn…) | `personal.profiles:` |
 | Summary paragraph | `summary:` |
 | Research interests | `research_interests:` |
@@ -123,32 +124,22 @@ Place `CV_Demrozi.pdf` at `assets/files/CV_Demrozi.pdf`. The Bio page links to i
 
 ## Publications & Collaborations Update
 
-### Main source: Scopus (run locally at UiS)
-`scripts/fetch_scopus.py` fetches every document of Scopus author `57193860991` and updates
-`_data/publications.yml` and `_data/collaborations.json` (map, partner institutions,
-co-authors, co-author network, citations, h-index).
+Everything comes from [OpenAlex](https://openalex.org) (free, no API key), using the ORCID.
 
-Run it on the UiS network (or VPN). Scopus only returns full author/affiliation data there.
+GitHub Actions runs `scripts/fetch_publications.py --collaborations` every Monday at 06:00 UTC.
+It updates `_data/publications.yml` and `_data/collaborations.json` (map, partner institutions,
+co-authors, co-author network, citations, h-index), then the site redeploys.
+Hand-curated entries (`C`, `J`, `B`, `P`, `T` ids) are never overwritten.
+Trigger it manually under **Actions → Update Publications from OpenAlex → Run workflow**,
+or run it yourself:
 
 ```powershell
 pip install pyyaml
-$env:SCOPUS_API_KEY = "<your key>"      # or put the key in scripts/.scopus_key (git-ignored)
-python scripts/fetch_scopus.py
-git add _data scripts/geo_cache.json
-git commit -m "Update publications and collaborations from Scopus"
-git push
+python scripts/fetch_publications.py --collaborations
 ```
 
-New partner cities are geocoded once with OpenStreetMap and cached in `scripts/geo_cache.json`.
-
-### Fallback: OpenAlex (automatic, weekly)
-GitHub Actions runs `scripts/fetch_publications.py` every Monday at 06:00 UTC. It only **adds**
-papers that are not in the list yet; entries from Scopus (`E…` ids) and hand-curated entries
-(`C`, `J`, `B`, `P`, `T` ids) are never overwritten. The site redeploys afterwards.
-Trigger it manually under **Actions → Update Publications from OpenAlex → Run workflow**.
-
-`python scripts/fetch_publications.py --collaborations` rebuilds the collaboration data from
-OpenAlex instead of Scopus (backup only).
+Partner cities without coordinates are geocoded once with OpenStreetMap and cached in
+`scripts/geo_cache.json`.
 
 ### Notes
 - Hand-added fields (`award`, `url`) survive every update.
@@ -202,5 +193,5 @@ Also set `url` in `_config.yml` to your domain.
 | `bundle install` fails | Make sure Ruby ≥ 3.0 is installed. On macOS use `brew install ruby`. |
 | `jekyll serve` gives port error | Use `jekyll serve --port 4001` |
 | Photo not showing | Check file is at `assets/img/florenc-demrozi.jpg` (case-sensitive on Linux) |
-| Publications not updating | Run `scripts/fetch_scopus.py` at UiS, or trigger the OpenAlex workflow in GitHub Actions |
+| Publications not updating | Trigger the OpenAlex workflow in GitHub Actions, or run `scripts/fetch_publications.py --collaborations` |
 | Liquid syntax error | Check `_data/cv.yml` for correct YAML indentation (use spaces, not tabs) |

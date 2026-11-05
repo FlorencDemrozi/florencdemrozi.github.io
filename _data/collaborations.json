@@ -3,7 +3,7 @@
  "source": "OpenAlex",
  "profile": {
   "documents": 62,
-  "citations": 881,
+  "citations": 886,
   "h_index": 14,
   "first_year": 2016
  },
@@ -100,69 +100,69 @@
     "Alejandro Masrur",
     "Stefano Tamburin",
     "Ruggero Angelo Bacchin",
-    "Marco Cristani",
     "Fabio Chiarani",
     "Michele Tebaldi",
-    "Michele Boldo",
-    "Franco Fummi",
-    "Mirco De Marchi",
-    "Paola Cesari",
-    "Alessandro Picelli",
-    "Claudio Tomazzoli",
-    "Davide Quaglia",
-    "Nicola Bombieri",
-    "MUHAMMAD  TOQEER ALI",
-    "Luigi Capogrosso",
-    "Stefano Centomo",
-    "Marin Jereghi",
-    "Francesco Pascucci",
-    "Matteo Cristani",
+    "Marco Cristani",
     "Rosalba Giugno",
+    "Claudio Tomazzoli",
     "Giulio Balestro",
-    "Tewabe Chekole Workneh",
-    "Cristiano Pravadelli",
-    "Mauro Musa Zamboni",
-    "Dong Seon Cheng",
-    "Stefano Aldegheri",
-    "Damiano Carra B",
-    "Ariel Caputo",
-    "Kevin Costa",
-    "Nicola Marchiotto",
-    "Silvia Francesca Storti",
-    "Tiziano Villa",
-    "Federico Cunico",
+    "Luigi Capogrosso",
+    "Francesco Pascucci",
+    "Paola Cesari",
+    "Marin Jereghi",
+    "Michele Boldo",
+    "Davide Quaglia",
+    "Mirco De Marchi",
+    "Franco Fummi",
+    "Stefano Centomo",
+    "MUHAMMAD  TOQEER ALI",
+    "Nicola Bombieri",
+    "Matteo Cristani",
+    "Alessandro Picelli",
     "Vladislav Bragoi",
-    "Elisa Quintarelli",
-    "Nicola Smania",
-    "Riccardo Zucchelli",
-    "Federica Paci",
-    "Enrico Martini",
-    "Sofia Franceschi",
-    "Geri Skenderi",
-    "Federico Girella",
-    "Luca Zenti",
-    "Bruno Pernice",
-    "Marco Emporio",
-    "Samuele Germiniani",
-    "Ilaria Siviero",
     "Ettore Cinquetti",
-    "Nicola Serlonghi",
-    "Carlo Tadiello",
+    "Marco Panato",
     "Andrea Avogaro",
-    "Luca Geretti",
-    "Nicola Valè",
-    "Erica Pizzocaro",
+    "Omar Ferro",
+    "Cristiano Pravadelli",
+    "Federico Girella",
+    "Enrico Martini",
     "Giuseppe Recchia",
+    "Davide Zamboni",
+    "Kevin Costa",
+    "Ariel Caputo",
+    "Ilaria Siviero",
+    "Anna Lia Sacerdoti",
+    "Nicola Serlonghi",
+    "Riccardo Zucchelli",
+    "Marco Emporio",
+    "Tiziano Villa",
+    "Nicola Valè",
+    "Graziano Pravadelli",
+    "Sofia Franceschi",
+    "Bruno Pernice",
+    "Erica Pizzocaro",
+    "Federica Paci",
+    "Gloria Menegaz",
+    "Stefano Aldegheri",
+    "Silvia Francesca Storti",
+    "Luca Zenti",
+    "Nicola Marchiotto",
+    "Nicola Smania",
+    "Luca Geretti",
+    "Carlo Tadiello",
+    "Elisa Quintarelli",
+    "Geri Skenderi",
+    "Dong Seon Cheng",
     "Andrea Giachetti",
     "Muhammad Toqeer Ali",
-    "Anna Lia Sacerdoti",
-    "Marco Panato",
-    "Gloria Menegaz",
-    "Davide Zamboni",
-    "Graziano Pravadelli",
+    "Mauro Musa Zamboni",
     "Elisa Mantovani",
-    "Omar Ferro",
-    "Muhammed Toqeer Ali"
+    "Samuele Germiniani",
+    "Federico Cunico",
+    "Muhammed Toqeer Ali",
+    "Tewabe Chekole Workneh",
+    "Damiano Carra B"
    ]
   },
   {
@@ -211,9 +211,9 @@
    "people": [
     "Luis Sigcha",
     "Tiziana Margaria",
+    "Matteo Sacchet",
     "Amandeep Singh",
-    "Marina Marchisio",
-    "Matteo Sacchet"
+    "Marina Marchisio"
    ]
   },
   {
@@ -237,9 +237,9 @@
    "papers": 3,
    "people": [
     "Graziano Pravadelli",
-    "Giovanni Perbellini",
+    "Francesco Stefanni",
     "Nicolo Dalla Riva",
-    "Francesco Stefanni"
+    "Giovanni Perbellini"
    ]
   },
   {
@@ -274,9 +274,9 @@
    "papers": 3,
    "people": [
     "Carlo Alberto Artusi",
+    "Giuliana Fazzina",
     "Tiziana Margaria",
-    "Leonardo Lopiano",
-    "Giuliana Fazzina"
+    "Leonardo Lopiano"
    ]
   },
   {
@@ -311,8 +311,8 @@
    "people": [
     "Azra Bihorac",
     "Parisa Rashidi",
-    "Parisa Rashidi",
-    "Patrick J Tighe"
+    "Patrick J Tighe",
+    "Parisa Rashidi"
    ]
   },
   {
@@ -379,8 +379,8 @@
    "papers": 1,
    "people": [
     "Carlo Alberto Artusi",
-    "Leonardo Lopiano",
-    "Giuliana Fazzina"
+    "Giuliana Fazzina",
+    "Leonardo Lopiano"
    ]
   },
   {
@@ -391,8 +391,8 @@
    "lon": 10.9938,
    "papers": 1,
    "people": [
-    "Luisa Bissoli",
-    "Davide Bonacina"
+    "Davide Bonacina",
+    "Luisa Bissoli"
    ]
   },
   {
@@ -436,8 +436,8 @@
    "lon": 5.47778,
    "papers": 1,
    "people": [
-    "Niek Muijs",
-    "Nicola Zannone"
+    "Nicola Zannone",
+    "Niek Muijs"
    ]
   },
   {
@@ -548,9 +548,9 @@
    "lon": 7.99560022354126,
    "papers": 1,
    "people": [
-    "Filippo Sanfilippo",
     "Syed Kumayl Raza Moosavi",
-    "Muhammad Hamza Zafar"
+    "Muhammad Hamza Zafar",
+    "Filippo Sanfilippo"
    ]
   },
   {

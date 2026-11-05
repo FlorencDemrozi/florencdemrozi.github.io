@@ -3,170 +3,123 @@ layout: default
 title: Home
 ---
 {% assign cv = site.data.cv %}
-{% assign pubs = site.data.publications %}
-
-<!-- HERO -->
-<section class="home-hero">
-  <div class="home-hero-inner">
-    <div class="hero-text fade-in">
-      <div class="hero-eyebrow">{{ cv.personal.address | split: "," | last | strip }}</div>
-      <h1 class="hero-name">
-        {{ cv.personal.name | split: " " | first }}<br>
-        {{ cv.personal.name | split: " " | last }}
-        <em>{{ cv.personal.title }}</em>
-      </h1>
-      <p class="hero-position">
-        {% assign current = cv.employment | first %}
-        {{ current.department }}<br>
-        {{ current.institution }}, {{ current.location }}
-      </p>
-      <blockquote class="hero-quote">
-        "{{ cv.personal.tagline_en }}"
-      </blockquote>
-      <div class="hero-tags">
-        {% for interest in cv.research_interests %}
-        <span class="hero-tag">{{ interest }}</span>
-        {% endfor %}
-      </div>
-      <div class="hero-socials">
-        {% for profile in cv.personal.profiles %}
-        <a class="hero-social" href="{{ profile.url }}" target="_blank" rel="noopener">
-          {% include icon.html icon=profile.icon %}
-          {{ profile.label }}
-        </a>
-        {% endfor %}
-      </div>
-    </div>
-
-    <div class="hero-card fade-in fade-in-3">
-      {% if cv.personal.photo %}
-      <img class="hero-card-photo" src="{{ site.baseurl }}/{{ cv.personal.photo }}" alt="{{ cv.personal.name }}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="hero-card-photo-placeholder" style="display:none">FD</div>
-      {% else %}
-      <div class="hero-card-photo-placeholder">FD</div>
-      {% endif %}
-      <div class="hero-card-info">
-        <div class="card-label">Current Position</div>
-        <div class="card-role">{{ current.role }}</div>
-        <div class="card-dept">{{ current.department }}<br>{{ current.institution }}</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT SNAPSHOT -->
-<div class="home-section home-section-alt">
-  <div class="home-section-inner">
-    <div class="section-label">About</div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>{{ cv.summary }}</p>
-        <p>I am a co-founder of the <a href="https://cisd.di.univr.it/area/7/" target="_blank">IoT for Care (IoT4Care)</a> research group at the University of Verona, and a member of the <strong>Biomedical Data Analysis Lab (BMDLab)</strong> and the <strong>Stavanger AI Lab (SAIL)</strong> at UiS. I also serve as <strong>Associate Editor</strong> of the <em>IEEE Sensors Journal</em>.</p>
-        <p>I am <strong>General Chair</strong> of <a href="https://coinsconf.org/index.html" target="_blank" rel="noopener">IEEE COINS 2027</a>, hosted at the University of Stavanger (August 2–4, 2027), and <strong>Program Chair</strong> of <a href="https://www.fdl-conference.com/" target="_blank" rel="noopener">FDL 2027</a>, the Forum on Specification &amp; Design Languages.</p>
-        <p>In 2026 I served as <strong>General Chair</strong> of ECMS 2026 and as <strong>Program Chair</strong> of <a href="https://coinsconf.com" target="_blank" rel="noopener">IEEE COINS 2026</a> (University of Bologna) and IEEE/IFIP VLSI-SoC 2026 (Limassol, Cyprus).</p>
-        <div class="btn-gap">
-          <a href="{{ site.baseurl }}/bio/" class="btn btn-primary">Full Biography →</a>
-          <a href="{{ site.baseurl }}/publications/" class="btn btn-outline">Publications</a>
-        </div>
-      </div>
-      <div>
-        <div class="ri-title">Research Interests</div>
-        <ul class="ri-list">
-          {% for interest in cv.research_interests %}
-          <li>{{ interest }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- COLLABORATIONS -->
 {% assign co = site.data.collaborations %}
-<div class="home-section">
-  <div class="home-section-inner">
-    <div class="section-label">Collaborations</div>
-    <h2 class="section-title">An international network</h2>
-    <div class="home-collab">
-      <div>
-        <p class="home-collab-text">I have published with <strong>{{ co.coauthors | size }} co-authors</strong> from <strong>{{ co.institutions | size }} partner institutions</strong> in <strong>{{ co.countries | size }} countries</strong>, including
-          {% for i in co.institutions limit:4 %}{{ i.name }}{% if forloop.last %}{% elsif forloop.rindex == 2 %} and {% else %}, {% endif %}{% endfor %}.</p>
-        <div class="pub-stats home-collab-stats">
-          <div class="pub-stat"><span class="num">{{ co.profile.citations }}</span><span class="lbl">Citations</span></div>
-          <div class="pub-stat"><span class="num">{{ co.profile.h_index }}</span><span class="lbl">h-index</span></div>
-          <div class="pub-stat"><span class="num">{{ co.countries | size }}</span><span class="lbl">Countries</span></div>
-        </div>
-        <div class="btn-gap">
-          <a href="{{ site.baseurl }}/network/" class="btn btn-primary">Explore collaborations &amp; network →</a>
-        </div>
-      </div>
-      <div class="collab-map collab-map-small" data-compact="true"></div>
-    </div>
-  </div>
-</div>
-<script id="collab-data" type="application/json">{{ co | jsonify }}</script>
-<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
-<script src="{{ site.baseurl }}/assets/js/collab.js?v={{ site.time | date: '%s' }}"></script>
+{% assign all = site.data.publications.items %}
+{% assign current = cv.employment | first %}
 
-<!-- NEWS -->
-<div class="home-section">
-  <div class="home-section-inner">
-    <div class="section-label">Recent Highlights</div>
-    <h2 class="section-title">News &amp; Updates</h2>
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-date">2027</div>
-        <h4>General Chair — <a href="https://coinsconf.org/index.html" target="_blank" rel="noopener">IEEE COINS 2027</a></h4>
-        <p>Serving as General Chair for IEEE COINS 2027, University of Stavanger, Norway, August 2–4, 2027.</p> <br>
-        <h4>Program Chair — <a href="https://www.fdl-conference.com/" target="_blank" rel="noopener">FDL 2027</a></h4>
-        <p>Serving as Program Chair for FDL 2027, the Forum on Specification &amp; Design Languages.</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">2026</div>
-        <h4>General Chair — ECMS 2026</h4>
-        <p>Served as General Chair for ECMS 2026, University of Agder, Grimstad, Norway, June 23–26.</p> <br>
-        <h4>Program Chair — IEEE COINS 2026</h4>
-        <p>Served as Program Chair for IEEE COINS 2026, University of Bologna, Italy, September 7–9.</p> <br>
-        <h4>Program Chair — IEEE/IFIP VLSI-SoC 2026</h4>
-        <p>Served as Program Chair for IEEE/IFIP VLSI-SoC 2026, Limassol, Cyprus, October 11–14.</p>
-      </div>
-      {% assign recent = site.data.publications.items | where_exp: "p", "p.year >= 2024" | sort: "year" | reverse %}
-      {% for pub in recent limit:3 %}
-      <div class="tl-item">
-        <div class="tl-date">{{ pub.year }}</div>
-        <h4>{{ pub.title }}</h4>
-        <p>{{ pub.venue }}{% if pub.doi %} · DOI: {{ pub.doi }}{% endif %}</p>
-      </div>
+<div class="home-layout">
+
+  <!-- PROFILE COLUMN -->
+  <aside class="profile">
+    {% if cv.personal.photo %}
+    <img class="profile-photo" src="{{ site.baseurl }}/{{ cv.personal.photo }}" alt="{{ cv.personal.name }}">
+    {% endif %}
+    <h1 class="profile-name">{{ cv.personal.name }}</h1>
+    <p class="profile-role">{{ cv.personal.title }}</p>
+    <p class="profile-dept">{{ current.department }}<br>{{ current.institution }}, {{ current.location | split: "," | last | strip }}</p>
+    <div class="profile-contact"><a href="mailto:{{ cv.personal.email }}">{{ cv.personal.email }}</a><br>Kjølv Egelands Hus</div>
+    <ul class="profile-links">
+      {% for profile in cv.personal.profiles %}
+      <li><a href="{{ profile.url }}" target="_blank" rel="noopener">{{ profile.label }}</a></li>
       {% endfor %}
-      <div class="tl-item">
-        <div class="tl-date">2025</div>
-        <h4>Promoted to Full Professor in Biomedical Sensing Systems</h4>
-        <p>Department of Electrical Engineering and Computer Science, University of Stavanger, Norway. June 2025.</p><br>
-        <h4>SpareBank 1 Sør-Norge Innovation Award</h4>
-        <p>Recipient of the 2025 Innovation Award, Stavanger, Norway.</p>
-      </div>
-      
-    </div>
-  </div>
-</div>
+    </ul>
+  </aside>
 
-<!-- PUBLICATION STATS -->
-<div class="home-section home-section-alt">
-  <div class="home-section-inner">
-    <div class="section-label">Research Output</div>
-    {% assign journals = site.data.publications.items | where: "type", "journal" %}
-    {% assign conferences = site.data.publications.items | where: "type", "conference" %}
-    {% assign books = site.data.publications.items | where: "type", "book" %}
-    <div class="pub-stats">
-      <div class="pub-stat"><span class="num">{{ site.data.publications.items | size }}</span><span class="lbl">Total Publications</span></div>
-      <div class="pub-stat"><span class="num">{{ journals | size }}</span><span class="lbl">Journal Articles</span></div>
-      <div class="pub-stat"><span class="num">{{ conferences | size }}</span><span class="lbl">Conference Papers</span></div>
-      <div class="pub-stat"><span class="num">{{ books | size }}</span><span class="lbl">Books / Editorials</span></div>
-    </div>
-    <div class="btn-gap">
-      <a href="{{ site.baseurl }}/publications/" class="btn btn-primary">View All Publications →</a>
-      <a href="{{ site.data.cv.personal.profiles | where: 'label', 'Google Scholar' | map: 'url' | first }}" target="_blank" class="btn btn-outline">Google Scholar</a>
-    </div>
+  <div class="home-main">
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About</h2>
+      <p class="lead">I design wearable and ambient sensing systems, and the machine learning behind them, to monitor health and daily activity outside the clinic.</p>
+      <div class="prose">
+        <p>{{ cv.summary }}</p>
+        <p>I am a co-founder of the <a href="https://cisd.di.univr.it/area/7/" target="_blank" rel="noopener">IoT for Care (IoT4Care)</a> research group at the University of Verona, and a member of the <strong>Biomedical Data Analysis Lab (BMDLab)</strong> and the <strong>Stavanger AI Lab (SAIL)</strong> at UiS. I also serve as Associate Editor of the <em>IEEE Sensors Journal</em>.</p>
+      </div>
+      <ul class="tags" aria-label="Research interests">
+        {% for interest in cv.research_interests %}<li>{{ interest }}</li>{% endfor %}
+      </ul>
+      <div><a class="more" href="{{ site.baseurl }}/bio/">Full biography →</a></div>
+    </section>
+
+    <!-- UPCOMING -->
+    <section>
+      <h2>Upcoming</h2>
+      <div class="upcoming">
+        <article>
+          <span class="what">General Chair · 2027</span>
+          <h3><a href="https://coinsconf.org/index.html" target="_blank" rel="noopener">IEEE COINS 2027</a></h3>
+          <p>University of Stavanger, Norway · August 2–4, 2027</p>
+        </article>
+        <article>
+          <span class="what">Program Chair · 2027</span>
+          <h3><a href="https://www.fdl-conference.com/" target="_blank" rel="noopener">FDL 2027</a></h3>
+          <p>Forum on Specification &amp; Design Languages</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- COLLABORATIONS -->
+    <section id="collaborations">
+      <h2>Collaborations</h2>
+      <div class="stats">
+        <div><b>{{ co.coauthors | size }}</b><span>Co-authors</span></div>
+        <div><b>{{ co.institutions | size }}</b><span>Institutions</span></div>
+        <div><b>{{ co.countries | size }}</b><span>Countries</span></div>
+        <div><b>{{ co.profile.citations }}</b><span>Citations</span></div>
+        <div><b>{{ co.profile.h_index }}</b><span>h-index</span></div>
+      </div>
+      <div class="collab-map" data-compact="true"></div>
+      <p class="small">Partners include {% for i in co.institutions limit:4 %}{{ i.name }}{% if forloop.last %}{% elsif forloop.rindex == 2 %} and {% else %}, {% endif %}{% endfor %}. Source: {{ co.source }}. <a class="more" href="{{ site.baseurl }}/network/">Explore the network →</a></p>
+    </section>
+    <script id="collab-data" type="application/json">{{ co | jsonify }}</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/collab.js?v={{ site.time | date: '%s' }}"></script>
+
+    <!-- NEWS -->
+    <section>
+      <h2>News</h2>
+      <ul class="dated">
+        <li><span class="yr">2026</span><div><div class="item-title">General Chair, ECMS 2026</div><div class="item-meta">University of Agder, Grimstad, Norway · June 23–26</div></div></li>
+        <li><span class="yr">2026</span><div><div class="item-title">Program Chair, <a href="https://coinsconf.com" target="_blank" rel="noopener">IEEE COINS 2026</a></div><div class="item-meta">University of Bologna, Italy · September 7–9</div></div></li>
+        <li><span class="yr">2026</span><div><div class="item-title">Program Chair, IEEE/IFIP VLSI-SoC 2026</div><div class="item-meta">Limassol, Cyprus · October 11–14</div></div></li>
+        <li><span class="yr">2025</span><div><div class="item-title">Promoted to Full Professor in Biomedical Sensing Systems</div><div class="item-meta">Dept. Electrical Engineering and Computer Science, University of Stavanger · June 2025</div></div></li>
+        <li><span class="yr">2025</span><div><div class="item-title">SpareBank 1 Sør-Norge Innovation Award</div><div class="item-meta">Stavanger, Norway</div></div></li>
+      </ul>
+    </section>
+
+    <!-- RECENT PUBLICATIONS -->
+    <section id="publications">
+      <h2>Recent publications</h2>
+      {% assign recent = all | sort: "year" | reverse %}
+      <ol class="dated">
+        {% for pub in recent limit:5 %}
+        <li><span class="yr">{{ pub.year }}</span><div>
+          <div class="item-title">{% if pub.doi %}<a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener" style="color:inherit">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</div>
+          <div class="item-meta">{{ pub.authors | replace: "Demrozi F.", "<strong>Demrozi F.</strong>" }} · <i>{{ pub.venue }}</i><span class="chip">{{ pub.type }}</span></div>
+        </div></li>
+        {% endfor %}
+      </ol>
+      {% assign journals = all | where: "type", "journal" %}
+      {% assign conferences = all | where: "type", "conference" %}
+      {% assign books = all | where: "type", "book" %}
+      <p class="small">{{ all | size }} publications: {{ journals | size }} journal articles, {{ conferences | size }} conference papers, {{ books | size }} books and editorials. <a class="more" href="{{ site.baseurl }}/publications/">All publications →</a></p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects and datasets</h2>
+      <div class="project-links">
+        <a href="https://sensing4health.ux.uis.no/sosc.html" target="_blank" rel="noopener"><strong>SOSC</strong><span>Smart Objects for Smart Care · NFR, PI</span></a>
+        <a href="https://florencdemrozi.github.io/flair/"><strong>FLAIR</strong><span>Free-living activity dataset, wrist IMU</span></a>
+        <a href="https://zenodo.org/records/17838806" target="_blank" rel="noopener"><strong>FoG-STAR</strong><span>Freezing of gait dataset, 22 PD patients</span></a>
+        <a href="https://zenodo.org/records/18346755" target="_blank" rel="noopener"><strong>UNIVRFall</strong><span>IMU fall detection dataset, 39 participants</span></a>
+        <a href="https://florencdemrozi.github.io/mmai-lab/"><strong>MMAI Lab</strong><span>Multimodal AI Lab</span></a>
+        <a href="https://florencdemrozi.github.io/pcc/"><strong>PCC</strong><span>Program Chair Copilot, conference management tool</span></a>
+        <a href="https://atlas.ux.uis.no/#/" target="_blank" rel="noopener"><strong>ATLAS</strong><span>UiS Researcher Atlas</span></a>
+      </div>
+      <div><a class="more" href="{{ site.baseurl }}/projects/">All projects →</a></div>
+    </section>
+
   </div>
 </div>

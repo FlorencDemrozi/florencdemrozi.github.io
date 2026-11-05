@@ -1,22 +1,30 @@
 {% assign cv = site.data.cv %}
-<nav id="top-nav">
+{% capture theme_switch %}
+<div class="theme-switch" role="group" aria-label="Colour theme">
+  <button type="button" data-theme-choice="auto" aria-pressed="true" title="Follow your device setting"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 2a6 6 0 0 1 0 12z" fill="currentColor"/></svg>Auto</button>
+  <button type="button" data-theme-choice="light" aria-pressed="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1"/></svg>Light</button>
+  <button type="button" data-theme-choice="dark" aria-pressed="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M13.5 10A6 6 0 0 1 6 2.5a6 6 0 1 0 7.5 7.5z"/></svg>Dark</button>
+  <button type="button" data-theme-choice="paper" aria-pressed="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M2.5 3.5h4.5a1.5 1.5 0 0 1 1 .5 1.5 1.5 0 0 1 1-.5h4.5v9H9a1 1 0 0 0-1 1 1 1 0 0 0-1-1H2.5z"/><path d="M8 4v9"/></svg>Paper</button>
+</div>
+{% endcapture %}
+<nav id="top-nav" aria-label="Main">
   <div class="nav-inner">
-    <a class="nav-logo" href="{{ site.baseurl }}/">
-      <span class="nav-dot"></span>{{ cv.personal.name | split: " " | first }} {{ cv.personal.name | split: " " | last }}
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="{{ site.baseurl }}/" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
-      <li><a href="{{ site.baseurl }}/bio/" {% if page.url contains "/bio" %}class="active"{% endif %}>Bio</a></li>
-      <li><a href="{{ site.baseurl }}/publications/" {% if page.url contains "/publications" %}class="active"{% endif %}>Publications</a></li>
-      <li><a href="{{ site.baseurl }}/projects/" {% if page.url contains "/projects" %}class="active"{% endif %}>Projects</a></li>
-      <li><a href="{{ site.baseurl }}/network/" {% if page.url contains "/network" %}class="active"{% endif %}>Network</a></li>
-      <li><a href="{{ site.baseurl }}/thesis/" {% if page.url contains "/thesis" %}class="active"{% endif %}>Thesis Proposals</a></li>
-      <li><a href="{{ site.baseurl }}/activities/" {% if page.url contains "/activities" %}class="active"{% endif %}>Activities</a></li>
-      <li><a href="{{ site.baseurl }}/contact/" {% if page.url contains "/contact" %}class="active"{% endif %}>Contact</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="nav-logo" href="{{ site.baseurl }}/">{{ cv.personal.name }}</a>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="{{ site.baseurl }}/" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
+        <li><a href="{{ site.baseurl }}/bio/" {% if page.url contains "/bio" %}class="active"{% endif %}>Bio</a></li>
+        <li><a href="{{ site.baseurl }}/publications/" {% if page.url contains "/publications" %}class="active"{% endif %}>Publications</a></li>
+        <li><a href="{{ site.baseurl }}/projects/" {% if page.url contains "/projects" %}class="active"{% endif %}>Projects</a></li>
+        <li><a href="{{ site.baseurl }}/network/" {% if page.url contains "/network" %}class="active"{% endif %}>Network</a></li>
+        <li><a href="{{ site.baseurl }}/activities/" {% if page.url contains "/activities" %}class="active"{% endif %}>Activities</a></li>
+        <li><a href="{{ site.baseurl }}/contact/" {% if page.url contains "/contact" %}class="active"{% endif %}>Contact</a></li>
+      </ul>
+      {{ theme_switch }}
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
   <div class="mobile-nav" id="mobileNav">
     <a href="{{ site.baseurl }}/">Home</a>
@@ -24,8 +32,8 @@
     <a href="{{ site.baseurl }}/publications/">Publications</a>
     <a href="{{ site.baseurl }}/projects/">Projects</a>
     <a href="{{ site.baseurl }}/network/">Network</a>
-    <a href="{{ site.baseurl }}/thesis/">Thesis Proposals</a>
     <a href="{{ site.baseurl }}/activities/">Activities</a>
     <a href="{{ site.baseurl }}/contact/">Contact</a>
+    {{ theme_switch }}
   </div>
 </nav>

@@ -1,9 +1,28 @@
-// ── HAMBURGER ────────────────────────────────────────────────
+// ── MOBILE MENU ───────────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');
-if (hamburger) {
-  hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+if (hamburger && mobileNav) {
+  hamburger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
 }
+
+// ── COLOUR THEME (auto / light / dark / paper) ────────────────
+(function () {
+  const root = document.documentElement;
+  const buttons = document.querySelectorAll('[data-theme-choice]');
+  let current = 'auto';
+  try { current = localStorage.getItem('fd-theme') || 'auto'; } catch (e) {}
+  const mark = t => buttons.forEach(b => b.setAttribute('aria-pressed', b.dataset.themeChoice === t));
+  mark(current);
+  buttons.forEach(b => b.addEventListener('click', () => {
+    const t = b.dataset.themeChoice;
+    if (t === 'auto') root.removeAttribute('data-theme'); else root.setAttribute('data-theme', t);
+    try { localStorage.setItem('fd-theme', t); } catch (e) {}
+    mark(t);
+  }));
+})();
 
 // ── PUBLICATION FILTER ────────────────────────────────────────
 document.querySelectorAll('.pub-filter-btn').forEach(btn => {
@@ -11,32 +30,13 @@ document.querySelectorAll('.pub-filter-btn').forEach(btn => {
     document.querySelectorAll('.pub-filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const filter = btn.dataset.filter;
+    let visible = 0;
     document.querySelectorAll('.pub-item').forEach(item => {
       const show = filter === 'all' || item.dataset.type === filter;
       item.style.display = show ? 'grid' : 'none';
+      if (show) visible++;
     });
-    // Update count
-    const visible = document.querySelectorAll('.pub-item:not([style*="none"])').length;
     const counter = document.getElementById('pub-count');
     if (counter) counter.textContent = visible;
   });
 });
-
-// ── SCROLL REVEAL ─────────────────────────────────────────────
-if ('IntersectionObserver' in window) {
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.07 });
-  document.querySelectorAll('.pub-item, .pos-item, .edu-item, .tl-item, .thesis-card, .project-card, .award-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(10px)';
-    el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-    obs.observe(el);
-  });
-}

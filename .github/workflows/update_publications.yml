@@ -28,13 +28,13 @@ jobs:
         run: |
           pip install pyyaml
 
-      - name: Fetch publications from OpenAlex
-        run: python scripts/fetch_publications.py
+      - name: Fetch publications and collaborations from OpenAlex
+        run: python scripts/fetch_publications.py --collaborations
 
       - name: Check for changes
         id: diff
         run: |
-          if git diff --quiet _data/publications.yml; then
+          if git diff --quiet _data/publications.yml _data/collaborations.json scripts/geo_cache.json; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -45,6 +45,6 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add _data/publications.yml
-          git commit -m "chore: auto-update publications from OpenAlex [$(date +'%Y-%m-%d')]"
+          git add _data/publications.yml _data/collaborations.json scripts/geo_cache.json
+          git commit -m "chore: auto-update publications and collaborations from OpenAlex [$(date +'%Y-%m-%d')]"
           git push

@@ -7,7 +7,8 @@ using the author's ORCID. OpenAlex is a free, open scholarly index
 that allows automated access (Google Scholar blocks CI servers).
 
 Usage:
-  python scripts/fetch_publications.py
+  python scripts/fetch_publications.py                   # publications only
+  python scripts/fetch_publications.py --collaborations  # also rebuild _data/collaborations.json
 
 Dependencies:
   pip install pyyaml
@@ -43,7 +44,7 @@ SCHOLAR_ID = "gF5XNDIAAAAJ"
 REPO_ROOT  = Path(__file__).parent.parent
 PUBS_FILE  = REPO_ROOT / "_data" / "publications.yml"
 API        = "https://api.openalex.org/works"
-# C/J/B/P/T = hand-curated, E = from Scopus (fetch_scopus.py): never overwritten here
+# C/J/B/P/T (and old E) ids = hand-curated: never overwritten here
 CURATED_PREFIXES = ("C", "J", "B", "P", "T", "E")
 SELECT = "id,doi,title,publication_year,type,primary_location,authorships,cited_by_count"
 
@@ -197,7 +198,7 @@ def merge(existing: list, fetched: list) -> list:
 
 
 def build_openalex_collaborations(works: list):
-    """Backup source for _data/collaborations.json (main source: fetch_scopus.py)."""
+    """Builds _data/collaborations.json (map, institutions, co-authors, network) from OpenAlex."""
     from collab import build_collaborations, h_index, write_collaborations
     inst_ids = {i["id"] for w in works for a in w.get("authorships", []) for i in a.get("institutions", []) if i.get("id")}
     geo, ids = {}, sorted(inst_ids)

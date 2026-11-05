@@ -11,5 +11,3 @@ Thumbs.db
 __pycache__/
 *.pyc
 
-# Scopus API key (never commit)
-scripts/.scopus_key

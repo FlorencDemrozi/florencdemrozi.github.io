@@ -1,9 +1,8 @@
 """
 collab.py — builds _data/collaborations.json from a list of papers.
 
-Source-agnostic: fetch_scopus.py (main source) and fetch_publications.py
-(OpenAlex, --collaborations) both convert their records to the shape below
-and call build_collaborations().
+fetch_publications.py --collaborations (OpenAlex) converts its records to the
+shape below and calls build_collaborations().
 
 Paper shape:
     {

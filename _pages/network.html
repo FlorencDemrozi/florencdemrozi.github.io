@@ -8,7 +8,7 @@ description: "International collaborations, partner institutions and co-author n
 {% assign co = site.data.collaborations %}
 {% assign maxc = co.countries.first.papers %}
 
-<p class="section-intro">My research is built with colleagues across {{ co.countries | size }} countries. The map shows where my co-authors are based, and the network shows who has published with whom. Hover over a country, an institution or a person for details.</p>
+<p class="section-intro">My research is built with colleagues across {{ co.countries | size }} countries. The map shows where my co-authors are based, and the network shows who has published with whom. Drag to move the map, scroll with the mouse wheel or pinch on the touchpad to zoom, and hover over a country, an institution or a person for details.</p>
 
 <div class="pub-stats collab-stats">
   <div class="pub-stat"><span class="num">{{ co.coauthors | size }}</span><span class="lbl">Co-authors</span></div>
@@ -67,7 +67,7 @@ description: "International collaborations, partner institutions and co-author n
 
 <div class="section-label mt-5">Co-authorship</div>
 <h2 class="section-title">Co-author network</h2>
-<p class="collab-note mb-0">Each dot is a co-author; bigger dots mean more joint papers. Lines connect people who published together. Colours show the co-author's country. Drag dots to rearrange, use the buttons to zoom, and hover to see a person's links.</p>
+<p class="collab-note mb-0">Each dot is a co-author; bigger dots mean more joint papers. Lines connect people who published together. Colours show the co-author's country. Drag dots to rearrange them, drag the background to move, scroll or pinch to zoom, and hover to see a person's links.</p>
 <div class="collab-net-tools">
   <div class="collab-legend" id="collab-network-legend"></div>
   <input type="search" id="collab-search" class="collab-search" placeholder="Find a co-author…" aria-label="Find a co-author">

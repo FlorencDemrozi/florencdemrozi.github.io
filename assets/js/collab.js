@@ -7,7 +7,7 @@
   const HOME = { name: 'University of Stavanger', lat: 58.938, lon: 5.694 };
   const WORLD_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json';
 
-  // Scopus/OpenAlex country names -> world-atlas names
+  // OpenAlex country names -> world-atlas names
   const ALIAS = {
     'United States': 'United States of America', 'USA': 'United States of America',
     'The Netherlands': 'Netherlands', 'Czech Republic': 'Czechia',
@@ -65,7 +65,8 @@
       const H = Math.max(260, Math.round(y1 - y0));
       proj.translate([proj.translate()[0], proj.translate()[1] - y0]);
       const max = d3.max(DATA.countries, d => d.papers) || 1;
-      const color = d3.scaleSequentialLog([1, max], t => d3.interpolateRgb('#f3d2cc', '#8e2a1f')(t));
+      // country shade = accent colour with more opacity for more joint papers (works in every theme)
+      const shade = d3.scaleLog([1, max], [0.22, 1]).clamp(true);
 
       const svg = d3.select(el).append('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
         .attr('aria-label', `Map of ${DATA.countries.length} collaborating countries`);
@@ -74,7 +75,8 @@
       g.selectAll('path').data(countries).join('path')
         .attr('d', path)
         .attr('class', d => 'collab-country' + (countryInfo[d.properties.name] ? ' is-partner' : ''))
-        .style('fill', d => { const c = countryInfo[d.properties.name]; return c ? color(c.papers) : null; })
+        .style('fill', d => countryInfo[d.properties.name] ? 'var(--accent)' : null)
+        .style('fill-opacity', d => { const c = countryInfo[d.properties.name]; return c ? shade(c.papers) : null; })
         .on('mousemove', (ev, d) => {
           const c = countryInfo[d.properties.name];
           if (!c) return hideTip();
@@ -108,19 +110,22 @@
         .on('mousemove', ev => showTip(`<strong>${HOME.name}</strong><span>Home institution · Stavanger, Norway</span>`, ev))
         .on('mouseleave', hideTip);
 
-      if (!compact) {
+      {
         const zoom = d3.zoom().scaleExtent([1, 8]).translateExtent([[0, 0], [W, H]])
           .on('zoom', ev => {
             const k = ev.transform.k, f = Math.pow(k, 0.75);
             g.attr('transform', ev.transform);
             g.selectAll('circle.collab-inst').attr('r', d => r(d.papers) / f).attr('stroke-width', 1 / k);
-            g.selectAll('circle.collab-home').attr('r', 6 / f).attr('stroke-width', 2 / k);
+            g.selectAll('circle.collab-home').attr('r', (compact ? 4 : 6) / f).attr('stroke-width', 2 / k);
           });
-        svg.call(zoom).on('wheel.zoom', null);
+        // drag to pan, mouse wheel / two-finger pinch on a touchpad / pinch on a phone to zoom
+        svg.call(zoom).on('dblclick.zoom', null);
+        d3.select(el).append('div').attr('class', 'collab-hint').text('Drag to move · scroll or pinch to zoom');
         const ctr = d3.select(el).append('div').attr('class', 'collab-zoom');
         ctr.append('button').attr('type', 'button').attr('aria-label', 'Zoom in').text('+').on('click', () => svg.transition().call(zoom.scaleBy, 1.6));
         ctr.append('button').attr('type', 'button').attr('aria-label', 'Zoom out').text('−').on('click', () => svg.transition().call(zoom.scaleBy, 1 / 1.6));
         ctr.append('button').attr('type', 'button').attr('aria-label', 'Reset map').text('⟲').on('click', () => svg.transition().call(zoom.transform, d3.zoomIdentity));
+        if (compact) return;
         // quick jump to Europe, where most partners are
         const [ex0, ey0] = proj([-11, 66]), [ex1, ey1] = proj([30, 35]);
         const k = Math.min(8, 0.8 / Math.max((ex1 - ex0) / W, (ey1 - ey0) / H));
@@ -161,7 +166,7 @@
     const node = g.append('g').selectAll('circle').data(nodes).join('circle')
       .attr('class', d => 'net-node' + (d.self ? ' self' : ''))
       .attr('r', rad)
-      .attr('fill', d => d.self ? '#1a1a2e' : colorOf(d.country));
+      .attr('fill', d => d.self ? null : colorOf(d.country));
     const label = g.append('g').selectAll('text').data(nodes.filter(d => d.self || d.papers >= 4)).join('text')
       .attr('class', d => 'net-label' + (d.self ? ' self' : ''))
       .text(d => d.name);
@@ -204,7 +209,9 @@
       .on('end', (ev, d) => { if (!ev.active) sim.alphaTarget(0); if (!d.self) { d.fx = null; d.fy = null; } }));
 
     const zoom = d3.zoom().scaleExtent([0.5, 5]).on('zoom', ev => g.attr('transform', ev.transform));
-    svg.call(zoom).on('wheel.zoom', null);
+    // drag the background to pan, mouse wheel / touchpad pinch to zoom
+    svg.call(zoom).on('dblclick.zoom', null);
+    d3.select(netEl).append('div').attr('class', 'collab-hint').text('Drag to move · scroll or pinch to zoom');
     const ctr = d3.select(netEl).append('div').attr('class', 'collab-zoom');
     ctr.append('button').attr('type', 'button').attr('aria-label', 'Zoom in').text('+').on('click', () => svg.transition().call(zoom.scaleBy, 1.4));
     ctr.append('button').attr('type', 'button').attr('aria-label', 'Zoom out').text('−').on('click', () => svg.transition().call(zoom.scaleBy, 1 / 1.4));
