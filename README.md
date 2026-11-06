@@ -71,7 +71,8 @@ scripts/geo_cache.json      Cached city coordinates
 | Editor, chair, reviewer, committee roles | `cv.yml` → `service:` |
 | Projects and datasets | `_data/projects.yml` |
 | "Upcoming" chair roles on Home | `index.html` (Upcoming section) |
-| Supervised students | `_pages/activities.html` |
+| UiS supervised students | automatic weekly from NVA (`scripts/fetch_students.py` → `_data/students_nva.yml`); programmes, name spellings and students missing from NVA in `_data/students_uis.yml` |
+| Verona supervised students | `_pages/activities.html` |
 
 **Photo:** replace `assets/img/florenc-demrozi.jpg` and make a 640 px copy named
 `florenc-demrozi-640.jpg` (that small copy is what the pages load).

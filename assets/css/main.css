@@ -359,6 +359,14 @@ h2.section-title { font-family: var(--serif); font-weight: 400; font-size: clamp
 .badge-phd { background: var(--accent); color: var(--on-accent); }
 .badge-msc { background: var(--accent-soft); color: var(--accent); }
 .badge-bsc { background: var(--tint); color: var(--muted); }
+.students-table td a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--rule); }
+.students-table td a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.students-note { font-size: 0.8rem; color: var(--muted); margin: -0.2rem 0 0.4rem; }
+.students-note .src { margin-right: 0.25rem; }
+.src { display: inline-block; font: 500 0.66rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.05em; padding: 0.2rem 0.45rem; border-radius: 3px; white-space: nowrap; }
+.src-auto { background: var(--accent-soft); color: var(--accent); }
+.src-manual { background: var(--tint); color: var(--muted); }
+@media (max-width: 640px) { .students-table { font-size: 0.82rem; } .students-table th { letter-spacing: 0.06em; } }
 
 .teach-item { padding: 0.6rem 0; border-bottom: 1px solid var(--rule); font-size: 0.92rem; color: var(--muted); }
 .teach-item:last-child { border-bottom: none; }

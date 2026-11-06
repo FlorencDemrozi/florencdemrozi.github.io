@@ -11,30 +11,33 @@ permalink: /activities/
 <h2 class="section-title">Supervised Students</h2>
 
 <h3 class="teach-year">University of Stavanger — 2022–present</h3>
+<p class="students-note"><span class="src src-auto">Auto</span> Student, level, year and thesis link are imported weekly from <a href="https://nva.sikt.no/filter?query=florenc&amp;category=DegreeBachelor,DegreeMaster" target="_blank" rel="noopener">NVA</a>; the programme is added by hand. <span class="src src-manual">Manual</span> Entered by hand.</p>
+{%- assign nva = site.data.students_nva -%}
+{%- assign nva_names = nva | map: "name" -%}
+{%- assign manual_only = "" | split: "" -%}
+{%- for m in site.data.students_uis -%}
+  {%- if m.level -%}{%- unless nva_names contains m.name -%}{%- assign manual_only = manual_only | push: m -%}{%- endunless -%}{%- endif -%}
+{%- endfor -%}
+{%- assign manual_years = manual_only | map: "year" -%}
+{%- assign years = nva | map: "year" | concat: manual_years | compact | uniq | sort | reverse -%}
+{%- assign undated = manual_only | where_exp: "m", "m.year == nil" -%}
 <table class="students-table" style="margin-bottom:2.5rem">
-  <thead><tr><th>Student</th><th>Programme</th><th>Level</th></tr></thead>
+  <thead><tr><th>Student</th><th>Programme</th><th>Level</th><th>Year</th><th>Source</th></tr></thead>
   <tbody>
-    <tr><td>Rakul Ponnuthurai Inthrakumar</td><td>Computer Science</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Markus Korneliussen Klungtveit</td><td>Computer Science</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Jan Markus Høie</td><td>Computer Science</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Tawite Noe Marthe</td><td>Computer Science</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Mascuud Mohamed Ali</td><td>Computer Science</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Abdulaziz Abdulkadir Hassan</td><td>Computer Science</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Mikhaela Barba</td><td>Medical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Sarah Jasmin Hussain</td><td>Medical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Kjetil Andreas Wangberg</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Tina Ravndal Askø</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Rolf Svanheim</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Svein-Thore Hammerseth Wighus</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Aditya Borah</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Tom Mantel</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Joakim Tønnessen</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Knut Edland Gjerdsbakk</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Norunn Hjartåker</td><td>Electrical Technology</td><td><span class="badge badge-bsc">B.Sc.</span></td></tr>
-    <tr><td>Lars-Erik Nes Panengstuen</td><td>Robotics</td><td><span class="badge badge-msc">M.Sc.</span></td></tr>
-    <tr><td>Aleksander Odland Fattnes</td><td>Computer Science</td><td><span class="badge badge-msc">M.Sc.</span></td></tr>
-    <tr><td>Morten Ekse</td><td>Electrical Technology</td><td><span class="badge badge-msc">M.Sc.</span></td></tr>
-    <tr><td>Aleksander Møllerud</td><td>Electrical Technology</td><td><span class="badge badge-msc">M.Sc.</span></td></tr>
+{%- for y in years -%}
+  {%- assign rows = nva | where: "year", y -%}
+  {%- for s in rows -%}
+    {%- assign info = site.data.students_uis | where: "name", s.name | first %}
+    <tr><td><a href="{{ s.url }}" target="_blank" rel="noopener" title="{{ s.title | escape }}">{{ s.name }}</a></td><td>{{ info.programme | default: "—" }}</td><td>{% include level-badge.html level=s.level %}</td><td>{{ s.year }}</td><td><span class="src src-auto" title="Student, level, year and thesis link from NVA; programme added by hand">Auto</span></td></tr>
+  {%- endfor -%}
+  {%- assign rows = manual_only | where: "year", y -%}
+  {%- for s in rows %}
+    <tr><td>{{ s.name }}</td><td>{{ s.programme | default: "—" }}</td><td>{% include level-badge.html level=s.level %}</td><td>{{ s.year }}</td><td><span class="src src-manual">Manual</span></td></tr>
+  {%- endfor -%}
+{%- endfor -%}
+{%- for s in undated %}
+    <tr><td>{{ s.name }}</td><td>{{ s.programme | default: "—" }}</td><td>{% include level-badge.html level=s.level %}</td><td>—</td><td><span class="src src-manual">Manual</span></td></tr>
+{%- endfor %}
   </tbody>
 </table>
 

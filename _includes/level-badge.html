@@ -1,0 +1,5 @@
+{%- case include.level -%}
+{%- when "Ph.D." -%}<span class="badge badge-phd">Ph.D.</span>
+{%- when "M.Sc." -%}<span class="badge badge-msc">M.Sc.</span>
+{%- else -%}<span class="badge badge-bsc">{{ include.level | default: "B.Sc." }}</span>
+{%- endcase -%}

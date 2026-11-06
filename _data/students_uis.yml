@@ -1,0 +1,63 @@
+# UiS supervised students — MANUAL information (edit freely).
+#
+# Name, level, year and thesis link are imported automatically every week from
+# NVA (nva.sikt.no) into _data/students_nva.yml. This file adds what NVA does not have:
+#
+#   - programme: shown in the "Programme" column for the student.
+#   - name:      the spelling used on the site (NVA spellings vary; a student matches
+#                when all words of one name appear in the other).
+#   - Students NOT in NVA: give name, programme, level (B.Sc./M.Sc./Ph.D.) and year;
+#                they appear with "Manual" in the Source column.
+
+- name: Rakul Ponnuthurai Inthrakumar
+  programme: Computer Science
+- name: Markus Korneliussen Klungtveit
+  programme: Computer Science
+- name: Jan Markus Høie
+  programme: Computer Science
+- name: Tawite Noe Marthe
+  programme: Computer Science
+- name: Mascuud Mohamed Ali
+  programme: Computer Science
+- name: Abdulaziz Abdulkadir Hassan
+  programme: Computer Science
+- name: Mikhaela Barba
+  programme: Medical Technology
+- name: Sarah Jasmin Hussain
+  programme: Medical Technology
+- name: Kjetil Andreas Wangberg
+  programme: Electrical Technology
+- name: Tina Ravndal Askø
+  programme: Electrical Technology
+- name: Rolf Svanheim
+  programme: Electrical Technology
+- name: Svein-Thore Hammerseth Wighus
+  programme: Electrical Technology
+- name: Aditya Borah
+  programme: Electrical Technology
+- name: Tom Mantel
+  programme: Electrical Technology
+- name: Joakim Tønnessen
+  programme: Electrical Technology
+- name: Knut Edland Gjerdsbakk
+  programme: Electrical Technology
+- name: Norunn Hjartåker
+  programme: Electrical Technology
+- name: Lars-Erik Nes Panengstuen
+  programme: Robotics
+- name: Aleksander Odland Fattnes
+  programme: Computer Science
+- name: Morten Ekse
+  programme: Electrical Technology
+- name: Aleksander Møllerud
+  programme: Electrical Technology
+- name: Siyi Hu
+  programme: Computer Science
+- name: Tarjei Nevestveit
+  programme: Electrical Technology
+- name: Martin Kolstad
+  programme: Electrical Technology
+- name: Cedrik Harbo
+  programme: Electrical Technology
+- name: Katarzyna Haland
+  programme: Data Science
