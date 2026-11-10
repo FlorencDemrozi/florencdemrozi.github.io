@@ -44,12 +44,12 @@
   foot: "Zenodo · DOI 10.5281/zenodo.18346755 · CC BY 4.0"
   cta: "View dataset"
 
-- acr: "MMAI Lab"
+- acr: "m²AI BMD Lab"
   tag: "Research Lab"
-  title: "Multimodal AI Lab"
-  url: "https://florencdemrozi.github.io/mmai-lab/"
-  short: "Multimodal AI Lab"
-  desc: "Sensing. Understanding. Improving Lives. The lab combines motion and biomechanics, physiological and neural sensing, vision and contactless sensing with AI and edge computing for health and well-being."
+  title: "Multimodal AI Biomedical Data Analysis Laboratory"
+  url: "https://florencdemrozi.github.io/m2ai-lab/"
+  short: "Multimodal AI Biomedical Data Analysis Lab"
+  desc: "Sensing. Understanding. Improving Lives. The lab captures human behaviour, physiology and cognition at the same time: optical motion capture as ground truth, synchronized with muscle activity, brain activity, eye tracking, thermal imaging, radio-frequency sensing, XR and wearables, and processed on site with edge AI."
   foot: "Dept. of Electrical Engineering & Computer Science (IDE), UiS"
   cta: "Visit lab"
 
