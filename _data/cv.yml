@@ -327,6 +327,10 @@ projects:
 # News on the Home page (newest first). "url" is optional.
 news:
   - year: 2026
+    title: "New m²AI BMD Lab website online"
+    url: "https://florencdemrozi.github.io/m2ai-lab/"
+    detail: "The m²AI BMD Lab is the newest infrastructure available at IDE (UiS) founded by the Faculty of Science and Technology, UiS with 2.5 Mil Nok. The lab includes SOTA instrumentation in the Biomedical Sensing Systems domain."
+  - year: 2026
     title: "General Chair, ECMS 2026"
     detail: "University of Agder, Grimstad, Norway · June 23–26"
   - year: 2026
