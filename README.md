@@ -50,9 +50,11 @@ assets/js/collab.js         Collaboration map and co-author network (d3)
 assets/img/                 Photo (florenc-demrozi.jpg original, -640.jpg used on the site), favicons
 assets/files/CV_Demrozi.pdf CV linked from the Bio page
 scripts/fetch_publications.py  Weekly OpenAlex updater
+scripts/telegram_news.py    News updates sent through Telegram
 scripts/collab.py           Builds collaborations.json
 scripts/geo_cache.json      Cached city coordinates
-.github/workflows/          deploy.yml (build + publish), update_publications.yml (weekly update)
+.github/workflows/          deploy.yml (build + publish), update_publications.yml (weekly update),
+                            telegram_news.yml (News from Telegram, every 10 min)
 ```
 
 ---
@@ -110,6 +112,34 @@ To fix a publication permanently, edit it in `publications.yml` and give it a cu
 
 Partner cities without coordinates are geocoded once with OpenStreetMap and cached in
 `scripts/geo_cache.json`.
+
+---
+
+## News from Telegram
+
+The Home page News list can be edited by messaging a private Telegram bot.
+Every 10 minutes `.github/workflows/telegram_news.yml` runs `scripts/telegram_news.py`,
+which reads new messages, edits `news:` in `_data/cv.yml`, commits, redeploys and replies.
+
+| Message | Effect |
+|---|---|
+| `/news Title \| detail \| https://link \| 2027` | Adds an item, placed by year (newest first). Only the title is required; parts can be in any order; a new line also works as separator; the year defaults to the current year |
+| `/list` | Shows the news, numbered |
+| `/delete N` | Removes item N |
+| `/undo` | Removes the top item |
+| `/help` | Shows the commands |
+
+Only messages from the Telegram account in `TELEGRAM_USER_ID` are accepted.
+
+**Setup (once):**
+1. In Telegram, message **@BotFather**, send `/newbot`, pick a name; copy the token.
+2. Message **@userinfobot** to get your numeric user id.
+3. On GitHub: **Settings → Secrets and variables → Actions → New repository secret**:
+   `TELEGRAM_BOT_TOKEN` (the token) and `TELEGRAM_USER_ID` (the id).
+4. Open your new bot in Telegram and send `/help`. The reply comes within ~10 minutes.
+
+Telegram keeps unread bot messages for 24 hours, so if the workflow is ever disabled for
+longer, messages sent in that time are lost; send them again.
 
 ---
 
