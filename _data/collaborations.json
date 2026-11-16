@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-16",
  "source": "OpenAlex",
  "profile": {
   "documents": 62,
-  "citations": 950,
+  "citations": 974,
   "h_index": 14,
   "first_year": 2016
  },
@@ -643,18 +643,18 @@
    "papers": 11
   },
   {
-   "id": "https://openalex.org/A5052362859",
-   "name": "Alejandro Masrur",
-   "institution": "Chemnitz University of Technology",
-   "country": "Germany",
-   "home": false,
-   "papers": 8
-  },
-  {
    "id": "https://openalex.org/A5031417684",
    "name": "Luigi Borzì",
    "institution": "Politecnico di Torino",
    "country": "Italy",
+   "home": false,
+   "papers": 8
+  },
+  {
+   "id": "https://openalex.org/A5052362859",
+   "name": "Alejandro Masrur",
+   "institution": "Chemnitz University of Technology",
+   "country": "Germany",
    "home": false,
    "papers": 8
   },
@@ -883,18 +883,18 @@
    "papers": 2
   },
   {
-   "id": "https://openalex.org/A5013165259",
-   "name": "Tiziana Margaria",
-   "institution": "University of Limerick",
-   "country": "Ireland",
-   "home": false,
-   "papers": 2
-  },
-  {
    "id": "https://openalex.org/A5018615087",
    "name": "Farshad Firouzi",
    "institution": "Arizona State University",
    "country": "United States",
+   "home": false,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5013165259",
+   "name": "Tiziana Margaria",
+   "institution": "University of Limerick",
+   "country": "Ireland",
    "home": false,
    "papers": 2
   },
@@ -939,14 +939,6 @@
    "papers": 2
   },
   {
-   "id": "https://openalex.org/A5024030643",
-   "name": "Alessandro Zampogna",
-   "institution": "Istituto Neurologico Mediterraneo",
-   "country": "Italy",
-   "home": false,
-   "papers": 2
-  },
-  {
    "id": "https://openalex.org/A5053113062",
    "name": "Martin Schmidhammer",
    "institution": "University of Stavanger",
@@ -960,6 +952,14 @@
    "institution": "University of Stavanger",
    "country": "Norway",
    "home": true,
+   "papers": 2
+  },
+  {
+   "id": "https://openalex.org/A5024030643",
+   "name": "Alessandro Zampogna",
+   "institution": "Istituto Neurologico Mediterraneo",
+   "country": "Italy",
+   "home": false,
    "papers": 2
   },
   {
@@ -1915,21 +1915,6 @@
    "weight": 4
   },
   {
-   "source": "https://openalex.org/A5023565335",
-   "target": "https://openalex.org/A5052362859",
-   "weight": 8
-  },
-  {
-   "source": "https://openalex.org/A5025088388",
-   "target": "https://openalex.org/A5052362859",
-   "weight": 8
-  },
-  {
-   "source": "https://openalex.org/A5052362859",
-   "target": "https://openalex.org/A5082029992",
-   "weight": 8
-  },
-  {
    "source": "https://openalex.org/A5003773371",
    "target": "https://openalex.org/A5024819065",
    "weight": 2
@@ -2290,6 +2275,21 @@
    "weight": 2
   },
   {
+   "source": "https://openalex.org/A5023565335",
+   "target": "https://openalex.org/A5052362859",
+   "weight": 8
+  },
+  {
+   "source": "https://openalex.org/A5025088388",
+   "target": "https://openalex.org/A5052362859",
+   "weight": 8
+  },
+  {
+   "source": "https://openalex.org/A5052362859",
+   "target": "https://openalex.org/A5082029992",
+   "weight": 8
+  },
+  {
    "source": "https://openalex.org/A5025088388",
    "target": "https://openalex.org/A5068666260",
    "weight": 1
@@ -2388,6 +2388,21 @@
    "source": "https://openalex.org/A5082029992",
    "target": "https://openalex.org/A5123998087",
    "weight": 3
+  },
+  {
+   "source": "https://openalex.org/A5018615087",
+   "target": "https://openalex.org/A5030607647",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5018615087",
+   "target": "https://openalex.org/A5031417684",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5018615087",
+   "target": "https://openalex.org/A5079537650",
+   "weight": 1
   },
   {
    "source": "https://openalex.org/A5025088388",
@@ -2602,21 +2617,6 @@
   {
    "source": "https://openalex.org/A5060453305",
    "target": "https://openalex.org/A5082029992",
-   "weight": 1
-  },
-  {
-   "source": "https://openalex.org/A5018615087",
-   "target": "https://openalex.org/A5030607647",
-   "weight": 1
-  },
-  {
-   "source": "https://openalex.org/A5018615087",
-   "target": "https://openalex.org/A5031417684",
-   "weight": 1
-  },
-  {
-   "source": "https://openalex.org/A5018615087",
-   "target": "https://openalex.org/A5079537650",
    "weight": 1
   },
   {
@@ -3510,21 +3510,6 @@
    "weight": 1
   },
   {
-   "source": "https://openalex.org/A5024030643",
-   "target": "https://openalex.org/A5031417684",
-   "weight": 1
-  },
-  {
-   "source": "https://openalex.org/A5024030643",
-   "target": "https://openalex.org/A5091065734",
-   "weight": 1
-  },
-  {
-   "source": "https://openalex.org/A5031417684",
-   "target": "https://openalex.org/A5091065734",
-   "weight": 1
-  },
-  {
    "source": "https://openalex.org/A5023565335",
    "target": "https://openalex.org/A5032476098",
    "weight": 2
@@ -3578,6 +3563,21 @@
    "source": "https://openalex.org/A5053113062",
    "target": "https://openalex.org/A5100737286",
    "weight": 2
+  },
+  {
+   "source": "https://openalex.org/A5024030643",
+   "target": "https://openalex.org/A5031417684",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5024030643",
+   "target": "https://openalex.org/A5091065734",
+   "weight": 1
+  },
+  {
+   "source": "https://openalex.org/A5031417684",
+   "target": "https://openalex.org/A5091065734",
+   "weight": 1
   },
   {
    "source": "https://openalex.org/A5025088388",
