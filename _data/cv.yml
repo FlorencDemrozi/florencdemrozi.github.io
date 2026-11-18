@@ -327,8 +327,9 @@ projects:
 # News on the Home page (newest first). "url" is optional.
 news:
   - year: 2026
-    title: "New PhD Position available Deadline December 15th"
-    detail: "PhD Fellowship in Lifelong Machine Learning for Human Activity Recognition · PhD Fellowship in Lifelong Machine Learning for Human Activity Recognition (311300) · University of Stavanger https://share.google/dnjJECFTCWrjYmI9C"
+    title: "New PhD Position available,  Deadline December 15th"
+    url: "https://share.google/dnjJECFTCWrjYmI9C"
+    detail: "PhD Fellowship in Lifelong Machine Learning for Human Activity Recognition (311300) at University of Stavanger"
   - year: 2026
     title: "New m²AI BMD Lab website online"
     url: "https://florencdemrozi.github.io/m2ai-lab/"
